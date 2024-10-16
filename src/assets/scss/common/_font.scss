@@ -61,3 +61,47 @@
 		url(../fonts/NotoSans-Black.woff) format('woff');
 }
 
+@font-face {
+	font-family: 'NeuzeitGrotesk';
+	font-style: normal;
+	font-weight: 300;
+	src: local(※),
+		url(../fonts/NeuzeitGrotesk-Light.woff2) format('woff2'),
+		url(../fonts/NeuzeitGrotesk-Light.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'NeuzeitGrotesk';
+	font-style: normal;
+	font-weight: 400;
+	src: local(※),
+		url(../fonts/NeuzeitGrotesk-Regular.woff2) format('woff2'),
+		url(../fonts/NeuzeitGrotesk-Regular.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'NeuzeitGrotesk';
+	font-style: normal;
+	font-weight: 700;
+	src: local(※),
+		url(../fonts/NeuzeitGrotesk-Bold.woff2) format('woff2'),
+		url(../fonts/NeuzeitGrotesk-Bold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'NeuzeitGrotesk';
+	font-style: normal;
+	font-weight: 900;
+	src: local(※),
+		url(../fonts/NeuzeitGrotesk-Black.woff2) format('woff2'),
+		url(../fonts/NeuzeitGrotesk-Black.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'FamiljenGrotesk';
+	font-style: normal;
+	font-weight: 500;
+	src: local(※),
+		url(../fonts/FamiljenGrotesk-Regular.woff2) format('woff2'),
+		url(../fonts/FamiljenGrotesk-Regular.woff) format('woff');
+}

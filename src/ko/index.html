@@ -1,13 +1,341 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../resources/assets/css/common.css" />
-        <link rel="stylesheet" href="../resources/assets/css/main.css" />
-        <title>Document</title>
-    </head>
+    <%- include("./include/head.html") %>
     <body>
-        <div>ko</div>
+        <div class="wrap" id="wrap">
+            <%- include("./include/header.html") %>
+            <main>
+                <section class="section section--kv">
+                    <div class="section__inner">
+                        <div class="main-full main-kv">
+                            <div class="main-kv__inner">
+                                <div class="main-board">
+                                    <div class="main-board__cont">
+                                        <div class="main-board__pc">
+                                            <ul class="main-board__list">
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy05.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue01">Macrogen</div>
+                                                        </div>
+                                                        <div class="main-board__description">Single Cell Multi-omics</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy01.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue01">Macrogen</div>
+                                                        </div>
+                                                        <div class="main-board__description">글로벌 정밀의학 헬스케어 리더</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy02.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue03">Service</div>
+                                                        </div>
+                                                        <div class="main-board__description">장내미생물 검사 더바이옴</div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="main-board__list main-board__list--center">
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy03.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue01">Macrogen</div>
+                                                        </div>
+                                                        <div class="main-board__description">인류의 건강한 미래 마크로젠</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy08.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue03">Service</div>
+                                                        </div>
+                                                        <div class="main-board__description">몸BTI 유전자검사 젠톡</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy04.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue02">News</div>
+                                                        </div>
+                                                        <div class="main-board__description">바이오뱅크</div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="main-board__list">
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy09.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue02">News</div>
+                                                        </div>
+                                                        <div class="main-board__description">젠톡 유전상담 AI 챗봇</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy06.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue02">News</div>
+                                                        </div>
+                                                        <div class="main-board__description">
+                                                            Ultima Genomics UG100™<br />
+                                                            아시아 최초 도입
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/main/dummy07.jpg" />
+                                                        <div class="side-space">
+                                                            <div class="side-space__inner side-space__inner--blue03">Global</div>
+                                                        </div>
+                                                        <div class="main-board__description">
+                                                            마크로젠 유럽<br />
+                                                            EMQN CIC, ISO17025
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section section--slogan">
+                    <div class="section__inner">
+                        <div class="main-full main-slogan">
+                            <div class="main-slogan__wrap">
+                                글로벌 탑티어 유전체 분석 기술력에<br />
+                                빅데이터와 AI를 더해<br />
+                                인류의 <span class="highlight"><span class="bg"></span>건강</span> 하고 <span class="highlight"><span class="bg"></span>행복한 삶</span> 을 만들어 갑니다
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section section--service">
+                    <div class="section__inner">
+                        <div class="main-full main-service">
+                            <div class="main-service__slide">
+                                <ul class="main-service__list swiper-wrapper">
+                                    <li class="main-service__item main-service__item--01 swiper-slide">
+                                        <div class="main-service__cont">
+                                            <div class="main-service__left">
+                                                <span class="main-service__entitle">Personal Healthcare</span>
+                                                <h3 class="main-service__kotitle">헬스케어</h3>
+                                                <p class="main-service__description">
+                                                    질병예측뿐만 아니라 영양, 다이어트에 이르기까지 건강을 유지하고<br />
+                                                    균형 잡힌 생활습관을 만들어가는데 필요한 다양한 유전자 검사를<br />
+                                                    제공합니다.
+                                                </p>
+                                                <ul class="main-service__link">
+                                                    <li>
+                                                        <a href="javascript:;">퍼스널 헬스케어</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">반려동물 헬스케어</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="main-service__right">
+                                                <div class="main-service__image">
+                                                    <img src="../resources/assets/images/main/service-img02.jpg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="main-service__item main-service__item--02 swiper-slide">
+                                        <div class="main-service__cont">
+                                            <div class="main-service__left">
+                                                <span class="main-service__entitle">Research and Data Analysis</span>
+                                                <h3 class="main-service__kotitle">연구분석</h3>
+                                                <p class="main-service__description">
+                                                    마크로젠은 오랜 기간 축적된 경험과 노하우와 글로벌 수준의<br />
+                                                    분석 인프라를 바탕으로 빠르고 정확한 NGS서비스의 경쟁력을<br />
+                                                    갖추고 있습니다.
+                                                </p>
+                                                <ul class="main-service__link">
+                                                    <li>
+                                                        <a href="javascript:;">연구분석 서비스</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">싱글셀분석 서비스</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="main-service__right">
+                                                <div class="main-service__image">
+                                                    <img src="../resources/assets/images/main/service-img01.jpg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="main-service__item main-service__item--03 swiper-slide">
+                                        <div class="main-service__cont">
+                                            <div class="main-service__left">
+                                                <span class="main-service__entitle">Clinical Diagnosis</span>
+                                                <h3 class="main-service__kotitle">임상진단</h3>
+                                                <p class="main-service__description">
+                                                    유전체정보, 의료정보 및 생활정보의 통합 빅데이터를 구축하고 질병을<br />
+                                                    예측하여 미래의학 혁신에 이바지하고 있습니다.
+                                                </p>
+                                                <ul class="main-service__link">
+                                                    <li>
+                                                        <a href="javascript:;">임상분석 서비스</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="main-service__right">
+                                                <div class="main-service__image">
+                                                    <img src="../resources/assets/images/main/service-img03.jpg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="main-service__button">
+                                    <li class="active">헬스케어</li>
+                                    <li>연구분석</li>
+                                    <li>임상진단</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="scrollarea main-full">
+                    <div class="scrollarea__inner">
+                        <div class="scroll-area">
+                            <section class="section section--info">
+                                <div class="section__inner">
+                                    <div class="main-info">
+                                        <div class="main-info__wrap">
+                                            <h2>
+                                                지속 성장을 이루며, 헬스케어<br />
+                                                패러다임의 변화를 이끕니다
+                                            </h2>
+                                            <div class="main-info__content">
+                                                <ul class="main-info__list">
+                                                    <li>
+                                                        <h3>1위</h3>
+                                                        <p>
+                                                            국내 유전체 분석<br />
+                                                            시장점유율
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h3>1위</h3>
+                                                        <p>
+                                                            국내 유전체 분석<br />
+                                                            시장점유율
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h3>1위</h3>
+                                                        <p>
+                                                            국내 유전체 분석<br />
+                                                            시장점유율
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h3>1위</h3>
+                                                        <p>
+                                                            국내 유전체 분석<br />
+                                                            시장점유율
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h3>1위</h3>
+                                                        <p>
+                                                            국내 유전체 분석<br />
+                                                            시장점유율
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h3>1위</h3>
+                                                        <p>
+                                                            국내 유전체 분석<br />
+                                                            시장점유율
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="parallax-slider">
+                                <div class="box2">
+                                    <div class="box2__inner">
+                                        <div class="prdslider">
+                                            <ul>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                                <li>
+                                                    <div style="width: 400px; height: 500px; background-color: gray"></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <section class="section section--info">
+                                <div class="section__inner">
+                                    <div class="main-info">
+                                        <div class="main-info__wrap"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="section section--info">
+                                <div class="section__inner">
+                                    <div class="main-info">
+                                        <div class="main-info__wrap"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <%- include("./include/footer.html") %>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     </body>
 </html>
