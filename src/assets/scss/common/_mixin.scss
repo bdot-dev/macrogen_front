@@ -1,1 +1,21 @@
 @charset "UTF-8";
+
+// Text Ellipsis (IE fix)
+// @type text
+@mixin ellipsis($line:null, $height:auto, $lineHeight:inherit) {
+    @if ($line==null) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    @else {
+        display: -webkit-box;
+        height: $height;
+        line-height: $lineHeight;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}

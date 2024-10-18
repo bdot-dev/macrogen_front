@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     header.addEventListener('mousemove', mouseMoveHandler);
 
     const setInitialPosition = () => {
-        const initialPositionX = (winWidth - contWidth) / 2;
-        const initialPositionY = (winHeight - contHeight) / 2;
-        moveBox.style.transform = `translate(${initialPositionX}px, ${initialPositionY}px)`;
+        // const initialPositionX = (winWidth - contWidth) / 2;
+        // const initialPositionY = (winHeight - contHeight) / 2;
+        moveBox.style.transform = `translate(0px, 0px)`;
     };
 
     window.addEventListener('load', setInitialPosition);
@@ -53,20 +53,178 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', setInitialPosition);
     // GSAP 애니메이션
     gsap.registerPlugin(ScrollTrigger);
-    const highlights = document.querySelectorAll('.highlight .bg');
-    highlights.forEach((bg, index) => {
-        gsap.to(bg, {
-            width: '100%',
-            duration: 0.6,
-            delay: index * 0.3,
-            scrollTrigger: {
-                trigger: bg.closest('.highlight'),
-                start: 'top 60%',
-                end: 'bottom 40%',
-                once: true,
+
+    const marquee = document.querySelector('.main-slogan__marquee h2');
+    const marqueeImgae = document.querySelector('.main-slogan__imagewrap');
+    const marqueeWidth = marquee.offsetWidth;
+    const marqueeImgaeWidth = marqueeImgae.offsetWidth;
+    const totalWidth = marqueeWidth + marqueeImgaeWidth;
+    const screenWidth = window.innerWidth;
+
+    console.log('totalWidth', totalWidth);
+    console.log('screenWidth', screenWidth);
+
+    // 타임라인 및 ScrollTrigger 설정
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.section--slogan',
+            start: 'top center',
+            end: '+=1000',
+            onEnter: () => {
+                tl.restart();
             },
-        });
+            onLeave: () => {
+                setTimeout(() => {
+                    resetAnimation();
+                }, 500);
+            },
+            onEnterBack: () => {
+                setTimeout(() => {
+                    tl.restart();
+                }, 500);
+            },
+            onLeaveBack: () => {
+                setTimeout(() => {
+                    resetAnimation();
+                }, 500);
+            },
+        },
     });
+
+    tl.to('.main-slogan', {
+        backgroundColor: '#1F273C',
+        duration: 1,
+        ease: 'power2.out',
+        onStart: () => {
+            // main-service__button의 모든 li 요소에서 active 클래스 제거
+            const listItems = document.querySelectorAll('.main-service__button li');
+            listItems.forEach((li) => {
+                li.classList.remove('active'); // active 클래스 제거
+            });
+
+            // 첫 번째 li에 active 클래스 추가
+            const firstLi = listItems[0];
+            if (firstLi) {
+                firstLi.classList.add('active'); // 첫 번째 li에 active 클래스 추가
+                firstLi.click(); // 첫 번째 li를 클릭한 것처럼 처리
+            }
+        },
+    })
+        .to(
+            '.main-slogan__text h2',
+            {
+                y: 0,
+                scale: 1,
+                duration: 1.5,
+                ease: 'power2.out',
+                stagger: 0,
+            },
+            '-=0.5'
+        )
+        .to(
+            '.highlight .bg',
+            {
+                width: '100%',
+                duration: 0.6,
+                ease: 'power2.out',
+                stagger: 0.3,
+            },
+            '-=0.5'
+        )
+        .to('.main-slogan__text h2', {
+            y: 100,
+            scale: 1,
+            duration: 1.5,
+            ease: 'power2.out',
+            stagger: 0,
+        })
+        .to(
+            '.overlay-circle',
+            {
+                scale: 100,
+                opacity: 1,
+                duration: 1.5,
+                ease: 'power2.out',
+                stagger: 0.5,
+                onComplete: () => {
+                    gsap.to('.overlay-circle', { opacity: 0, duration: 0 });
+                    gsap.to('.main-slogan', {
+                        backgroundColor: '#fff',
+                        duration: 0,
+                        ease: 'power2.out',
+                    });
+                },
+            },
+            '-=0.5'
+        )
+        .to(
+            '.main-slogan__marquee',
+            {
+                x: `-${totalWidth / 1.5}px`,
+                duration: 5,
+                stagger: 0,
+            },
+            '-=0.1'
+        )
+        .to(
+            '.main-slogan__marquee',
+            {
+                opacity: 1, // opacity를 1로 설정
+                duration: 1, // opacity 변경 시간
+            },
+            '-=5' // 첫 번째 애니메이션과 겹치도록 설정
+        )
+        .to(
+            '.main-slogan__image--scale',
+            {
+                scale: 3.6, // 원하는 scale 값 (예: 1.5로 설정)
+                x: '-50%', // 수평으로 이동 (조정 필요)
+                y: '-50%',
+                borderRadius: '0%',
+                duration: 1, // scale 변경 시간
+                ease: 'power2.out', // 부드러운 애니메이션
+            },
+            '+=0.5' // opacity 애니메이션이 끝난 후 0.5초 지연
+        )
+        .to('.main-slogan__image--scale', {
+            opacity: 0,
+            duration: 1,
+        })
+        .to(
+            '.main-service',
+            {
+                opacity: 1, // opacity를 1로 설정
+                duration: 1,
+                onStart: () => {
+                    // main-service의 z-index를 설정
+                    document.querySelector('.main-service').style.zIndex = '10'; // 원하는 z-index 값
+                },
+            },
+            '-=1.5' // 이전 애니메이션과 동시에 실행하려면 적절한 지점에서 설정
+        );
+
+    function resetAnimation() {
+        gsap.set('.main-slogan', { backgroundColor: '#1F1F1F' });
+        gsap.set('.main-slogan__text h2', { y: 100, scale: 1.3 });
+        gsap.set('.highlight .bg', { width: '0%' });
+        gsap.set('.main-slogan__marquee', { opacity: 0, x: '100%' });
+        gsap.set('.main-service', { opacity: 0 });
+    }
+
+    // const highlights = document.querySelectorAll('.highlight .bg');
+    // highlights.forEach((bg, index) => {
+    //     gsap.to(bg, {
+    //         width: '100%',
+    //         duration: 0.6,
+    //         delay: index * 0.3,
+    //         scrollTrigger: {
+    //             trigger: bg.closest('.highlight'),
+    //             start: 'top 60%',
+    //             end: 'bottom 40%',
+    //             once: true,
+    //         },
+    //     });
+    // });
     // 서비스 슬라이드 설정
     const serviceSwiper = new Swiper('.main-service__slide', {
         slidesPerView: 'auto',
@@ -135,10 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ScrollTrigger로 scroll-area 고정 설정
     ScrollTrigger.create({
         trigger: '.scroll-area',
-        pin: true, // 고정
-        pinSpacing: false, // 고정된 요소가 공간을 차지하지 않도록 설정
-        start: 'top top', // 스크롤 시작 시점
-        end: () => '+=' + document.querySelector('.scroll-area').offsetHeight, // 스크롤 고정 종료
+        pin: true,
+        pinSpacing: false,
+        start: 'top top',
+        end: () => '+=' + document.querySelector('.scroll-area').offsetHeight,
     });
 
     // 숫자 카운팅
@@ -156,24 +314,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Promise((resolve) => {
             const start = 0;
             const change = target - start;
-            const increment = change / ((duration / 1000) * 60); // 프레임당 증가량
+            const increment = change / ((duration / 1000) * 60);
             let current = start;
             const startTime = performance.now();
-            const targetLength = target.toString().length; // 목표 숫자의 자리수
+            const targetLength = target.toString().length;
 
             const step = () => {
                 const elapsed = performance.now() - startTime;
-                const progress = Math.min(elapsed / duration, 1); // 0에서 1까지의 비율
-                current = Math.floor(progress * target); // 현재 카운트
+                const progress = Math.min(elapsed / duration, 1);
+                current = Math.floor(progress * target);
 
-                // 랜덤 숫자 생성 (자리수에 맞춰)
                 element.innerText = generateRandomNumber(targetLength);
 
                 if (progress < 1) {
                     requestAnimationFrame(step);
                 } else {
-                    element.innerText = target; // 목표 값 설정
-                    resolve(); // 카운팅 완료
+                    element.innerText = target;
+                    resolve();
                 }
             };
             requestAnimationFrame(step);
@@ -181,32 +338,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function startCounting(element) {
-        const duration = 1000; // 모든 카운팅이 2초 동안 진행
+        const duration = 800;
         const target = parseInt(element.getAttribute('data-count'), 10);
         await countToTarget(element, target, duration);
-        console.log(`${target} 카운팅 완료!`);
     }
 
     const options = {
-        root: null, // 뷰포트
+        root: null,
         rootMargin: '0px',
-        threshold: 0.1, // 10%가 보일 때
+        threshold: 0.1,
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const element = entry.target;
-                element.classList.add('visible'); // 요소가 보일 때 클래스 추가
-                startCounting(element); // 카운팅 시작
-                observer.unobserve(element); // 카운팅이 시작되면 더 이상 관찰하지 않음
+                element.classList.add('visible');
+                startCounting(element);
+                observer.unobserve(element);
             }
         });
     }, options);
 
     const counters = document.querySelectorAll('.counting');
     counters.forEach((counter) => {
-        observer.observe(counter); // 각 카운터 요소를 관찰
+        observer.observe(counter);
     });
 
     var swiper = new Swiper('.global-swiper', {
