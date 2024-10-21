@@ -61,9 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalWidth = marqueeWidth + marqueeImgaeWidth;
     const screenWidth = window.innerWidth;
 
-    console.log('totalWidth', totalWidth);
-    console.log('screenWidth', screenWidth);
-
     // 타임라인 및 ScrollTrigger 설정
     const tl = gsap.timeline({
         scrollTrigger: {
@@ -135,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 100,
             scale: 1,
             duration: 1.5,
-            ease: 'power2.out',
+            ease: 'power2.easeOut',
             stagger: 0,
         })
         .to(
@@ -210,6 +207,17 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.set('.main-slogan__marquee', { opacity: 0, x: '100%' });
         gsap.set('.main-service', { opacity: 0 });
     }
+
+    window.addEventListener('resize', function () {
+        ScrollTrigger.refresh();
+    });
+
+    new SimpleMarquee('.main-marquee__slide ul', {
+        autoplay: true,
+        speed: 1.5,
+        pauseOnMouseEnter: false,
+        direction: 'right',
+    });
 
     // const highlights = document.querySelectorAll('.highlight .bg');
     // highlights.forEach((bg, index) => {

@@ -19,3 +19,12 @@
         -webkit-line-clamp: $line;
     }
 }
+
+
+
+// $vw-size -> 1920 기준 vw 
+// $max-size -> 1920 기준 최대 px
+// $min-size -> 375 기준 최대 px 
+@function dynamicSize($vw-size, $max-size, $min-size) {
+    @return max(min($vw-size, $max-size), $min-size);
+}

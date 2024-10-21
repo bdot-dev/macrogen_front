@@ -18,18 +18,7 @@ body {
     font-family: 'NotoSansKR', 'NeuzeitGrotesk', sans-serif;
 }
 
-body {
-    overflow-y: hidden;
-    scrollbar-width: none;
-}
 
-::-webkit-scrollbar {
-    display: none;
-}
-
-#wrap {
-    overflow: hidden;
-}
 
 .tac {
     text-align: center;
@@ -43,6 +32,7 @@ body {
     width: 100%;
     height: 124px;
     margin: 0 auto;
+    color: #fff;
     z-index: 99;
 
     &::before {
@@ -76,6 +66,78 @@ body {
         display: flex;
         align-items: center;
     }
+
+    &.black {
+        color: #000;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: unset;
+            z-index: 0;
+        }
+
+        .logo {
+            a {
+                background: url(../images/main/logo_black.png)
+            }
+        }
+
+        .icon {
+            background-color: #000;
+            background-image: none;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+
+            &--facebook {
+                mask-image: url(../images/common/facebook.svg);
+                -webkit-mask-image: url(../images/common/facebook.svg);
+            }
+
+            &--youtube {
+                mask-image: url(../images/common/youtube.svg);
+                -webkit-mask-image: url(../images/common/youtube.svg);
+            }
+
+            &--blog {
+                mask-image: url(../images/common/blog.svg);
+                -webkit-mask-image: url(../images/common/blog.svg);
+            }
+
+            &--linkedin {
+                mask-image: url(../images/common/linkedin.svg);
+                -webkit-mask-image: url(../images/common/linkedin.svg);
+            }
+        }
+
+        .lang {
+
+            &__global {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background-color: #000;
+                background-image: none;
+                background-size: cover;
+                mask-image: url(../images/common/globel.svg);
+                -webkit-mask-image: url(../images/common/globel.svg);
+                -webkit-mask-size: cover;
+                mask-size: cover;
+            }
+        }
+
+        .btn {
+            color: #000;
+
+            &--gray {
+                border: 1px solid #ddd;
+            }
+        }
+    }
 }
 
 // 로고
@@ -101,7 +163,6 @@ body {
         font-family: 'NeuzeitGrotesk';
         font-size: 18px;
         font-weight: 700;
-        color: #fff;
     }
 }
 
@@ -121,31 +182,44 @@ body {
     height: 30px;
 
     &--facebook {
-        background: url(../images/common/facebook.svg);
+        background-image: url(../images/common/facebook.svg);
     }
 
     &--youtube {
-        background: url(../images/common/youtube.svg);
+        background-image: url(../images/common/youtube.svg);
     }
 
     &--blog {
-        background: url(../images/common/blog.svg);
+        background-image: url(../images/common/blog.svg);
     }
 
     &--linkedin {
-        background: url(../images/common/linkedin.svg);
+        background-image: url(../images/common/linkedin.svg);
     }
 }
 
 .lang {
     display: flex;
     gap: 10px;
+
+    &__global {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-image: url(../images/common/globel.svg);
+        background-size: cover;
+        margin-top: 2px;
+    }
 }
 
 .btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     border-radius: 50px;
     font-family: "NeuzeitGrotesk";
     font-weight: 700;
+    line-height: 1;
     color: #fff;
 
     &--white {
@@ -157,6 +231,11 @@ body {
         padding: 10px 20px;
         font-size: 14px;
         line-height: 16px;
+    }
+
+    &--gradient {
+        padding: 19px 57px;
+        background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
     }
 }
 

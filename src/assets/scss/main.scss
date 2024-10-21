@@ -1,11 +1,33 @@
 @import 'common/mixin';
 
+body {
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#wrap {
+    overflow: hidden;
+}
+
 .section {
     height: 100vh;
 
     &--news {
         height: auto;
         padding: 180px 0;
+    }
+
+    &--marquee {
+        height: auto;
+        padding: 100px 0 180px 0;
+    }
+
+    &--banner {
+        height: auto;
     }
 
 }
@@ -23,6 +45,12 @@
 
     &--white {
         color: #fff;
+    }
+
+    &--small {
+        font-size: 50px;
+        line-height: 70px;
+        letter-spacing: -1.5px;
     }
 }
 
@@ -48,7 +76,6 @@
         align-items: center;
         height: 100vh;
         background: #1F1F1F;
-        ;
         overflow: hidden;
     }
 
@@ -72,8 +99,6 @@
 
         li {
             position: relative;
-            width: 560px;
-            height: 400px;
             border-radius: 10px;
             overflow: hidden;
         }
@@ -168,27 +193,27 @@
 
 // main-slogan
 .main-slogan {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     height: 100vh;
     // background-image: url(../images/main/main-slogan_bg.jpg);
     background: #1F1F1F;
-    overflow: hidden;
     line-height: 90px;
     color: #fff;
     text-align: center;
+    overflow: hidden;
 
 
     &__text {
         overflow: hidden;
 
         h2 {
+            transform: translateY(100%);
             font-size: 60px;
             font-weight: 700;
             letter-spacing: -1.8px;
-            transform: translateY(100%);
             scale: (1.3);
         }
     }
@@ -199,18 +224,18 @@
         gap: 100px;
         position: absolute;
         top: 50%;
-        transform: translate(100%, -50%);
         right: 0;
+        transform: translate(100%, -50%);
         z-index: 3;
         opacity: 0;
 
         h2 {
             display: inline-block;
+            flex: 1543px;
+            flex-shrink: 0;
             font-size: 80px;
             font-weight: 700;
             letter-spacing: -2.4px;
-            flex: 1543px;
-            flex-shrink: 0;
         }
     }
 
@@ -231,10 +256,10 @@
         }
 
         &--scale {
-            transform-origin: 27% 31%;
             background: url(../images/main/service-bg02.jpg);
-            background-size: cover;
             background-position: center;
+            background-size: cover;
+            transform-origin: 27% 31%;
         }
     }
 }
@@ -265,11 +290,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: #fff;
+    opacity: 0;
     pointer-events: none;
     z-index: 2;
     transition: all 0.2s;
@@ -351,8 +376,8 @@
         display: flex;
         gap: 293px;
         width: 100%;
-        padding-left: 423px;
         height: 425px;
+        padding-left: 423px;
     }
 
     &__left {
@@ -479,6 +504,7 @@
 
 .main-global {
     background-image: url(../images/main/main-global_bg_blur.jpg);
+    opacity: 1;
 
     &__wrap {
         display: flex;
@@ -531,8 +557,8 @@
 
 .main-news {
     max-width: 1660px;
-    padding: 0 20px;
     margin: 0 auto;
+    padding: 0 20px;
 
     &__partnership {
         width: 100%;
@@ -560,46 +586,46 @@
     }
 
     &__category {
+        background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
         font-family: "Neuzeit Grotesk";
         font-size: 24px;
         font-weight: 700;
-        background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
     &__title {
+        margin-top: 30px;
         font-size: 42px;
         font-weight: 700;
         letter-spacing: -1.26px;
         @include ellipsis(2, 120px, 60px);
-        margin-top: 30px;
     }
 
     &__line {
         display: block;
         height: 1px;
-        background-color: #000;
         margin: 40px 0;
+        background-color: #000;
     }
 
     &__description {
         font-size: 24px;
+        color: #444;
         letter-spacing: -0.72px;
         @include ellipsis(1, 30px, 28px);
-        color: #444;
     }
 
     &__date {
         padding-top: 30px;
-        color: #999;
         font-size: 18px;
         line-height: 16px;
+        color: #999;
     }
 
     &__right {
-        flex-basis: 490px;
         flex-shrink: 0;
+        flex-basis: 490px;
     }
 
     &__image {
@@ -612,6 +638,43 @@
             width: 100%;
             height: 100%;
         }
+    }
+}
+
+.main-marquee {
+    &__slide {
+        margin-top: 80px;
+
+        ul {
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+    &__image {
+        width: 270px;
+        height: 110px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.main-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/main/main-banner.jpg);
+    background-position: center;
+    background-size: cover;
+
+    &__button {
+        margin-top: 60px;
     }
 }
 
