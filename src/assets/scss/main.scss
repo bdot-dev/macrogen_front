@@ -253,12 +253,14 @@ body {
     &__imagewrap {
         white-space: nowrap;
         font-size: 0;
+
         ul {
             display: flex;
             align-items: center;
             column-gap: 40px;
             white-space: nowrap;
             font-size: 0;
+
             li {
                 position: relative;
                 display: inline-block;
@@ -502,6 +504,7 @@ body {
         max-width: 1000px;
         height: 100%;
         margin: 0 auto;
+        row-gap: 150px;
     }
 
     // &__content {

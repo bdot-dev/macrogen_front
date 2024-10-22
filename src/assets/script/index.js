@@ -121,25 +121,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power2.in',
                 stagger: 0,
             })
-            .to(
-                '.overlay-circle',
-                {
-                    scale: 100,
-                    opacity: 1,
-                    duration: 1.5,
-                    ease: 'power2.out',
-                    stagger: 0.5,
-                    onComplete: () => {
-                        gsap.to('.overlay-circle', { opacity: 0, duration: 0 });
-                        gsap.to('.main-slogan', {
-                            backgroundColor: '#fff',
-                            duration: 0,
-                            ease: 'power2.out',
-                        });
-                    },
+            .to('.overlay-circle', {
+                scale: 100,
+                opacity: 1,
+                duration: 1.5,
+                ease: 'power2.out',
+                stagger: 0.5,
+                onComplete: () => {
+                    gsap.to('.overlay-circle', { opacity: 0, duration: 0 });
+                    gsap.to('.main-slogan', {
+                        backgroundColor: '#fff',
+                        duration: 0,
+                        ease: 'power2.out',
+                    });
                 },
-                '-=0.5'
-            )
+            })
             .to(
                 '.main-slogan__marquee',
                 {
