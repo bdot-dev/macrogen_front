@@ -18,7 +18,16 @@ body {
     font-family: 'NotoSansKR', 'NeuzeitGrotesk', sans-serif;
 }
 
-
+.ir {
+    overflow: hidden;
+    position: absolute;
+    top: -999999px;
+    left: -999999px;
+    width: 0;
+    height: 0;
+    text-indent: -999999px;
+    font-size: 0;
+}
 
 .tac {
     text-align: center;
@@ -290,6 +299,10 @@ body {
 
             &:last-child {
                 margin-bottom: 0;
+            }
+
+            a {
+                display: block;
             }
         }
     }
