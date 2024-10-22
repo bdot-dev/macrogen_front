@@ -16,6 +16,10 @@ body {
 .section {
     height: 100vh;
 
+    &__inner {
+        height: 100%;
+    }
+
     &--news {
         height: auto;
         padding: 180px 0;
@@ -34,7 +38,7 @@ body {
 
 .scroll-area {
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .title {
@@ -54,9 +58,6 @@ body {
     }
 }
 
-.main-scroll {
-    height: 100vh;
-}
 
 
 // main-kv
@@ -193,24 +194,33 @@ body {
 
 // main-slogan
 .main-slogan {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
     height: 100vh;
-    // background-image: url(../images/main/main-slogan_bg.jpg);
     background: #1F1F1F;
     line-height: 90px;
     color: #fff;
     text-align: center;
     overflow: hidden;
 
+    &__wrap {
+        position: relative;
+        height: 100%;
+    }
+
+    &__group {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
 
     &__text {
         overflow: hidden;
+        white-space: nowrap;
 
-        h2 {
-            transform: translateY(100%);
+        h4 {
+            transform: translateY(110%);
             font-size: 60px;
             font-weight: 700;
             letter-spacing: -1.8px;
@@ -222,31 +232,47 @@ body {
         display: flex;
         align-items: center;
         gap: 100px;
+        white-space: nowrap;
         position: absolute;
         top: 50%;
-        right: 0;
-        transform: translate(100%, -50%);
+        left: 50%;
+        transform: translateY(-50%);
         z-index: 3;
         opacity: 0;
+        color: #000;
 
-        h2 {
+        h4 {
             display: inline-block;
-            flex: 1543px;
-            flex-shrink: 0;
             font-size: 80px;
             font-weight: 700;
             letter-spacing: -2.4px;
+            flex-shrink: 0;
         }
     }
 
     &__imagewrap {
-        display: flex;
-        gap: 40px;
+        white-space: nowrap;
+        font-size: 0;
+        ul {
+            display: flex;
+            align-items: center;
+            column-gap: 40px;
+            white-space: nowrap;
+            font-size: 0;
+            li {
+                position: relative;
+                display: inline-block;
+                font-size: 0;
+                width: 500px;
+                height: 304px;
+            }
+        }
     }
 
     &__image {
-        width: 540px;
-        height: 304px;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
         overflow: hidden;
 
@@ -256,10 +282,17 @@ body {
         }
 
         &--scale {
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
             background: url(../images/main/service-bg02.jpg);
             background-position: center;
             background-size: cover;
-            transform-origin: 27% 31%;
+            transform-origin: center center;
         }
     }
 }
@@ -332,7 +365,7 @@ body {
 
 
         &--01 {
-            background-image: url(../images/main/service-bg02.jpg);
+            // background-image: url(../images/main/service-bg02.jpg);
         }
 
         &--02 {
@@ -453,6 +486,9 @@ body {
     }
 }
 
+.main-full {
+    height: 100%;
+}
 
 // main-info
 .main-info {
@@ -468,9 +504,9 @@ body {
         margin: 0 auto;
     }
 
-    &__content {
-        margin-top: 15vh;
-    }
+    // &__content {
+    //     margin-top: 15vh;
+    // }
 
     &__list {
         display: flex;
@@ -482,7 +518,7 @@ body {
             width: calc((100% - 400px) / 3);
             text-align: center;
 
-            h3 {
+            strong {
                 font-family: "FamiljenGrotesk";
                 font-size: 60px;
                 font-weight: 700;
