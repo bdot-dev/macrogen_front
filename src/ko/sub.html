@@ -6,78 +6,101 @@
             <h2 class="ir">젠톡</h2>
             <%- include("./include/header.html", { headerClass: 'black' }) %>
             <div class="container">
-                <div class="gentok">
+                <article class="gentok">
                     <div class="gentok__title">
                         <h2>Digital Healthcare</h2>
                     </div>
                     <div class="gentok__kv">
-                        <div class="gentok__imagewrap">
-                            <img src="../resources/assets/images/sub/gentok_kv.jpg" alt="" />
-                        </div>
                         <div class="gentok__content">
-                            <h4 class="gentok__subtitle">몸BTI 건강관리 플랫폼</h4>
-                            <h3 class="gentok__kvtitle">젠톡</h3>
-                            <p class="gentok__description">유전자 분석을 통해 타고난 나의 특성을 알고, 몸속 미생물 분석으로<br />현재 건강 상태를 모니터링하면서 건강한 삶을 만들어가요</p>
-                            <div class="gentok__btnwrap">
-                                <div class="gentok__btn">
-                                    <a href="javascript:;">
-                                        <img src="../resources/assets/images/sub/apple.svg" alt="" />
-                                        <span>App Store</span>
-                                    </a>
-                                </div>
-                                <div class="gentok__btn">
-                                    <a href="javascript:;">
-                                        <img src="../resources/assets/images/sub/google.svg" alt="" />
-                                        <span>Google Play</span>
-                                    </a>
+                            <div class="gentok__text">
+                                <h4 class="gentok__subtitle">몸BTI 건강관리 플랫폼</h4>
+                                <h3 class="gentok__kvtitle">젠톡</h3>
+                                <p class="gentok__description">유전자 분석을 통해 타고난 나의 특성을 알고, 몸속 미생물 분석으로<br />현재 건강 상태를 모니터링하면서 건강한 삶을 만들어가요</p>
+                                <div class="gentok__btnwrap">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;" class="btn btn-default btn-default--regular">
+                                                <span class="btn btn-default__text btn-default__text--pl btn-default__text--apple">App Store</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="btn btn-default btn-default--regular">
+                                                <span class="btn btn-default__text btn-default__text--pl btn-default__text--google">Google Play</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="examine">
-                    <div class="examine__inner">
+                </article>
+                <article class="examine">
+                    <div class="examine__container">
                         <div class="examine__function">
                             <ul class="examine__list">
                                 <li>
-                                    <div class="examine__image">
-                                        <img src="../resources/assets/images/sub/func_image01.svg" alt="" />
+                                    <div class="examine__inner">
+                                        <div class="examine__image">
+                                            <img src="../resources/assets/images/sub/func_image01.svg" alt="129종의 다양한 검사항목" />
+                                        </div>
+                                        <div class="examine__num">
+                                            <span>01</span>
+                                        </div>
+                                        <div class="examine__text">
+                                            <p class="examine__name">
+                                                129종의<br />
+                                                다양한 검사항목
+                                            </p>
+                                        </div>
                                     </div>
-                                    <span class="examine__num">01</span>
-                                    <p class="examine__name">
-                                        129종의<br />
-                                        다양한 검사항목
-                                    </p>
                                 </li>
                                 <li>
-                                    <div class="examine__image">
-                                        <img src="../resources/assets/images/sub/func_image02.svg" alt="" />
+                                    <div class="examine__inner">
+                                        <div class="examine__image">
+                                            <img src="../resources/assets/images/sub/func_image02.svg" alt="보건복지부 인증기관" />
+                                        </div>
+                                        <div class="examine__num">
+                                            <span>02</span>
+                                        </div>
+                                        <div class="examine__text">
+                                            <p class="examine__name">
+                                                보건복지부<br />
+                                                인증기관
+                                            </p>
+                                        </div>
                                     </div>
-                                    <span class="examine__num">02</span>
-                                    <p class="examine__name">
-                                        보건복지부<br />
-                                        인증기관
-                                    </p>
                                 </li>
                                 <li>
-                                    <div class="examine__image">
-                                        <img src="../resources/assets/images/sub/func_image03.svg" alt="" />
+                                    <div class="examine__inner">
+                                        <div class="examine__image">
+                                            <img src="../resources/assets/images/sub/func_image03.svg" alt="AI 챗봇 유전상담 서비스" />
+                                        </div>
+                                        <div class="examine__num">
+                                            <span>03</span>
+                                        </div>
+                                        <div class="examine__text">
+                                            <p class="examine__name">
+                                                AI 챗봇<br />
+                                                유전상담 서비스
+                                            </p>
+                                        </div>
                                     </div>
-                                    <span class="examine__num">03</span>
-                                    <p class="examine__name">
-                                        1AI 챗봇<br />
-                                        유전상담 서비스
-                                    </p>
                                 </li>
                                 <li>
-                                    <div class="examine__image">
-                                        <img src="../resources/assets/images/sub/func_image04.svg" alt="" />
+                                    <div class="examine__inner">
+                                        <div class="examine__image">
+                                            <img src="../resources/assets/images/sub/func_image04.svg" alt="검사 항목별 관리 솔루션 제공" />
+                                        </div>
+                                        <div class="examine__num">
+                                            <span>04</span>
+                                        </div>
+                                        <div class="examine__text">
+                                            <p class="examine__name">
+                                                검사 항목별<br />
+                                                관리 솔루션 제공
+                                            </p>
+                                        </div>
                                     </div>
-                                    <span class="examine__num">04</span>
-                                    <p class="examine__name">
-                                        검사 항목별<br />
-                                        관리 솔루션 제공
-                                    </p>
                                 </li>
                             </ul>
                         </div>
@@ -87,59 +110,59 @@
                                     <div class="examine__checkimage">
                                         <img src="../resources/assets/images/sub/checklist_image01.png" alt="" />
                                     </div>
-                                    <div class="examine__content">
-                                        <div class="examine__title">
-                                            <p>유전자 검사</p>
-                                            <h4>젠톡</h4>
-                                        </div>
-                                        <p class="examine__text">
-                                            비만, 탈모 등 총 129종 검사항목으로<br />
-                                            그동안 알지 못했던 내 몸의 유전적 특성 알아봐요
-                                        </p>
-                                        <div class="examine__plus">
-                                            <a href="javascript:;">
-                                                <img src="../resources/assets/images/sub/plus.svg" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="examine__hidecont">
-                                        <div class="examine__hidewrap">
-                                            <div class="examine__hideleft">
-                                                <div class="examine__hideimage">
-                                                    <img src="../resources/assets/images/sub/checklist_hideimage01.jpg" alt="" />
-                                                </div>
+                                    <div class="examine__toggle">
+                                        <div class="examine__content">
+                                            <div class="examine__title">
+                                                <p>유전자 검사</p>
+                                                <h4>젠톡</h4>
                                             </div>
-                                            <div class="examine__hideright">
-                                                <ul class="examine__hidelist">
-                                                    <li>
-                                                        <div class="examine__itemleft">영양소</div>
-                                                        <div class="examine__itemright">비타민 C 농도, 비타민 D 농도, 코엔자임Q10, 마그네슘 농도 등 35개 항목</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">운동</div>
-                                                        <div class="examine__itemright">근력 운동 적합성, 지구력 운동 적합성, 운동 후 회복능력 등 총 10개 항목</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">피부/모발</div>
-                                                        <div class="examine__itemright">색소침착, 피부노화, 남성형 탈모 등 18개 항목</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">식습관</div>
-                                                        <div class="examine__itemright">식욕, 포만감, 쓴맛 민감도 등 총 21개 항목</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">개인특성</div>
-                                                        <div class="examine__itemright">알코올 홍조, 니코틴 의존성, 카페인 대사 등 23개 항목</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">건강관리</div>
-                                                        <div class="examine__itemright">비만, 요요 가능성, 복부비만, 중성지방농도 등 22개 항목</div>
-                                                    </li>
-                                                </ul>
-                                                <div class="examine__hidebutton">
-                                                    <a href="javascript:;">
-                                                        <span>더 알아보기</span>
-                                                    </a>
+                                            <div class="examine__desc">
+                                                <p>
+                                                    비만, 탈모 등 총 129종 검사항목으로<br />
+                                                    그동안 알지 못했던 내 몸의 유전적 특성 알아봐요
+                                                </p>
+                                            </div>
+                                            <button type="button" class="examine__plus">더보기</button>
+                                        </div>
+                                        <div class="examine__hidecont">
+                                            <div class="examine__hidewrap">
+                                                <div class="examine__hideleft">
+                                                    <div class="examine__hideimage">
+                                                        <img src="../resources/assets/images/sub/checklist_hideimage01.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="examine__hideright">
+                                                    <ul class="examine__hidelist">
+                                                        <li>
+                                                            <div class="examine__itemleft">영양소</div>
+                                                            <div class="examine__itemright">비타민 C 농도, 비타민 D 농도, 코엔자임Q10, 마그네슘 농도 등 35개 항목</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">운동</div>
+                                                            <div class="examine__itemright">근력 운동 적합성, 지구력 운동 적합성, 운동 후 회복능력 등 총 10개 항목</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">피부/모발</div>
+                                                            <div class="examine__itemright">색소침착, 피부노화, 남성형 탈모 등 18개 항목</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">식습관</div>
+                                                            <div class="examine__itemright">식욕, 포만감, 쓴맛 민감도 등 총 21개 항목</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">개인특성</div>
+                                                            <div class="examine__itemright">알코올 홍조, 니코틴 의존성, 카페인 대사 등 23개 항목</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">건강관리</div>
+                                                            <div class="examine__itemright">비만, 요요 가능성, 복부비만, 중성지방농도 등 22개 항목</div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="examine__hidebutton">
+                                                        <a href="javascript:;">
+                                                            <span>더 알아보기</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -149,50 +172,50 @@
                                     <div class="examine__checkimage">
                                         <img src="../resources/assets/images/sub/checklist_image02.png" alt="" />
                                     </div>
-                                    <div class="examine__content">
-                                        <div class="examine__title">
-                                            <p>마이크로바이옴 검사</p>
-                                            <h4>더바이옴</h4>
-                                        </div>
-                                        <p class="examine__text">
-                                            지속적으로 변화하는 몸 속 미생물을 분석하여<br />
-                                            현재 건강 상태를 체크해봐요
-                                        </p>
-                                        <div class="examine__plus">
-                                            <a href="javascript:;">
-                                                <img src="../resources/assets/images/sub/plus.svg" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="examine__hidecont">
-                                        <div class="examine__hidewrap">
-                                            <div class="examine__hideleft">
-                                                <div class="examine__hideimage">
-                                                    <img src="../resources/assets/images/sub/checklist_hideimage02.jpg" alt="" />
-                                                </div>
+                                    <div class="examine__toggle">
+                                        <div class="examine__content">
+                                            <div class="examine__title">
+                                                <p>마이크로바이옴 검사</p>
+                                                <h4>더바이옴</h4>
                                             </div>
-                                            <div class="examine__hideright">
-                                                <ul class="examine__hidelist">
-                                                    <li>
-                                                        <div class="examine__itemleft examine__itemleft--diff">장 건강 및 라이프 지수 종합 분석</div>
-                                                        <div class="examine__itemright">- 장 : 변비, 방귀, 복부 팽만감, 신경성 복부 불편감, 설사<br />- 웰니스 : 행복, 피로, 면역, 비만, 수면, 노화</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft examine__itemleft--diff">영양소 대사 점수</div>
-                                                        <div class="examine__itemright">- 식이섬유, 비타민B군, 단백질&BCAA 등 14종</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft examine__itemleft--diff">
-                                                            식약처 고시 프로바이오틱스<br />
-                                                            19종 검출 여부
-                                                        </div>
-                                                        <div class="examine__itemright"></div>
-                                                    </li>
-                                                </ul>
-                                                <div class="examine__hidebutton">
-                                                    <a href="javascript:;">
-                                                        <span>더 알아보기</span>
-                                                    </a>
+                                            <div class="examine__desc">
+                                                <p>
+                                                    지속적으로 변화하는 몸 속 미생물을 분석하여<br />
+                                                    현재 건강 상태를 체크해봐요
+                                                </p>
+                                            </div>
+                                            <button type="button" class="examine__plus">더보기</button>
+                                        </div>
+                                        <div class="examine__hidecont">
+                                            <div class="examine__hidewrap">
+                                                <div class="examine__hideleft">
+                                                    <div class="examine__hideimage">
+                                                        <img src="../resources/assets/images/sub/checklist_hideimage02.jpg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="examine__hideright">
+                                                    <ul class="examine__hidelist">
+                                                        <li>
+                                                            <div class="examine__itemleft examine__itemleft--diff">장 건강 및 라이프 지수 종합 분석</div>
+                                                            <div class="examine__itemright">- 장 : 변비, 방귀, 복부 팽만감, 신경성 복부 불편감, 설사<br />- 웰니스 : 행복, 피로, 면역, 비만, 수면, 노화</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft examine__itemleft--diff">영양소 대사 점수</div>
+                                                            <div class="examine__itemright">- 식이섬유, 비타민B군, 단백질&BCAA 등 14종</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft examine__itemleft--diff">
+                                                                식약처 고시 프로바이오틱스<br />
+                                                                19종 검출 여부
+                                                            </div>
+                                                            <div class="examine__itemright"></div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="examine__hidebutton">
+                                                        <a href="javascript:;">
+                                                            <span>더 알아보기</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -202,46 +225,46 @@
                                     <div class="examine__checkimage">
                                         <img src="../resources/assets/images/sub/checklist_image03.png" alt="" />
                                     </div>
-                                    <div class="examine__content">
-                                        <div class="examine__title">
-                                            <p>반려동물 유전자 검사</p>
-                                            <h4>마이펫진</h4>
+                                    <div class="examine__toggle">
+                                        <div class="examine__content">
+                                            <div class="examine__title">
+                                                <p>반려동물 유전자 검사</p>
+                                                <h4>마이펫진</h4>
+                                            </div>
+                                            <div class="examine__desc">
+                                                <p>
+                                                    소중한 반려동물의 유전질환을 미리 알아보고 예방하여<br />
+                                                    행복하고 건강한 삶을 함께해요
+                                                </p>
+                                            </div>
+                                            <button type="button" class="examine__plus">더보기</button>
                                         </div>
-                                        <p class="examine__text">
-                                            소중한 반려동물의 유전질환을 미리 알아보고 예방하여<br />
-                                            행복하고 건강한 삶을 함께해요
-                                        </p>
-                                        <div class="examine__plus">
-                                            <a href="javascript:;">
-                                                <img src="../resources/assets/images/sub/plus.svg" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="examine__hidecont">
-                                        <div class="examine__hidewrap examine__hidewrap--diff">
-                                            <div class="examine__hideright">
-                                                <ul class="examine__hidelist">
-                                                    <li>
-                                                        <div class="examine__itemleft">질병확인서</div>
-                                                        <div class="examine__itemright">유전질환의 가족력이 있거나 증상이 의심되는 경우 검사를 통해 조기진단 및 예방, 치료, 건강관리에 도움을 줄 수 있습니다.</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">DNA인증서</div>
-                                                        <div class="examine__itemright">2개 시료의 유전자 좌위를 비교 분석하여 동일한 개체의 DNA인지 식별하는 검사입니다.</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">혈연확인서</div>
-                                                        <div class="examine__itemright">반려동물 DNA의 고유한 유전자형을 비교 분석하여 부/모/자 간의 혈연관계를 입증하는 검사입니다.</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="examine__itemleft">성별확인서</div>
-                                                        <div class="examine__itemright">암수의 성염색체 차이를 DNA분석을 통해 확인함으로써 조류의 성 감별이 가능합니다.</div>
-                                                    </li>
-                                                </ul>
-                                                <div class="examine__hidebutton">
-                                                    <a href="javascript:;">
-                                                        <span>더 알아보기</span>
-                                                    </a>
+                                        <div class="examine__hidecont">
+                                            <div class="examine__hidewrap examine__hidewrap--diff">
+                                                <div class="examine__hideright">
+                                                    <ul class="examine__hidelist">
+                                                        <li>
+                                                            <div class="examine__itemleft">질병확인서</div>
+                                                            <div class="examine__itemright">유전질환의 가족력이 있거나 증상이 의심되는 경우 검사를 통해 조기진단 및 예방, 치료, 건강관리에 도움을 줄 수 있습니다.</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">DNA인증서</div>
+                                                            <div class="examine__itemright">2개 시료의 유전자 좌위를 비교 분석하여 동일한 개체의 DNA인지 식별하는 검사입니다.</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">혈연확인서</div>
+                                                            <div class="examine__itemright">반려동물 DNA의 고유한 유전자형을 비교 분석하여 부/모/자 간의 혈연관계를 입증하는 검사입니다.</div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="examine__itemleft">성별확인서</div>
+                                                            <div class="examine__itemright">암수의 성염색체 차이를 DNA분석을 통해 확인함으로써 조류의 성 감별이 가능합니다.</div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="examine__hidebutton">
+                                                        <a href="javascript:;">
+                                                            <span>더 알아보기</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -285,8 +308,8 @@
                             <div class="swiper-button-prev"></div>
                         </div>
                     </div>
-                </div>
-                <div class="about gray">
+                </article>
+                <article class="about gray">
                     <div class="about__inner">
                         <div class="about__title">
                             <h3>젠톡 이런 점이 좋았어요</h3>
@@ -410,8 +433,8 @@
                             <div class="advantage-slide__progres"></div>
                         </div>
                     </div>
-                </div>
-                <div class="about">
+                </article>
+                <article class="about">
                     <div class="about__inner">
                         <div class="about__title">
                             <h3>젠톡과 함께 소통해요</h3>
@@ -470,7 +493,7 @@
                             <div class="comms-slide__progres"></div>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="contact-btn">
                 <a href="javascript:;">
