@@ -678,8 +678,14 @@ body {
         height: 337px;
         border-radius: 10px;
         overflow: hidden;
-
+        a {
+            position: relative;
+            display: block;
+            height: 100%;
+        }
         img {
+            position: absolute;
+
             width: 100%;
             height: 100%;
             object-fit: cover;
