@@ -47,6 +47,7 @@ body {
     border: 1px solid #fff;
     background-color: rgba(255, 255, 255, 0.1);
     text-align: center;
+    transition: all 0.5s;
 
     &__text {
         font-family: "NeuzeitGrotesk";
@@ -55,6 +56,7 @@ body {
         line-height: 38px;
         color: #fff;
         text-align: center;
+        transition: all 0.3s;
 
         &--pl {
             position: relative;
@@ -112,6 +114,14 @@ body {
         .btn-default__text {
             color: #000;
         }
+
+        &:hover {
+            background-color: #000;
+
+            .btn-default__text {
+                color: #fff;
+            }
+        }
     }
 
     &--white {
@@ -119,6 +129,11 @@ body {
 
         .btn-default__text {
             color: #fff;
+        }
+
+        &:hover {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            background-color: rgba($color: white, $alpha: 0.1);
         }
     }
 
@@ -131,6 +146,25 @@ body {
         .btn-default__text {
             line-height: 54px;
             font-size: 16px;
+        }
+    }
+
+
+    &--bnw {
+        background-color: #fff;
+        border: none;
+
+        .btn-default__text {
+            color: #000;
+            font-size: 16px;
+        }
+
+        &:hover {
+            background-color: #000;
+
+            .btn-default__text {
+                color: #fff;
+            }
         }
     }
 }
@@ -407,6 +441,7 @@ body {
     &__select {
         position: relative;
         font-size: 0;
+
         .footer__button {
             position: relative;
             display: inline-block;
@@ -416,6 +451,7 @@ body {
             line-height: 1;
             color: #fff;
             padding-right: 20px;
+
             &::after {
                 position: absolute;
                 top: 50%;
@@ -431,6 +467,7 @@ body {
                 transform: translateY(-50%) rotate(135deg);
                 transition: 0.23s ease;
             }
+
             &.active {
                 &::after {
                     margin-top: -2px;
@@ -446,13 +483,16 @@ body {
         overflow-y: auto;
         border: 1px solid #fff;
         border-radius: 15px;
+
         ul {
             li {
                 font-size: 0;
                 border-bottom: 1px solid #2b2b2b;
+
                 &:last-child {
                     border-bottom: none;
                 }
+
                 a {
                     display: block;
                     font-family: "Neuzeit Grotesk";
