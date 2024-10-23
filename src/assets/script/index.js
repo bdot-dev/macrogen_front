@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nowX = (-1 + (e.pageX / winWidth) * 2).toFixed(2);
         const nowY = (1 - (e.pageY / winHeight) * 2).toFixed(2);
         const movePositionX = -1 * (nowX * ((contWidth + 50 - winWidth) / 2));
-        const movePositionY = nowY * ((contHeight + 50 - winHeight) / 2);
+        const movePositionY = nowY * ((contHeight + 20 - winHeight) / 2);
         if (!isMoving) {
             isMoving = true;
             requestAnimationFrame(() => {
@@ -292,13 +292,17 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (delta === 'up' && currentSectionIndex === sections.length - 1 && document.querySelector('.scroll-area').scrollTop === 0) {
             currentSectionIndex -= 1;
             goToSection(currentSectionIndex);
+            document.querySelector('.scroll-area').scrollTop = 0;
         }
     }
 
-    // ScrollTrigger.create({
-    //     trigger: '.scroll-area',
-    //     pin: true,
-    // });
+    ScrollTrigger.create({
+        trigger: '.scroll-area',
+        pin: true,
+        pinSpacing: false,
+        start: 'top top',
+        end: 'bottom bottom',
+    });
 
     new Swiper('.global-swiper', {
         slidesPerView: 'auto',
@@ -316,6 +320,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    const handleTargetPosition = () => {
+        const marquee = document.querySelector('.main-slogan__marquee');
+        gsap.to(marquee, {
+            left: 'calc(50% + 245.333px)',
+            transform: 'translate(-100%, -50%)',
+            duration: 5,
+            stagger: 0,
+        });
+    };
+
     window.addEventListener('load', setInitialPosition);
     window.addEventListener('scroll', setInitialPosition);
     window.addEventListener('wheel', handleWheel, { passive: false });
@@ -324,6 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
         debounce(() => {
             updateDimensions();
             handleWindowScroll();
+            // handleTargetPosition();
+            ScrollTrigger.update();
+            ScrollTrigger.refresh();
         }, 100)
     );
 

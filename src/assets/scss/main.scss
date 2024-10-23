@@ -611,6 +611,12 @@ body {
             display: flex;
             gap: 130px;
 
+            &:hover {
+                .main-news__line {
+                    background-color: #000;
+                }
+            }
+
             &+li {
                 margin-top: 120px;
             }
@@ -645,13 +651,16 @@ body {
         a {
             display: block;
         }
+
+
     }
 
     &__line {
         display: block;
         height: 1px;
         margin: 40px 0;
-        background-color: #000;
+        background-color: #ddd;
+        transition: all 0.3s;
     }
 
     &__description {
@@ -678,11 +687,13 @@ body {
         height: 337px;
         border-radius: 10px;
         overflow: hidden;
+
         a {
             position: relative;
             display: block;
             height: 100%;
         }
+
         img {
             position: absolute;
 
