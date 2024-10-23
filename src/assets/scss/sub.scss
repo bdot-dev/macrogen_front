@@ -39,8 +39,9 @@ body {
         width: 100%;
         margin: 0 auto;
         padding: 135px 20px;
+
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             bottom: -70px;
             right: -90px;
@@ -80,6 +81,7 @@ body {
 
     &__btnwrap {
         margin-top: 60px;
+
         ul {
             display: flex;
             column-gap: 10px;
@@ -135,6 +137,7 @@ body {
     }
 
     &__num {
+        display: inline-block;
         margin-top: 40px;
         font-family: "Neuzeit Grotesk";
         font-size: 18px;
@@ -195,7 +198,7 @@ body {
         padding-right: 60px;
         column-gap: 55px;
 
-        > button {
+        >button {
             position: absolute;
             top: 50%;
             right: 0;
@@ -205,9 +208,10 @@ body {
             padding: 0;
             font-size: 0;
             transform: translateY(-50%);
-            
-            &::before, &::after {
-                content:'';
+
+            &::before,
+            &::after {
+                content: '';
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -216,10 +220,12 @@ body {
                 transform: translate(-50%, -50%);
                 transition: 0.13s ease;
             }
+
             &::before {
                 width: 2px;
                 height: 34px;
             }
+
             &::after {
                 width: 34px;
                 height: 2px;
@@ -267,10 +273,10 @@ body {
     }
 
     &__hidewrap {
-        
+
         display: flex;
         gap: 48px;
-        
+
         padding: 40px 0 50px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
 
@@ -360,8 +366,6 @@ body {
     border-radius: 20px;
     overflow: hidden;
 
-    &__wrap {}
-
     &__item {
 
         &--01 {
@@ -380,12 +384,6 @@ body {
     &__cont {
         padding: 108px 187px;
 
-        span {
-            font-size: 18px;
-            line-height: 28px;
-            letter-spacing: -0.54px;
-        }
-
         h3 {
             margin-top: 16px;
             font-size: 50px;
@@ -395,23 +393,14 @@ body {
         }
     }
 
+    &__category {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.54px;
+    }
+
     &__btn {
         margin-top: 45px;
-
-        a {
-            display: inline-flex;
-            align-items: center;
-            padding: 17px 50px;
-            border: 1px solid;
-            border-radius: 50px;
-
-            span {
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 14px;
-                letter-spacing: -0.42px;
-            }
-        }
     }
 
     .swiper-button-next,
@@ -445,7 +434,10 @@ body {
 
 .about {
     &__inner {
-        padding: 180px 150px 280px 250px;
+        max-width: 1620px;
+        width: 100%;
+        padding: 180px 20px 280px;
+        margin: 0 auto;
     }
 
     &__title {
@@ -463,23 +455,7 @@ body {
         }
     }
 
-    &__btn {
-        a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 19px 50px;
-            border-radius: 50px;
-            background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
-            color: #fff;
-        }
 
-        span {
-            font-weight: 500;
-            line-height: 16px;
-            letter-spacing: -0.48px;
-        }
-    }
 }
 
 .about-slide {
@@ -491,6 +467,9 @@ body {
     position: relative;
 
     &__wrap {
+        max-width: 1620px;
+        width: 100%;
+        margin: 0 auto;
 
         li {
             max-width: 473px;
@@ -620,6 +599,20 @@ body {
 
     &__sns {
         margin-top: 30px;
+        width: 40px;
+        height: 40px;
+
+        &--blog {
+            background-image: url(../images/sub/comms_blog.svg);
+        }
+
+        &--insta {
+            background-image: url(../images/sub/comms_insta.svg);
+        }
+
+        &--youtube {
+            background-image: url(../images/sub/comms_youtube.svg);
+        }
     }
 
     &__description {

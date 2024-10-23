@@ -47,6 +47,7 @@ body {
     border: 1px solid #fff;
     background-color: rgba(255, 255, 255, 0.1);
     text-align: center;
+
     &__text {
         font-family: "NeuzeitGrotesk";
         font-size: 14px;
@@ -58,11 +59,12 @@ body {
         &--pl {
             position: relative;
             padding-left: 20px;
+
             &::before {
                 position: absolute;
                 top: 50%;
                 left: 0;
-                content:'';
+                content: '';
                 display: inline-block;
                 width: 14px;
                 height: 14px;
@@ -83,6 +85,7 @@ body {
                 background: url(../images/sub/apple.svg) center / auto no-repeat;
             }
         }
+
         &--google {
             &::before {
                 width: 14px;
@@ -96,8 +99,38 @@ body {
     &--regular {
         min-width: 150px;
         border-radius: 25px;
+
         .btn-default__text {
             line-height: 48px;
+        }
+    }
+
+    &--black {
+        background-color: transparent;
+        border: 1px solid;
+
+        .btn-default__text {
+            color: #000;
+        }
+    }
+
+    &--white {
+        background-color: transparent;
+
+        .btn-default__text {
+            color: #fff;
+        }
+    }
+
+    &--gradient {
+        padding: 0 50px;
+        background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
+        border-radius: 27px;
+        border: none;
+
+        .btn-default__text {
+            line-height: 54px;
+            font-size: 16px;
         }
     }
 }
@@ -106,7 +139,6 @@ body {
 .header {
     position: fixed;
     top: 0;
-    max-width: 1920px;
     width: 100%;
     height: 124px;
     margin: 0 auto;
@@ -199,6 +231,7 @@ body {
 
         .btn-default__text {
             color: #000;
+
             &::before {
                 background: url(../images/common/icon_global_black.svg) center / auto no-repeat;
             }
@@ -272,7 +305,7 @@ body {
         display: inline-block;
         width: 14px;
         height: 14px;
-        
+
         background-size: cover;
         margin-top: 2px;
     }
@@ -292,7 +325,9 @@ body {
 
     &__inner {
         max-width: 1920px;
+        width: 100%;
         min-width: 1480px;
+        margin: 0 auto;
         padding: 100px 150px 62px 150px;
     }
 

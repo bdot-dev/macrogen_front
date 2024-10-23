@@ -495,6 +495,8 @@ body {
 // main-info
 .main-info {
     background-image: url(../images/main/main-info_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &__wrap {
         display: flex;
@@ -639,6 +641,10 @@ body {
         font-weight: 700;
         letter-spacing: -1.26px;
         @include ellipsis(2, 120px, 60px);
+
+        a {
+            display: block;
+        }
     }
 
     &__line {
@@ -669,13 +675,14 @@ body {
 
     &__image {
         width: 100%;
-        height: 100%;
+        height: 337px;
         border-radius: 10px;
         overflow: hidden;
 
         img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
     }
 }

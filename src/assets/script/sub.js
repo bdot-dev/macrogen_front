@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
         pagination: {
             el: '.swiper-pagination',
         },
-        autoplay: {
-            delay: 3000,
-        },
-        loop: true,
+        // autoplay: {
+        //     delay: 3000,
+        // },
+        // loop: true,
         speed: 1100,
     });
     let advanSwiper = new Swiper('.advantage-slide', {
