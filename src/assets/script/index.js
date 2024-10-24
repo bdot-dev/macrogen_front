@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalWidth = marqueeWidth + marqueeImageWidth;
     const counters = document.querySelectorAll('.counting');
     const sections = gsap.utils.toArray('.section--slide');
-    let winWidth = window.outerWidth;
-    let winHeight = window.outerHeight;
+    let winWidth = window.innerWidth;
+    let winHeight = window.innerHeight;
     let contWidth = moveBox.clientWidth;
     let contHeight = moveBox.clientHeight;
     let isMoving = false;
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let tl;
 
     const updateDimensions = () => {
-        winWidth = window.outerWidth;
-        winHeight = window.outerHeight;
+        winWidth = window.innerWidth;
+        winHeight = window.innerHeight;
         contWidth = moveBox.clientWidth;
         contHeight = moveBox.clientHeight;
     };
@@ -37,10 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const mouseMoveHandler = (e) => {
-        const nowX = (-1 + (e.pageX / winWidth) * 2).toFixed(2);
-        const nowY = (1 - (e.pageY / winHeight) * 2).toFixed(2);
-        const movePositionX = -1 * (nowX * ((contWidth + 50 - winWidth) / 2));
-        const movePositionY = nowY * ((contHeight + 20 - winHeight) / 2);
+        console.log(e.pageX, contHeight, winHeight);
+
+        const nowX = 1 - (e.pageX / winWidth) * 2;
+        const nowY = 1 - (e.pageY / winHeight) * 2;
+        const movePositionX = -1 * (nowX * ((contWidth - winWidth) / 2));
+        const movePositionY = nowY * ((contHeight - winHeight) / 2);
         if (!isMoving) {
             isMoving = true;
             requestAnimationFrame(() => {
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resetSloganAnimation = () => {
         gsap.set('.main-slogan', { backgroundColor: '#1F1F1F' });
+        gsap.set('.main-slogan--diff', { backgroundColor: '#fff' });
         gsap.set('.main-slogan__text h4', { y: '110%', scale: 1.3 });
         gsap.set('.highlight .bg', { width: '0%' });
         gsap.set('.main-slogan__marquee', { opacity: 0, top: '50%', left: '50%', transform: 'translateY(-50%)' });
@@ -177,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 1,
                     onStart: () => {
                         // main-service의 z-index를 설정
-                        document.querySelector('.main-service').style.zIndex = '10'; // 원하는 z-index 값
+                        document.querySelector('.main-service').style.zIndex = '1'; // 원하는 z-index 값
                     },
                 },
                 '-=1.5' // 이전 애니메이션과 동시에 실행하려면 적절한 지점에서 설정
@@ -271,6 +274,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     tl.kill();
                     resetSloganAnimation();
                 }
+
+                if (index === 0) {
+                    // main 최상단 도착 헤더 처리
+                    header.classList.remove('header-sm');
+                }
             },
         });
     }
@@ -296,39 +304,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    ScrollTrigger.create({
-        trigger: '.scroll-area',
-        pin: true,
-        pinSpacing: false,
-        start: 'top top',
-        end: 'bottom bottom',
-    });
-
     new Swiper('.global-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 20,
     });
-
-    const handleWindowScroll = () => {
-        gsap.to(window, {
-            scrollTo: {
-                y: sections[currentSectionIndex].offsetTop,
-                autoKill: false,
-            },
-            duration: 1,
-            ease: 'expo.inOut',
-        });
-    };
-
-    const handleTargetPosition = () => {
-        const marquee = document.querySelector('.main-slogan__marquee');
-        gsap.to(marquee, {
-            left: 'calc(50% + 245.333px)',
-            transform: 'translate(-100%, -50%)',
-            duration: 5,
-            stagger: 0,
-        });
-    };
 
     window.addEventListener('load', setInitialPosition);
     window.addEventListener('scroll', setInitialPosition);
@@ -338,9 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
         debounce(() => {
             updateDimensions();
             handleWindowScroll();
-            // handleTargetPosition();
-            ScrollTrigger.update();
-            ScrollTrigger.refresh();
         }, 100)
     );
 
