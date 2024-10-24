@@ -13,7 +13,12 @@ body {
     overflow: hidden;
     position: static;
     min-width: auto;
-
+    .header-main {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
 }
 
 
