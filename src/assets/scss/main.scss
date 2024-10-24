@@ -13,6 +13,7 @@ body {
     overflow: hidden;
     position: static;
     min-width: auto;
+
     .header {
         &-main {
             position: absolute;
@@ -111,7 +112,7 @@ body {
             &:nth-child(even) {
                 .main-board__image {
                     animation: scale cubic-bezier(0.5, 1, 0.89, 1) 1.78s forwards;
-                    
+
                 }
             }
 
@@ -145,11 +146,12 @@ body {
                 transform: scale(1.23);
             }
         }
-        
+
         @keyframes scale {
             0% {
                 transform: scale(0);
             }
+
             100% {
                 transform: scale(1);
             }
