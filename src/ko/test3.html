@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
     <%- include("./include/main_head.html") %>
+    <script src="../resources/assets/script/test.js"></script>
     <body>
         <style>
             .main-board__pc {
                 min-width: 2010px;
-                padding: 150px 0 120px 0;
+                padding: 120px 0;
                 align-items: center;
             }
             .main-board__list {
-                gap: 40px;
+                row-gap: 60px;
             }
             .main-board__image {
                 transition: transform 0.5s;
@@ -345,76 +346,86 @@
                                         <div class="main-news__partnership">
                                             <ul class="main-news__list">
                                                 <li>
-                                                    <div class="main-news__left">
-                                                        <div class="main-news__content">
-                                                            <span class="main-news__category">Partnership</span>
-                                                            <h4 class="main-news__title">
-                                                                <a href="javascript:;">“마침내 갤럭시에서 만나보는 내 유전자검사 결과” 마크로젠–삼성전자, 파트너십 MOU체결 ‘젠톡’ 유전자검사 서비스 갤럭시에 탑재된다 </a>
-                                                            </h4>
-                                                            <span class="main-news__line"></span>
-                                                            <p class="main-news__description">
-                                                                2024년 7월 24일 - 글로벌 디지털 헬스케어 기업 마크로젠(대표 김창훈)과 삼성전자가 손을 맞잡았다. 마크로젠은 삼성전자와 유전체 데이터 기반 헬스케어 서비스의 연구개발과 사업화를 목적으로 업무협약(MOU)을 체결했다고 24년 7월 24일 밝혔다.
-                                                                2024년 7월 24일 - 글로벌 디지털 헬스케어 기업
-                                                            </p>
+                                                    <a href="javascript:;" class="main-news__container">
+                                                        <div class="main-news__left">
+                                                            <div class="main-news__content">
+                                                                <div class="main-news__tag">
+                                                                    <span class="main-news__category">Partnership</span>
+                                                                </div>
+                                                                <div class="main-news__top">
+                                                                    <h4 class="main-news__title">“마침내 갤럭시에서 만나보는 내 유전자검사 결과” 마크로젠–삼성전자, 파트너십 MOU체결 ‘젠톡’ 유전자검사 서비스 갤럭시에 탑재된다</h4>
+                                                                </div>
+                                                                <div class="main-news__bottom">
+                                                                    <p class="main-news__description">
+                                                                        2024년 7월 24일 - 글로벌 디지털 헬스케어 기업 마크로젠(대표 김창훈)과 삼성전자가 손을 맞잡았다. 마크로젠은 삼성전자와 유전체 데이터 기반 헬스케어 서비스의 연구개발과 사업화를 목적으로 업무협약(MOU)을 체결했다고 24년 7월 24일
+                                                                        밝혔다. 2024년 7월 24일 - 글로벌 디지털 헬스케어 기업
+                                                                    </p>
 
-                                                            <p class="main-news__date">2024.05.17</p>
+                                                                    <time class="main-news__date">2024.05.17</time>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="main-news__right">
-                                                        <div class="main-news__image">
-                                                            <a href="javascript:;">
+                                                        <div class="main-news__right">
+                                                            <div class="main-news__image">
                                                                 <img src="../resources/assets/images/main/news_image01.jpg" alt="" />
-                                                            </a>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <div class="main-news__left">
-                                                        <div class="main-news__content">
-                                                            <span class="main-news__category">Business</span>
-                                                            <h4 class="main-news__title">
-                                                                <a href="javascript:;"> 마크로젠, 젠톡에 ‘생성형 AI’ 탑재…맞춤형 유전상담 AI 챗봇 베타 오픈 </a>
-                                                            </h4>
-                                                            <span class="main-news__line"></span>
-                                                            <p class="main-news__description">
-                                                                2024년 7월 1일 - 글로벌 디지털 헬스케어 기업 마크로젠(대표 김창훈)이 유전정보 기반 건강관리 플랫폼 ‘젠톡(GenTok)’에 생성형 AI를 탑재하고 맞춤형 유전상담 AI 챗봇 서비스 ‘젠톡AI’를 베타 오픈했다고 1일 밝혔다. 오픈AI의 챗GPT(GPT-4o)를
-                                                                기반으로 한 젠톡AI는 개인별 유전자검사 분석 데이터 입력을 자동으로 처리해 분석 결과를 요약해준다. 사용자는 비만, 탈모, 영양소, 식습관, 운동, 수면 패턴, 피부 특성 등 국내 최대 129가지 검사항목과 연계해 어떻게 생활습관을 개선할 수 있는지,
-                                                            </p>
+                                                    <a href="javascript:;" class="main-news__container">
+                                                        <div class="main-news__left">
+                                                            <div class="main-news__content">
+                                                                <div class="main-news__tag">
+                                                                    <span class="main-news__category">Business</span>
+                                                                </div>
+                                                                <div class="main-news__top">
+                                                                    <h4 class="main-news__title">마크로젠, 젠톡에 ‘생성형 AI’ 탑재…맞춤형 유전상담 AI 챗봇 베타 오픈</h4>
+                                                                </div>
+                                                                <div class="main-news__bottom">
+                                                                    <p class="main-news__description">
+                                                                        2024년 7월 1일 - 글로벌 디지털 헬스케어 기업 마크로젠(대표 김창훈)이 유전정보 기반 건강관리 플랫폼 ‘젠톡(GenTok)’에 생성형 AI를 탑재하고 맞춤형 유전상담 AI 챗봇 서비스 ‘젠톡AI’를 베타 오픈했다고 1일 밝혔다. 오픈AI의
+                                                                        챗GPT(GPT-4o)를 기반으로 한 젠톡AI는 개인별 유전자검사 분석 데이터 입력을 자동으로 처리해 분석 결과를 요약해준다. 사용자는 비만, 탈모, 영양소, 식습관, 운동, 수면 패턴, 피부 특성 등 국내 최대 129가지 검사항목과 연계해 어떻게
+                                                                        생활습관을 개선할 수 있는지,
+                                                                    </p>
 
-                                                            <p class="main-news__date">2024.05.01</p>
+                                                                    <time class="main-news__date">2024.05.01</time>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="main-news__right">
-                                                        <div class="main-news__image">
-                                                            <a href="javascript:;">
+                                                        <div class="main-news__right">
+                                                            <div class="main-news__image">
                                                                 <img src="../resources/assets/images/main/news_image02.jpg" alt="" />
-                                                            </a>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <div class="main-news__left">
-                                                        <div class="main-news__content">
-                                                            <span class="main-news__category">Business</span>
-                                                            <h4 class="main-news__title">
-                                                                <a href="javascript:;"> 마크로젠, 국내 최초 비의료기관 바이오뱅크 개설 허가 </a>
-                                                            </h4>
-                                                            <span class="main-news__line"></span>
-                                                            <p class="main-news__description">
-                                                                2024년 6월 4일 - 글로벌 디지털 헬스케어 기업 마크로젠(대표 김창훈)이 비의료기관 중 국내 최초로 바이오뱅크(인체유래물은행) 개설 허가를 받았다고 밝혔다. 마크로젠은 누적 50만 건 이상의 유전자 분석 및 27년간의 연구 유전체 데이터와
-                                                                마크로젠의료재단 건강검진센터를 통한 의료정보에,
-                                                            </p>
+                                                    <a href="javascript:;" class="main-news__container">
+                                                        <div class="main-news__left">
+                                                            <div class="main-news__content">
+                                                                <div class="main-news__tag">
+                                                                    <span class="main-news__category">Business</span>
+                                                                </div>
+                                                                <div class="main-news__top">
+                                                                    <h4 class="main-news__title">마크로젠, 국내 최초 비의료기관 바이오뱅크 개설 허가</h4>
+                                                                </div>
+                                                                <div class="main-news__bottom">
+                                                                    <p class="main-news__description">
+                                                                        2024년 6월 4일 - 글로벌 디지털 헬스케어 기업 마크로젠(대표 김창훈)이 비의료기관 중 국내 최초로 바이오뱅크(인체유래물은행) 개설 허가를 받았다고 밝혔다. 마크로젠은 누적 50만 건 이상의 유전자 분석 및 27년간의 연구 유전체 데이터와
+                                                                        마크로젠의료재단 건강검진센터를 통한 의료정보에,
+                                                                    </p>
 
-                                                            <p class="main-news__date">2024.05.01</p>
+                                                                    <time class="main-news__date">2024.05.01</time>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="main-news__right">
-                                                        <div class="main-news__image">
-                                                            <a href="javascript:;">
+                                                        <div class="main-news__right">
+                                                            <div class="main-news__image">
                                                                 <img src="../resources/assets/images/main/news_image01.jpg" alt="" />
-                                                            </a>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -488,6 +499,14 @@
                                 </div>
                             </div>
                         </section>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const $htmlEl = document.querySelector('html');
+                                if ($htmlEl) {
+                                    document.querySelector('html').classList.add('animated');
+                                }
+                            });
+                        </script>
                         <%- include("./include/footer.html") %>
                     </div>
                 </section>
