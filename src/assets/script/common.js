@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.documentElement.addEventListener('click', function (e) {
-        console.log($familyToggle);
         if (!e.target.closest('.footer__select')) {
             $familyButton.classList.remove('active');
             if ($familyToggle) {

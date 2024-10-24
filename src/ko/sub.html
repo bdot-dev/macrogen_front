@@ -4,7 +4,7 @@
     <body>
         <div class="wrap" id="wrap">
             <h2 class="ir">젠톡</h2>
-            <%- include("./include/header.html", { headerClass: 'black' }) %>
+            <header class="header header-bg-white header-sm" id="header"><%- include("./include/header.html") %></header>
             <div class="container">
                 <article class="gentok">
                     <div class="gentok__title">
@@ -511,6 +511,14 @@
                     </div>
                 </article>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const $htmlEl = document.querySelector('html');
+                    if ($htmlEl) {
+                        document.querySelector('html').classList.add('animated');
+                    }
+                });
+            </script>
             <div class="contact-btn">
                 <a href="javascript:;">
                     <img src="../resources/assets/images/sub/gentok_logo.png" />
@@ -518,6 +526,5 @@
             </div>
             <%- include("./include/footer.html") %>
         </div>
-        <script></script>
     </body>
 </html>
