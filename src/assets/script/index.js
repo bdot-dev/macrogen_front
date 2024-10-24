@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 1,
                     onStart: () => {
                         // main-service의 z-index를 설정
-                        document.querySelector('.main-service').style.zIndex = '1'; // 원하는 z-index 값
+                        document.querySelector('.main-service').style.zIndex = '3'; // 원하는 z-index 값
                     },
                 },
                 '-=1.5' // 이전 애니메이션과 동시에 실행하려면 적절한 지점에서 설정
