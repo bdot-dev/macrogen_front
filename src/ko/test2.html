@@ -1,48 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <title>마크로젠</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../resources/assets/library/swiper/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="../resources/assets/library/aos/aos.css" />
-        <link rel="stylesheet" href="../resources/assets/css/common.css" />
-        <link rel="stylesheet" href="../resources/assets/css/main.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=Marcellus&display=swap" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-        <script src="../resources/assets/library/jquery/jquery-3.7.1.min.js"></script>
-        <script src="../resources/assets/library/jquery/jquery.easing.min.js"></script>
-        <script src="../resources/assets/library/swiper/swiper-bundle.min.js"></script>
-        <script src="../resources/assets/library/aos/aos.js"></script>
-        <script src="../resources/assets/library/lenis/lenis.min.js"></script>
-        <script src="../resources/assets/library/gsap/gsap.min.js"></script>
-        <script src="../resources/assets/library/gsap/ScrollTrigger.min.js"></script>
-        <script src="../resources/assets/library/gsap/ScrollToPlugin.min.js"></script>
-        <script src="../resources/assets/library/marquee/marquee.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
-        <script src="../resources/assets/script/common.js"></script>
-        <script src="../resources/assets/script/test2.js"></script>
-    </head>
-
+    <%- include("./include/main_head.html") %>
+    <script src="../resources/assets/script/test2.js"></script>
     <body>
         <style>
             .main-board__pc {
                 min-width: 1760px;
-                padding: 150px 0 120px 0;
+                /* padding: 150px 0 120px 0; */
             }
             .main-board__list {
                 gap: 40px;
-            }
-            .main-board__image {
-                transition: transform 0.5s;
-            }
-            .main-board__list li:hover .main-board__image {
-                transform: scale(1.05);
             }
             .main-board__cont {
                 background-color: #fff;
@@ -60,8 +27,8 @@
                 background-color: #1f1f1f;
             }
         </style>
-        <div class="wrap" id="wrap">
-            <%- include("./include/header.html") %>
+        <div class="wrap main-wrap" id="wrap">
+            <header class="header header-main" id="header"><%- include("./include/header.html") %></header>
             <main class="container">
                 <h2 class="ir">정밀의학 생명공학기업 마크로젠은 개개인이 타고난 유전적 특성을 정확히 알고 보다 건강한 삶을 준비할 수 있도록 돕는 초개인화 헬스케어 서비스를 제공합니다.</h2>
                 <section class="section section--kv section--slide">
