@@ -35,19 +35,13 @@ body {
 
 .wrap {
     .container {
+        overflow-x: hidden;
         padding-top: 120px;
         width: auto;
         padding: 0 !important;
         max-width: none;
+        
     }
-
-    // .header-sm, .header-main-sm {
-    //     height: 123px;
-    //     .inner {
-    //         height: 123px;
-    //     }
-    // }
-    
 }
 
 .btn {
@@ -193,33 +187,51 @@ body {
     .footer {
         background-color: #111111;
         color: #fff;
+        min-width: auto;
+        padding: 0;
+        &::before {
+            display: none;
+        }
     
         &__inner {
-            max-width: 1920px;
+            max-width: 1660px;
             width: 100%;
-            min-width: 1480px;
             margin: 0 auto;
-            padding: 100px 150px 62px 150px;
+            padding: 80px 20px 62px;
+        }
+
+        &__top {
+            display: flex;
+            column-gap: 160px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
     
         &__title {
+            flex-shrink: 0;
+            flex-basis: 385px;
             h2 {
                 font-family: "NeuzeitGrotesk";
-                font-size: 80px;
+                font-size: 36px;
                 font-weight: 700;
-                line-height: 90px;
+                line-height: 42px;
             }
         }
     
         &__list {
             display: flex;
+            flex-basis: 100%;
             justify-content: space-between;
-            padding-top: 80px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            
         }
     
         &__menu {
+            strong {
+                display: block;
+                margin-bottom: 30px;
+                font-size: 18px;
+            }
             li {
                 margin-bottom: 15px;
                 font-size: 16px;
@@ -228,10 +240,8 @@ body {
                 letter-spacing: -0.48px;
     
                 &:first-child {
-                    margin-bottom: 30px;
                     font-family: "Neuzeit Grotesk";
                     font-size: 18px;
-                    font-weight: 700;
                     line-height: 18px
                 }
     
@@ -241,6 +251,10 @@ body {
     
                 a {
                     display: block;
+                    font-size: 16px;
+                    &:hover {
+                        color: #7fb3ff;
+                    }
                 }
             }
         }
@@ -267,10 +281,13 @@ body {
                     font-weight: 300;
                     line-height: 14px;
                     letter-spacing: -0.42px;
-    
-                    &:nth-child(2) {
-                        font-weight: 700;
+
+                    a {
+                        &:hover {
+                            color: #7fb3ff;
+                        }
                     }
+                    
                 }
             }
         }

@@ -304,6 +304,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const handleWindowScroll = () => {
+        gsap.to(window, {
+            scrollTo: {
+                y: sections[currentSectionIndex].offsetTop,
+                autoKill: false,
+            },
+            duration: 1,
+            ease: 'expo.inOut',
+        });
+    };
+
     new Swiper('.global-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 20,

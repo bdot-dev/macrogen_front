@@ -340,10 +340,12 @@
             //2023-04-27::"focusout" 삭제
             gnb2depth.removeClass('active');
             gnbIndex.removeClass('active');
-            $('.header-main').css('background', 'none');
-            $('#gnb2Depth').css('border', 'none');
-            if ($('html').is('.animated')) {
-                $('#header').removeClass('header-bg-white');
+            if (!$('.wrap').hasClass('main-wrap')) {
+                $('.header-main').css('background', 'none');
+                $('#gnb2Depth').css('border', 'none');
+                if ($('html').is('.animated')) {
+                    $('#header').removeClass('header-bg-white');
+                }
             }
 
             $('.item li a').removeClass('activation');
