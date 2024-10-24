@@ -316,7 +316,7 @@
     gnbIndex = $('#gnb li');
 
     $('#gnb li').mouseover(function () {
-        $('.header-main').css('background', '#fff');
+        // $('.header-main').css('background', '#fff');
         $(this).parents('#header').addClass('header-bg-white');
         gnbIndex.removeClass('active');
         $(this).addClass('active');
@@ -340,12 +340,10 @@
             //2023-04-27::"focusout" 삭제
             gnb2depth.removeClass('active');
             gnbIndex.removeClass('active');
-            if (!$('.wrap').hasClass('main-wrap')) {
-                $('.header-main').css('background', 'none');
-                $('#gnb2Depth').css('border', 'none');
-                if ($('html').is('.animated')) {
-                    $('#header').removeClass('header-bg-white');
-                }
+            // $('.header-main').css('background', 'none');
+            $('#gnb2Depth').css('border', 'none');
+            if ($('html').is('.animated')) {
+                $('#header').removeClass('header-bg-white');
             }
 
             $('.item li a').removeClass('activation');

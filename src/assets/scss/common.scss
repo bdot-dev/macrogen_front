@@ -184,6 +184,43 @@ body {
 
 // footer
 .wrap {
+    .header {
+        .inner {
+            .section_btn .sns {
+                vertical-align: middle;
+            }
+            .btn_eng {
+                vertical-align: middle;
+            }
+        }
+    }
+    .header-main {
+        &.header-sm{
+            .icon-facebook-circle {
+                background-image: url("https://www.macrogen.com/publishing/pc-ko/dist/img/common/ico-facebook-circle.svg");
+                width: 30px;
+                height: 30px;
+            }
+
+            .icon-youtube-circle {
+                background-image: url("https://www.macrogen.com/publishing/pc-ko/dist/img/common/ico-youtube-circle.svg");
+                width: 30px;
+                height: 30px;
+            }
+
+            .icon-blog-circle {
+                background-image: url("https://www.macrogen.com/publishing/pc-ko/dist/img/common/ico-blog-circle.svg");
+                width: 30px;
+                height: 30px;
+            }
+
+            .icon-linkedin-circle {
+                background-image: url("https://www.macrogen.com/publishing/pc-ko/dist/img/common/ico-linkedin-circle.svg");
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
     .footer {
         background-color: #111111;
         color: #fff;

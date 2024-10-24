@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalWidth = marqueeWidth + marqueeImageWidth;
     const counters = document.querySelectorAll('.counting');
     const sections = gsap.utils.toArray('.section--slide');
+    const $depth2 = document.querySelector('#gnb2Depth');
     let winWidth = window.innerWidth;
     let winHeight = window.innerHeight;
     let contWidth = moveBox.clientWidth;
