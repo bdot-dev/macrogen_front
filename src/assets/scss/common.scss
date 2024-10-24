@@ -38,11 +38,16 @@ body {
         overflow-x: hidden;
         padding-top: 120px;
         width: auto;
-        padding: 0 !important;
         max-width: none;
         
     }
+    &.header-fixed {
+        .header {
+            position: fixed !important;
+        }
+    }
 }
+
 
 .btn {
     padding: 0;
@@ -194,7 +199,7 @@ body {
             }
         }
     }
-    .header-main {
+    .header {
         &.header-sm{
             .icon-facebook-circle {
                 background-image: url("https://www.macrogen.com/publishing/pc-ko/dist/img/common/ico-facebook-circle.svg");

@@ -1,10 +1,12 @@
 @import 'common/mixin';
 
+
 .gray {
     background-color: #F7F7F7;
 }
 
 .gentok {
+    padding-top: 124px;
     &__title {
         padding: 100px 0;
         text-align: center;

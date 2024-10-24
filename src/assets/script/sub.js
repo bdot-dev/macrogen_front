@@ -51,19 +51,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-// $(function () {
-//     $('.examine__hidewrap').hide();
-//     let examinePlus = $('.examine__plus');
-//     examinePlus.on('click', function () {
-//         let content = $(this).parent().parent().find('.examine__hidewrap');
-//         let icons = $(this).find('img');
-//         if (content.is(':visible')) {
-//             content.slideUp('slow');
-//             icons.attr('src', '../resources/assets/images/sub/plus.svg');
-//         } else {
-//             content.slideDown('slow');
-//             icons.attr('src', '../resources/assets/images/sub/minus.svg');
-//         }
-//     });
-// });
