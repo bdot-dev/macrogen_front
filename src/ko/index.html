@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
     <%- include("./include/main_head.html") %>
+
     <body>
         <div class="wrap main-wrap" id="wrap">
             <header class="header header-main" id="header"><%- include("./include/header.html") %></header>
@@ -311,6 +312,23 @@
                                 </div>
                             </div>
                         </section>
+
+                        <style>
+                            .global-swiper .swiper-container {
+                                width: 600px;
+                                height: 300px;
+                            }
+                            .global-swiper .swiper-slide {
+                                /* 슬라이드가 처음에 오른쪽으로 100px 이동 */
+                                transform: translateX(100px);
+                                opacity: 0;
+                                transition: transform 0.6s ease, opacity 0.6s ease;
+                            }
+                            .section--global.active .global-swiper .swiper-slide {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                        </style>
                         <section class="section section--news">
                             <div class="section__inner">
                                 <h2 class="ir">마크로젠 뉴스</h2>

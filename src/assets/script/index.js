@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
 
     const moveBox = document.querySelector('.main-board__pc');
     const mainBoard = document.querySelector('.main-board');
@@ -317,6 +318,17 @@ document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.global-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 20,
+        on: {
+            init: function () {
+                const slides = document.querySelectorAll('.global-swiper .swiper-slide');
+                slides.forEach((slide, index) => {
+                    // 슬라이드에 딜레이를 주어 순차적으로 애니메이션 실행
+                    setTimeout(() => {
+                        slide.classList.add('active'); // 애니메이션 트리거
+                    }, index * 200); // 각 슬라이드마다 200ms 차이를 두고 애니메이션 시작
+                });
+            },
+        },
     });
 
     window.addEventListener('load', setInitialPosition);
@@ -338,6 +350,19 @@ document.addEventListener('DOMContentLoaded', () => {
             serviceButtons.forEach((b) => b.classList.remove('active'));
             btn.classList.add('active');
         });
+    });
+
+    gsap.to('.section--global', {
+        scrollTrigger: {
+            trigger: '.section--global',
+            scroller: '.scroll-area',
+            start: 'top top',
+            onEnter: () => {
+                document.querySelector('.section--global').classList.add('active');
+            },
+            markers: true, // 스크롤 위치 확인용 마커 (디버깅에 유용)
+            once: true,
+        },
     });
 
     initAnimation();
