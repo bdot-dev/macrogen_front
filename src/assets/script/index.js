@@ -276,7 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (index === 0) {
-                    // main 최상단 도착 헤더 처리
                     header.classList.remove('header-sm');
                 }
             },
@@ -315,22 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    new Swiper('.global-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        on: {
-            init: function () {
-                const slides = document.querySelectorAll('.global-swiper .swiper-slide');
-                slides.forEach((slide, index) => {
-                    // 슬라이드에 딜레이를 주어 순차적으로 애니메이션 실행
-                    setTimeout(() => {
-                        slide.classList.add('active'); // 애니메이션 트리거
-                    }, index * 200); // 각 슬라이드마다 200ms 차이를 두고 애니메이션 시작
-                });
-            },
-        },
-    });
-
     window.addEventListener('load', setInitialPosition);
     window.addEventListener('scroll', setInitialPosition);
     window.addEventListener('wheel', handleWheel, { passive: false });
@@ -352,17 +335,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const swiperOptions = {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        on: {
+            init: function () {
+                const slides = document.querySelectorAll('.global-swiper .swiper-slide');
+                slides.forEach((slide, index) => {
+                    setTimeout(() => {
+                        slide.classList.add('active');
+                    }, index * 200);
+                });
+            },
+        },
+    };
+
+    let globalSlider;
+
     gsap.to('.section--global', {
         scrollTrigger: {
             trigger: '.section--global',
             scroller: '.scroll-area',
-            start: 'top top',
+            start: 'center top+=20%',
             onEnter: () => {
                 document.querySelector('.section--global').classList.add('active');
+                globalSlider = new Swiper('.global-swiper', swiperOptions);
             },
-            markers: true, // 스크롤 위치 확인용 마커 (디버깅에 유용)
+            markers: true,
             once: true,
         },
+    });
+
+    document.querySelectorAll('.group-button').forEach((button) => {
+        button.addEventListener('click', function () {
+            const groupIndex = this.dataset.group;
+            const slides = document.querySelectorAll(`.swiper-slide[data-group="${groupIndex}"]`);
+
+            if (slides.length > 0) {
+                const firstSlide = slides[0];
+
+                const allSlides = Array.from(globalSlider.slides);
+                const firstSlideIndex = allSlides.indexOf(firstSlide);
+
+                const activeSlides = document.querySelectorAll('.swiper-slide-active');
+                activeSlides.forEach((slide) => {
+                    slide.classList.remove('swiper-slide-active');
+                });
+                globalSlider.slideTo(firstSlideIndex);
+
+                firstSlide.classList.add('swiper-slide-active');
+                globalSlider.update();
+            } else {
+                console.log(`그룹 ${groupIndex}에 슬라이드가 없습니다.`);
+            }
+        });
     });
 
     initAnimation();

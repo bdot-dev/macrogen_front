@@ -19,6 +19,7 @@ body {
         top: 0;
         left: 0;
         width: 100%;
+        max-width: none;
     }
 }
 
@@ -50,8 +51,8 @@ body {
     }
 
     &--global {
-        height: auto;
-
+        width: 100%;
+        height: auto; 
         &.active {
             .global-swiper {
                 .swiper-slide {
@@ -612,8 +613,17 @@ body {
 }
 
 .main-global {
-    padding: 150px 0 0 0;
-    background-image: url(../images/main/main-global_bg.jpg);
+    position: relative;
+    min-width: 1480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 150px 0 100px;
+    background-color: #223644;
+
+    .title {
+        position: relative;
+        z-index: 1;
+    }
 
     &__wrap {
         display: flex;
@@ -632,17 +642,31 @@ body {
         column-gap: 20px;
         margin-top: 60px;
     }
+
+    &__map {
+        position: relative;
+        margin-top: 60px;
+        ul {
+            li {
+                text-align: center;
+                img {
+                    display: inline-block;
+                    width: 60vw;
+                    max-width: 1150px;
+                }
+            }
+        }
+    }
 }
 
 .global-swiper {
     width: 100%;
-    margin-top: 100px;
-    padding: 595px 100px 50px 150px;
+    margin-top: -45px;
+    padding: 0 150px;
     color: #fff;
 
     &__item {
         max-width: 300px;
-        max-height: 244px;
         width: 100%;
         height: 100%;
     }
