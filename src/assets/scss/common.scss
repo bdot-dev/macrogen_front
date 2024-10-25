@@ -39,8 +39,9 @@ body {
         padding-top: 120px;
         width: auto;
         max-width: none;
-        
+
     }
+
     &.header-fixed {
         .header {
             position: fixed !important;
@@ -167,6 +168,22 @@ body {
         }
     }
 
+    &--gradclick {
+        padding: 0 52px;
+        border: none;
+        background: #38556A;
+        border-radius: 30px;
+
+        &.active {
+            background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
+        }
+
+        .btn-default__text {
+            line-height: 60px;
+            font-size: 24px;
+        }
+    }
+
 
     &--bnw {
         background-color: #fff;
@@ -194,13 +211,15 @@ body {
             .section_btn .sns {
                 vertical-align: middle;
             }
+
             .btn_eng {
                 vertical-align: middle;
             }
         }
     }
+
     .header {
-        &.header-sm{
+        &.header-sm {
             .icon-facebook-circle {
                 background-image: url("https://www.macrogen.com/publishing/pc-ko/dist/img/common/ico-facebook-circle.svg");
                 width: 30px;
@@ -226,15 +245,17 @@ body {
             }
         }
     }
+
     .footer {
         background-color: #111111;
         color: #fff;
         min-width: auto;
         padding: 0;
+
         &::before {
             display: none;
         }
-    
+
         &__inner {
             max-width: 1660px;
             width: 100%;
@@ -248,10 +269,11 @@ body {
             padding-bottom: 60px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-    
+
         &__title {
             flex-shrink: 0;
             flex-basis: 385px;
+
             h2 {
                 font-family: "NeuzeitGrotesk";
                 font-size: 36px;
@@ -259,65 +281,67 @@ body {
                 line-height: 42px;
             }
         }
-    
+
         &__list {
             display: flex;
             flex-basis: 100%;
             justify-content: space-between;
             padding-top: 20px;
-            
+
         }
-    
+
         &__menu {
             strong {
                 display: block;
                 margin-bottom: 30px;
                 font-size: 18px;
             }
+
             li {
                 margin-bottom: 15px;
                 font-size: 16px;
                 font-weight: 300;
                 line-height: 1;
                 letter-spacing: -0.48px;
-    
+
                 &:first-child {
                     font-family: "Neuzeit Grotesk";
                     font-size: 18px;
                     line-height: 18px
                 }
-    
+
                 &:last-child {
                     margin-bottom: 0;
                 }
-    
+
                 a {
                     display: block;
                     font-size: 16px;
+
                     &:hover {
                         color: #7fb3ff;
                     }
                 }
             }
         }
-    
+
         &__bottom {
             padding-top: 60px;
         }
-    
+
         &__etc {
             display: flex;
             justify-content: space-between;
         }
-    
+
         &__site {
             display: flex;
             justify-content: space-between;
-    
+
             ul {
                 display: flex;
                 gap: 30px;
-    
+
                 li {
                     font-size: 14px;
                     font-weight: 300;
@@ -329,15 +353,15 @@ body {
                             color: #7fb3ff;
                         }
                     }
-                    
+
                 }
             }
         }
-    
+
         &__select {
             position: relative;
             font-size: 0;
-    
+
             .footer__button {
                 position: relative;
                 display: inline-block;
@@ -347,7 +371,7 @@ body {
                 line-height: 1;
                 color: #fff;
                 padding-right: 20px;
-    
+
                 &::after {
                     position: absolute;
                     top: 50%;
@@ -363,7 +387,7 @@ body {
                     transform: translateY(-50%) rotate(135deg);
                     transition: 0.23s ease;
                 }
-    
+
                 &.active {
                     &::after {
                         margin-top: -2px;
@@ -372,23 +396,23 @@ body {
                 }
             }
         }
-    
+
         &__container {
             height: 150px;
             padding: 15px;
             overflow-y: auto;
             border: 1px solid #fff;
             border-radius: 15px;
-    
+
             ul {
                 li {
                     font-size: 0;
                     border-bottom: 1px solid #2b2b2b;
-    
+
                     &:last-child {
                         border-bottom: none;
                     }
-    
+
                     a {
                         display: block;
                         font-family: "Neuzeit Grotesk";
@@ -405,7 +429,7 @@ body {
                 }
             }
         }
-    
+
         &__toggle {
             overflow: hidden;
             position: absolute;
@@ -416,14 +440,14 @@ body {
             background-color: #111;
             transition: 0.23s ease;
         }
-    
+
         &__info {
             display: flex;
             gap: 20px;
             padding-top: 40px;
             font-size: 14px;
         }
-    
+
         &__copyright {
             padding-top: 10px;
             font-size: 12px;

@@ -26,10 +26,15 @@ body {
 .section {
     height: 100vh;
 
+    &--auto {
+        height: auto;
+    }
+
     &__inner {
         height: 100%;
     }
 
+    // auto 삭제
     &--news {
         height: auto;
         padding: 180px 0;
@@ -46,7 +51,20 @@ body {
 
     &--global {
         height: auto;
+
+        &.active {
+            .global-swiper {
+                .swiper-slide {
+                    &.active {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
+
+    // auto 삭제
 
 }
 
@@ -612,25 +630,7 @@ body {
     &__btnlist {
         display: flex;
         column-gap: 20px;
-    }
-
-    &__btnitem {
         margin-top: 60px;
-        padding: 0 52px;
-        border-radius: 30px;
-        background: #38556A;
-        cursor: pointer;
-
-        &.active {
-            background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
-        }
-
-        span {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 60px;
-            color: #fff;
-        }
     }
 }
 
@@ -673,6 +673,18 @@ body {
             letter-spacing: -0.54px;
             color: #fff;
         }
+    }
+
+    .swiper-container {
+        width: 600px;
+        height: 300px;
+    }
+
+    .swiper-slide {
+        /* 슬라이드가 처음에 오른쪽으로 100px 이동 */
+        transform: translateX(100px);
+        opacity: 0;
+        transition: transform 0.6s ease, opacity 0.6s ease;
     }
 }
 
