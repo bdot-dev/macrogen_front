@@ -251,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             duration: 1,
             ease: 'expo.inOut',
-
             onComplete() {
                 currentSectionIndex = index;
                 isScrolling = false;
@@ -270,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (sections[index].classList.contains('section--slogan')) {
                     initAnimation();
+                    ScrollTrigger.update();
                 } else {
                     tl.kill();
                     resetSloganAnimation();
@@ -351,29 +351,55 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let globalSlider;
+    let initialGroupIndex = null; // 초기 그룹 인덱스를 저장할 변수
 
     gsap.to('.section--global', {
         scrollTrigger: {
-            trigger: '.section--global',
+            trigger: '.section--global .title',
             scroller: '.scroll-area',
-            start: 'center top+=20%',
+            start: 'bottom+=40px top',
             onEnter: () => {
                 document.querySelector('.section--global').classList.add('active');
+                document.querySelector('.main-global__btnlist').classList.add('active');
                 globalSlider = new Swiper('.global-swiper', swiperOptions);
+
+                if (initialGroupIndex !== null) {
+                    const slides = document.querySelectorAll(`.swiper-slide[data-group="${initialGroupIndex}"]`);
+
+                    if (slides.length > 0) {
+                        const firstSlide = slides[0];
+                        const allSlides = Array.from(globalSlider.slides);
+                        const firstSlideIndex = allSlides.indexOf(firstSlide);
+
+                        globalSlider.slideTo(firstSlideIndex);
+                        firstSlide.classList.add('swiper-slide-active');
+                        globalSlider.update();
+                    }
+                }
             },
             markers: true,
             once: true,
         },
     });
 
+    // 그룹 버튼 클릭 시 그룹 인덱스 저장
     document.querySelectorAll('.group-button').forEach((button) => {
         button.addEventListener('click', function () {
             const groupIndex = this.dataset.group;
+            initialGroupIndex = groupIndex; // 클릭된 그룹 인덱스 저장
+
             const slides = document.querySelectorAll(`.swiper-slide[data-group="${groupIndex}"]`);
+            const parentLi = this.closest('li');
+            const siblingButtons = parentLi.parentElement.querySelectorAll('li button');
+
+            siblingButtons.forEach((siblingButton) => {
+                siblingButton.classList.remove('active');
+            });
+
+            this.classList.add('active');
 
             if (slides.length > 0) {
                 const firstSlide = slides[0];
-
                 const allSlides = Array.from(globalSlider.slides);
                 const firstSlideIndex = allSlides.indexOf(firstSlide);
 
@@ -381,8 +407,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 activeSlides.forEach((slide) => {
                     slide.classList.remove('swiper-slide-active');
                 });
-                globalSlider.slideTo(firstSlideIndex);
 
+                globalSlider.slideTo(firstSlideIndex);
                 firstSlide.classList.add('swiper-slide-active');
                 globalSlider.update();
             } else {
@@ -390,6 +416,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // const globalMapSlider = new Swiper('.main-global__bg', {
+    //     slidesPerView: 'auto',
+    //     loop: false,
+    //     speed: 600,
+    //     effect: 'fade',
+    //     fadeEffect: {
+    //         crossFade: true,
+    //     },
+    //     parallax: true,
+    //     grabCursor: false,
+    // });
 
     initAnimation();
     goToSection(currentSectionIndex);

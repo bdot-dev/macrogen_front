@@ -182,6 +182,13 @@ body {
             line-height: 60px;
             font-size: 24px;
         }
+
+        &:hover {
+            background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
+            .btn-default__text {
+                color: #fff;
+            }
+        }
     }
 
 

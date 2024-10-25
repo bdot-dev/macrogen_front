@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
-
+    gsap.registerPlugin(ScrollToPlugin);
     const moveBox = document.querySelector('.main-board__pc');
     const mainBoard = document.querySelector('.main-board');
     const header = document.querySelector('#header');
@@ -260,7 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             duration: 1,
             ease: 'expo.inOut',
-
             onComplete() {
                 currentSectionIndex = index;
                 isScrolling = false;
@@ -279,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (sections[index].classList.contains('section--slogan')) {
                     initAnimation();
+                    ScrollTrigger.update();
                 } else {
                     tl.kill();
                     resetSloganAnimation();
@@ -308,14 +308,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    ScrollTrigger.create({
-        trigger: '.scroll-area',
-        pin: true,
-        pinSpacing: false,
-        start: 'top top',
-        end: 'bottom bottom',
-    });
-
     new Swiper('.global-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 20,
@@ -332,16 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const handleTargetPosition = () => {
-        const marquee = document.querySelector('.main-slogan__marquee');
-        gsap.to(marquee, {
-            left: 'calc(50% + 245.333px)',
-            transform: 'translate(-100%, -50%)',
-            duration: 5,
-            stagger: 0,
-        });
-    };
-
     window.addEventListener('load', setInitialPosition);
     window.addEventListener('scroll', setInitialPosition);
     window.addEventListener('wheel', handleWheel, { passive: false });
@@ -350,9 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
         debounce(() => {
             updateDimensions();
             handleWindowScroll();
-            // handleTargetPosition();
-            ScrollTrigger.update();
-            ScrollTrigger.refresh();
         }, 100)
     );
 
