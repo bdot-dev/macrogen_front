@@ -185,6 +185,7 @@ body {
 
         &:hover {
             background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
+
             .btn-default__text {
                 color: #fff;
             }
@@ -469,5 +470,21 @@ body {
         &:first-child {
             font-weight: 700;
         }
+    }
+}
+
+.top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 3;
+
+    button {
+        padding: 30px;
+        border-radius: 50%;
+        background-color: #222;
+        background-image: url(../images/common/top_arrow.svg);
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

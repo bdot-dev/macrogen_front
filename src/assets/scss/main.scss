@@ -52,7 +52,8 @@ body {
 
     &--global {
         width: 100%;
-        height: auto; 
+        height: auto;
+
         &.active {
             .global-swiper {
                 .swiper-slide {
@@ -117,6 +118,7 @@ body {
         display: flex;
         justify-content: space-between;
         transform: translate(0, 0);
+        min-width: 1620px;
         padding: 70px 120px;
         column-gap: 60px;
         -webkit-transition-timing-function: ease-out;
@@ -643,6 +645,7 @@ body {
         column-gap: 20px;
         justify-content: center;
         transition: 0.54s ease;
+
         &.active {
             opacity: 1;
         }
@@ -651,11 +654,13 @@ body {
     &__map {
         position: relative;
         margin-top: 60px;
-        
+
     }
+
     &__bg {
         li {
             text-align: center;
+
             img {
                 display: inline-block;
                 width: 60vw;
@@ -670,7 +675,7 @@ body {
     margin-top: -45px;
     padding: 0 150px;
     color: #fff;
-    
+
     &__item {
         max-width: 300px;
         width: 100%;

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
+
     const moveBox = document.querySelector('.main-board__pc');
     const mainBoard = document.querySelector('.main-board');
     const header = document.querySelector('#header');
@@ -12,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalWidth = marqueeWidth + marqueeImageWidth;
     const counters = document.querySelectorAll('.counting');
     const sections = gsap.utils.toArray('.section--slide');
-    let winWidth = window.outerWidth;
-    let winHeight = window.outerHeight;
+    const $depth2 = document.querySelector('#gnb2Depth');
+    let winWidth = window.innerWidth;
+    let winHeight = window.innerHeight;
     let contWidth = moveBox.clientWidth;
     let contHeight = moveBox.clientHeight;
     let isMoving = false;
@@ -22,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let tl;
 
     const updateDimensions = () => {
-        winWidth = window.outerWidth;
-        winHeight = window.outerHeight;
+        winWidth = window.innerWidth;
+        winHeight = window.innerHeight;
         contWidth = moveBox.clientWidth;
         contHeight = moveBox.clientHeight;
     };
@@ -189,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 1,
                     onStart: () => {
                         // main-service의 z-index를 설정
-                        document.querySelector('.main-service').style.zIndex = '10'; // 원하는 z-index 값
+                        document.querySelector('.main-service').style.zIndex = '3'; // 원하는 z-index 값
                     },
                 },
                 '-=1.5' // 이전 애니메이션과 동시에 실행하려면 적절한 지점에서 설정
@@ -283,6 +285,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     tl.kill();
                     resetSloganAnimation();
                 }
+
+                if (index === 0) {
+                    header.classList.remove('header-sm');
+                }
             },
         });
     }
@@ -345,6 +351,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const swiperOptions = {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        on: {
+            init: function () {
+                const slides = document.querySelectorAll('.global-swiper .swiper-slide');
+                slides.forEach((slide, index) => {
+                    setTimeout(() => {
+                        slide.classList.add('active');
+                    }, index * 200);
+                });
+            },
+        },
+    };
+
+    let globalSlider;
+    let initialGroupIndex = null; // 초기 그룹 인덱스를 저장할 변수
+
+    gsap.to('.section--global', {
+        scrollTrigger: {
+            trigger: '.section--global .title',
+            scroller: '.scroll-area',
+            start: 'bottom+=40px top',
+            onEnter: () => {
+                document.querySelector('.section--global').classList.add('active');
+                document.querySelector('.main-global__btnlist').classList.add('active');
+                globalSlider = new Swiper('.global-swiper', swiperOptions);
+
+                if (initialGroupIndex !== null) {
+                    const slides = document.querySelectorAll(`.swiper-slide[data-group="${initialGroupIndex}"]`);
+
+                    if (slides.length > 0) {
+                        const firstSlide = slides[0];
+                        const allSlides = Array.from(globalSlider.slides);
+                        const firstSlideIndex = allSlides.indexOf(firstSlide);
+
+                        globalSlider.slideTo(firstSlideIndex);
+                        firstSlide.classList.add('swiper-slide-active');
+                        globalSlider.update();
+                    }
+                }
+            },
+            markers: true,
+            once: true,
+        },
+    });
+
+    // 그룹 버튼 클릭 시 그룹 인덱스 저장
+    document.querySelectorAll('.group-button').forEach((button) => {
+        button.addEventListener('click', function () {
+            const groupIndex = this.dataset.group;
+            initialGroupIndex = groupIndex; // 클릭된 그룹 인덱스 저장
+
+            const slides = document.querySelectorAll(`.swiper-slide[data-group="${groupIndex}"]`);
+            const parentLi = this.closest('li');
+            const siblingButtons = parentLi.parentElement.querySelectorAll('li button');
+
+            siblingButtons.forEach((siblingButton) => {
+                siblingButton.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            if (slides.length > 0) {
+                const firstSlide = slides[0];
+                const allSlides = Array.from(globalSlider.slides);
+                const firstSlideIndex = allSlides.indexOf(firstSlide);
+
+                const activeSlides = document.querySelectorAll('.swiper-slide-active');
+                activeSlides.forEach((slide) => {
+                    slide.classList.remove('swiper-slide-active');
+                });
+
+                globalSlider.slideTo(firstSlideIndex);
+                firstSlide.classList.add('swiper-slide-active');
+                globalSlider.update();
+            } else {
+                console.log(`그룹 ${groupIndex}에 슬라이드가 없습니다.`);
+            }
+        });
+    });
     initAnimation();
     goToSection(currentSectionIndex);
 });
