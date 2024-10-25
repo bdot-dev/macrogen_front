@@ -552,8 +552,29 @@ body {
             }
 
             a {
+                position: relative;
                 display: inline-block;
                 width: 100%;
+                color: #fff;
+                padding: 4px 0;
+
+                &::before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    content: '';
+                    display: inline-block;
+                    width: 0;
+                    height: 1px;
+                    background-color: #fff;
+                    transition: 0.23s ease;
+                }
+
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
@@ -741,7 +762,7 @@ body {
 
             a {
                 &:hover {
-                    .main-news__title {
+                    .main-news__top {
                         &::after {
                             width: 100%;
                         }
@@ -752,10 +773,9 @@ body {
                             transform: scale(1.23);
                         }
                     }
+                    
                 }
-
             }
-
         }
     }
 
@@ -768,6 +788,19 @@ body {
     &__top {
         position: relative;
         margin-top: 30px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #ddd;
+        &::after {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: #000;
+            transition: 0.34s ease;
+        }
     }
 
     &__bottom {
@@ -792,35 +825,16 @@ body {
     }
 
     &__title {
-        position: relative;
-        padding-bottom: 40px;
-        border-bottom: 1px solid #ddd;
+        
         font-size: 42px;
         font-weight: 700;
         letter-spacing: -1.26px;
-
-        &::after {
-            display: inline-block;
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 1px;
-            background-color: #000;
-            transition: 0.34s ease;
-        }
-
-        h4 {
-            display: block;
-            display: -webkit-box;
-            height: 105px;
-            overflow: hidden;
-            word-break: keep-all;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
+        display: -webkit-box;
+        overflow: hidden;
+        word-break: keep-all;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 
     &__description {
