@@ -166,6 +166,13 @@ body {
             line-height: 54px;
             font-size: 16px;
         }
+
+        &:hover {
+            background: linear-gradient(90deg, #52C8FF 0%, #A16CFE 100%);
+            .btn-default__text {
+                color: #fff;
+            }
+        }
     }
 
     &--gradclick {
@@ -184,7 +191,7 @@ body {
         }
 
         &:hover {
-            background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
+            background: linear-gradient(90deg, #52C8FF 0%, #A16CFE 100%);
             .btn-default__text {
                 color: #fff;
             }

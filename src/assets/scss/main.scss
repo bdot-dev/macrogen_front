@@ -659,7 +659,7 @@ body {
             img {
                 display: inline-block;
                 width: 60vw;
-                max-width: 1150px;
+                max-width: 1160px;
             }
         }
     }
@@ -765,7 +765,6 @@ body {
         margin-top: 30px;
     }
 
-
     &__bottom {
         margin-top: 40px;
     }
@@ -807,8 +806,6 @@ body {
             transition: 0.34s ease;
         }
 
-
-
         h4 {
             display: block;
             display: -webkit-box;
@@ -818,11 +815,7 @@ body {
             text-overflow: ellipsis;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-
-
         }
-
-
     }
 
     &__description {

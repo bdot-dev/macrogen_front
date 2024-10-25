@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new SimpleMarquee('.main-marquee__slide ul', {
         autoplay: true,
         speed: 1.5,
-        pauseOnMouseEnter: false,
+        pauseOnMouseEnter: true,
         direction: 'right',
     });
 
@@ -347,11 +347,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, index * 200);
                 });
             },
+            slideChange: function () {
+                // 슬라이드 변경 시 동기화 로직 추가
+                const currentSlide = this.slides[this.activeIndex];
+                const currentGroup = currentSlide.getAttribute('data-group');
+
+                // 모든 버튼에서 active 클래스 제거 후, 현재 그룹의 버튼에만 추가
+                document.querySelectorAll('.group-button').forEach((button) => {
+                    button.classList.toggle('active', button.dataset.group === currentGroup);
+                });
+            },
         },
     };
 
+    const globalMapSlider = new Swiper('.main-global__bg', {
+        slidesPerView: 'auto',
+        loop: false,
+        speed: 600,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        parallax: true,
+        grabCursor: false,
+    });
+
     let globalSlider;
-    let initialGroupIndex = null; // 초기 그룹 인덱스를 저장할 변수
+    let initialGroupIndex = null;
+    let groupIndex;
 
     gsap.to('.section--global', {
         scrollTrigger: {
@@ -364,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 globalSlider = new Swiper('.global-swiper', swiperOptions);
 
                 if (initialGroupIndex !== null) {
-                    const slides = document.querySelectorAll(`.swiper-slide[data-group="${initialGroupIndex}"]`);
+                    const slides = document.querySelectorAll(`.global-swiper .swiper-slide[data-group="${initialGroupIndex}"]`);
 
                     if (slides.length > 0) {
                         const firstSlide = slides[0];
@@ -372,8 +395,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const firstSlideIndex = allSlides.indexOf(firstSlide);
 
                         globalSlider.slideTo(firstSlideIndex);
+                        globalMapSlider.slideTo(groupIndex - 1);
                         firstSlide.classList.add('swiper-slide-active');
                         globalSlider.update();
+                        globalMapSlider.update();
                     }
                 }
             },
@@ -382,13 +407,13 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // 그룹 버튼 클릭 시 그룹 인덱스 저장
+    // 그룹 버튼 클릭 시 그룹 인덱스 저장 및 슬라이드 동기화
     document.querySelectorAll('.group-button').forEach((button) => {
         button.addEventListener('click', function () {
-            const groupIndex = this.dataset.group;
-            initialGroupIndex = groupIndex; // 클릭된 그룹 인덱스 저장
+            groupIndex = this.dataset.group;
+            initialGroupIndex = groupIndex;
 
-            const slides = document.querySelectorAll(`.swiper-slide[data-group="${groupIndex}"]`);
+            const slides = document.querySelectorAll(`.global-swiper .swiper-slide[data-group="${groupIndex}"]`);
             const parentLi = this.closest('li');
             const siblingButtons = parentLi.parentElement.querySelectorAll('li button');
 
@@ -409,25 +434,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 globalSlider.slideTo(firstSlideIndex);
+                globalMapSlider.slideTo(groupIndex - 1);
                 firstSlide.classList.add('swiper-slide-active');
                 globalSlider.update();
+                globalMapSlider.update();
             } else {
                 console.log(`그룹 ${groupIndex}에 슬라이드가 없습니다.`);
             }
         });
     });
-
-    // const globalMapSlider = new Swiper('.main-global__bg', {
-    //     slidesPerView: 'auto',
-    //     loop: false,
-    //     speed: 600,
-    //     effect: 'fade',
-    //     fadeEffect: {
-    //         crossFade: true,
-    //     },
-    //     parallax: true,
-    //     grabCursor: false,
-    // });
 
     initAnimation();
     goToSection(currentSectionIndex);
