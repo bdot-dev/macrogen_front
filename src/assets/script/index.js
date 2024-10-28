@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counting');
     const sections = gsap.utils.toArray('.section--slide');
     const $depth2 = document.querySelector('#gnb2Depth');
+    const topButton = document.querySelector('.top-btn');
     let winWidth = window.innerWidth;
     let winHeight = window.innerHeight;
     let contWidth = moveBox.clientWidth;
@@ -22,6 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let isScrolling = false;
     let currentSectionIndex = 0;
     let tl;
+
+    let globalSlider;
+    let initialGroupIndex = null;
+    let groupIndex;
+
+    const globalMapSlider = new Swiper('.main-global__bg', {
+        slidesPerView: 'auto',
+        loop: false,
+        speed: 600,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        allowTouchMove: false,
+        parallax: true,
+        grabCursor: false,
+    });
 
     const updateDimensions = () => {
         winWidth = window.innerWidth;
@@ -277,6 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (index === 0) {
                     header.classList.remove('header-sm');
+                    header.style.display = 'block';
+                    document.querySelector('.scroll-area').scrollTop = 0;
                 }
             },
         });
@@ -348,33 +368,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             },
             slideChange: function () {
-                // 슬라이드 변경 시 동기화 로직 추가
                 const currentSlide = this.slides[this.activeIndex];
                 const currentGroup = currentSlide.getAttribute('data-group');
 
-                // 모든 버튼에서 active 클래스 제거 후, 현재 그룹의 버튼에만 추가
+                globalMapSlider.slideTo(currentGroup - 1);
+
                 document.querySelectorAll('.group-button').forEach((button) => {
                     button.classList.toggle('active', button.dataset.group === currentGroup);
                 });
             },
         },
     };
-
-    const globalMapSlider = new Swiper('.main-global__bg', {
-        slidesPerView: 'auto',
-        loop: false,
-        speed: 600,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true,
-        },
-        parallax: true,
-        grabCursor: false,
-    });
-
-    let globalSlider;
-    let initialGroupIndex = null;
-    let groupIndex;
 
     gsap.to('.section--global', {
         scrollTrigger: {
@@ -402,12 +406,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            markers: true,
+            markers: false,
             once: true,
         },
     });
 
-    // 그룹 버튼 클릭 시 그룹 인덱스 저장 및 슬라이드 동기화
     document.querySelectorAll('.group-button').forEach((button) => {
         button.addEventListener('click', function () {
             groupIndex = this.dataset.group;
@@ -442,6 +445,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`그룹 ${groupIndex}에 슬라이드가 없습니다.`);
             }
         });
+    });
+
+    topButton.addEventListener('click', () => {
+        goToSection(0);
     });
 
     initAnimation();

@@ -263,6 +263,7 @@ body {
     }
 
     .footer {
+        position: relative;
         background-color: #111111;
         color: #fff;
         min-width: auto;
@@ -496,4 +497,5 @@ body {
         background-repeat: no-repeat;
         font-size: 0;
     }
+
 }

@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const topButton = document.querySelector('.top-btn');
+    const contactButton = document.querySelector('.contact-btn');
+    const footer = document.querySelector('.footer');
+    const $plusIcon = document.querySelectorAll('.examine__plus');
+
     let banner_swiper = new Swiper('.slide-banner', {
         navigation: {
             nextEl: '.swiper-button-next',
@@ -30,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    const $plusIcon = document.querySelectorAll('.examine__plus');
-
     $plusIcon.forEach((icon) => {
         icon.addEventListener('click', function (e) {
             const $target = this.parentNode.nextElementSibling;
@@ -50,4 +53,26 @@ document.addEventListener('DOMContentLoaded', function () {
             // this.parentNode.nextElementSibling.style.height = `${toggleHeight}px`;
         });
     });
+
+    topButton.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+    });
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    contactButton.classList.add('fixed');
+                } else {
+                    contactButton.classList.remove('fixed');
+                }
+            });
+        },
+        {
+            threshold: 0,
+            rootMargin: '0px 0px -80px 0px',
+        }
+    );
+
+    observer.observe(footer);
 });

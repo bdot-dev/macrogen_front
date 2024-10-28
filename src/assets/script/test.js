@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counting');
     const sections = gsap.utils.toArray('.section--slide');
     const $depth2 = document.querySelector('#gnb2Depth');
+    const topButton = document.querySelector('.top-btn');
     let winWidth = window.innerWidth;
     let winHeight = window.innerHeight;
     let contWidth = moveBox.clientWidth;
@@ -22,6 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let isScrolling = false;
     let currentSectionIndex = 0;
     let tl;
+
+    let globalSlider;
+    let initialGroupIndex = null;
+    let groupIndex;
+
+    const globalMapSlider = new Swiper('.main-global__bg', {
+        slidesPerView: 'auto',
+        loop: false,
+        speed: 600,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        allowTouchMove: false,
+        parallax: true,
+        grabCursor: false,
+    });
 
     const updateDimensions = () => {
         winWidth = window.innerWidth;
@@ -204,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new SimpleMarquee('.main-marquee__slide ul', {
         autoplay: true,
         speed: 1.5,
-        pauseOnMouseEnter: false,
+        pauseOnMouseEnter: true,
         direction: 'right',
     });
 
@@ -288,6 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (index === 0) {
                     header.classList.remove('header-sm');
+                    header.style.display = 'block';
+                    document.querySelector('.scroll-area').scrollTop = 0;
                 }
             },
         });
@@ -313,11 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.scroll-area').scrollTop = 0;
         }
     }
-
-    new Swiper('.global-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-    });
 
     const handleWindowScroll = () => {
         gsap.to(window, {
@@ -363,11 +378,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, index * 200);
                 });
             },
+            slideChange: function () {
+                const currentSlide = this.slides[this.activeIndex];
+                const currentGroup = currentSlide.getAttribute('data-group');
+
+                globalMapSlider.slideTo(currentGroup - 1);
+
+                document.querySelectorAll('.group-button').forEach((button) => {
+                    button.classList.toggle('active', button.dataset.group === currentGroup);
+                });
+            },
         },
     };
-
-    let globalSlider;
-    let initialGroupIndex = null; // 초기 그룹 인덱스를 저장할 변수
 
     gsap.to('.section--global', {
         scrollTrigger: {
@@ -380,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 globalSlider = new Swiper('.global-swiper', swiperOptions);
 
                 if (initialGroupIndex !== null) {
-                    const slides = document.querySelectorAll(`.swiper-slide[data-group="${initialGroupIndex}"]`);
+                    const slides = document.querySelectorAll(`.global-swiper .swiper-slide[data-group="${initialGroupIndex}"]`);
 
                     if (slides.length > 0) {
                         const firstSlide = slides[0];
@@ -388,23 +410,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         const firstSlideIndex = allSlides.indexOf(firstSlide);
 
                         globalSlider.slideTo(firstSlideIndex);
+                        globalMapSlider.slideTo(groupIndex - 1);
                         firstSlide.classList.add('swiper-slide-active');
                         globalSlider.update();
+                        globalMapSlider.update();
                     }
                 }
             },
-            markers: true,
+            markers: false,
             once: true,
         },
     });
 
-    // 그룹 버튼 클릭 시 그룹 인덱스 저장
     document.querySelectorAll('.group-button').forEach((button) => {
         button.addEventListener('click', function () {
-            const groupIndex = this.dataset.group;
-            initialGroupIndex = groupIndex; // 클릭된 그룹 인덱스 저장
+            groupIndex = this.dataset.group;
+            initialGroupIndex = groupIndex;
 
-            const slides = document.querySelectorAll(`.swiper-slide[data-group="${groupIndex}"]`);
+            const slides = document.querySelectorAll(`.global-swiper .swiper-slide[data-group="${groupIndex}"]`);
             const parentLi = this.closest('li');
             const siblingButtons = parentLi.parentElement.querySelectorAll('li button');
 
@@ -425,12 +448,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 globalSlider.slideTo(firstSlideIndex);
+                globalMapSlider.slideTo(groupIndex - 1);
                 firstSlide.classList.add('swiper-slide-active');
                 globalSlider.update();
+                globalMapSlider.update();
             } else {
                 console.log(`그룹 ${groupIndex}에 슬라이드가 없습니다.`);
             }
         });
+    });
+
+    topButton.addEventListener('click', () => {
+        goToSection(0);
     });
     initAnimation();
     goToSection(currentSectionIndex);
