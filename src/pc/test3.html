@@ -1,184 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <title>마크로젠</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- original source -->
-    <link type="text/css" rel="stylesheet" href="https://www.macrogen.com/publishing/pc-ko/dist/css/macrogen_component_pc.css?renewal" />
-    <link type="text/css" rel="stylesheet" href="https://www.macrogen.com/publishing/pc-ko/dist/css/macrogen_page_pc_ko.css?renewal" />
-    <link type="text/css" rel="stylesheet" href="https://www.macrogen.com/publishing/pc-ko/dist/css/bootstrap-ie11.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)" />
-    <script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/a62d836d/www-widgetapi.vflset/www-widgetapi.js" async=""></script>
-    <script async="" src="https://www.youtube.com/player_api"></script>
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y6MNZB3ZYY&amp;l=dataLayer&amp;cx=c"></script>
-    <script src="https://www.macrogen.com/publishing/pc-ko/dist/js/bundle.js?renewal"></script>
-    <!--[if !IE]-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <!--[endif]-->
-    <script nomodule="">
-        window.MSInputMethodContext &&
-            document.documentMode &&
-            document.write(
-                '<script src="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js,npm/ie11-custom-properties@4,npm/element-qsa-scope@1"><\/script><script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CNumber.parseInt%2CNumber.parseFloat%2CArray.prototype.find%2CArray.prototype.includes"><\/script>'
-            );
-    </script>
-    <script src="https://www.macrogen.com/publishing/pc-ko/dist/js/common.js?renewal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-
-    <style>
-        [v-cloak] {
-            display: none;
-        }
-        .document-dimed,
-        .loading-dimed {
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 999;
-            background: #aaa;
-            opacity: 0.7;
-        }
-        .loading-dimed.visual {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .loading-dimed {
-            z-index: 2000;
-        }
-        .loading-dimed:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: 1;
-            width: 40px;
-            height: 40px;
-            margin: -20px 0 0 -20px;
-            background: url('/images/loading.svg') no-repeat 0 0;
-        }
-        .loading-dimed:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            background: #000;
-        }
-        .document-dimed:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.8;
-            background: #000;
-        }
-    </style>
-
-    <script src="https://www.macrogen.com/common/js/jquery.form.min.js"></script>
-    <script src="https://www.macrogen.com/common/js/jquery.validate.min.js"></script>
-    <script src="https://www.macrogen.com/common/js/jquery.cookie.js"></script>
-
-    <script src="https://www.macrogen.com/common/js/moment.min.js"></script>
-    <script src="https://www.macrogen.com/common/js/moment-timezone-with-data.min.js"></script>
-
-    <script src="https://www.macrogen.com/common/js/vue.js"></script>
-    <script src="https://www.macrogen.com/js/vueComponent/vue-filter.js"></script>
-    <script src="https://www.macrogen.com/js/app/App.js"></script>
-    <!-- // original source -->
-
-    <link rel="stylesheet" href="../resources/assets/library/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../resources/assets/library/aos/aos.css" />
-    <link rel="stylesheet" href="../resources/assets/css/common.css" />
-    <link rel="stylesheet" href="../resources/assets/css/main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=Marcellus&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-    <script src="../resources/assets/library/jquery/jquery-3.7.1.min.js"></script>
-    <script src="../resources/assets/library/jquery/jquery.easing.min.js"></script>
-    <script src="../resources/assets/library/swiper/swiper-bundle.min.js"></script>
-    <script src="../resources/assets/library/aos/aos.js"></script>
-    <script src="../resources/assets/library/lenis/lenis.min.js"></script>
-    <script src="../resources/assets/library/gsap/gsap.min.js"></script>
-    <script src="../resources/assets/library/gsap/ScrollTrigger.min.js"></script>
-    <script src="../resources/assets/library/gsap/ScrollToPlugin.min.js"></script>
-    <script src="../resources/assets/library/marquee/marquee.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
-    <script src="../resources/assets/script/common.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <style>
-        html,
-        body {
-            scroll-behavior: auto !important;
-        }
-    </style>
-    <script src="../resources/assets/script/test.js"></script>
+    <%- include("./include/main_head.html") %>
+    <!-- <script src="../resources/assets/script/test.js"></script> -->
     <body>
         <style>
             .main-board__pc {
-                min-width: 1760px;
-                padding: 200px 20px 120px;
+                min-width: 2010px;
+                padding: 120px 0;
+                align-items: center;
             }
             .main-board__list {
-                gap: 40px;
+                row-gap: 60px;
             }
             .main-board__list li:hover img {
                 transform: scale(1.1);
             }
-            .main-board__list li:hover .main-board__descriptionbg {
-                opacity: 1;
+            .main-board__image {
+                transition: transform 0.5s;
             }
-            .main-board__cont {
-                background-color: #fff;
+            .main-board__list li:hover .main-board__image {
+                transform: scale(1.05);
             }
-            .main-slogan {
-                background: #fff;
-            }
-            .main-slogan__text {
-                color: #000;
-            }
-            .main-slogan__marquee {
-                color: #fff;
-            }
-            .overlay-circle {
-                background-color: #1f1f1f;
-            }
-
-            .main-board__description--diff {
-                text-align: left;
-                left: 35px;
-                top: 30px;
-                transform: unset;
-                font-size: 22px;
-                font-weight: 700;
-                line-height: 32px;
-                letter-spacing: -0.66px;
-            }
-            .main-board__descriptionbg {
-                position: absolute;
-                width: 100%;
-                background: rgba(181, 57, 0, 0.1);
-                backdrop-filter: blur(2.5px);
-                height: 90px;
-                top: 0;
-                left: 0;
+            .main-board__description {
+                bottom: 30px;
                 opacity: 0;
                 transition: all 0.5s;
-                border-radius: 10px 10px 0 0;
+                font-size: 20px;
+            }
+            .main-board__description.active {
+                opacity: 1;
             }
         </style>
         <div class="wrap main-wrap" id="wrap">
@@ -196,77 +46,95 @@
                                             <ul class="main-board__list">
                                                 <li>
                                                     <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image01.jpg" alt="Single Cell Multi-omics" />
+                                                        <img src="../resources/assets/images/test/type3_image01.jpg" alt="Single Cell Multi-omics" />
                                                     </div>
-                                                    <h4 class="main-board__description main-board__description--diff">
-                                                        국내 최초 비의료기관<br />
-                                                        바이오뱅크
-                                                    </h4>
+                                                    <h4 class="main-board__description">R&D</h4>
                                                 </li>
                                                 <li>
                                                     <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image02.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                        <img src="../resources/assets/images/test/type3_image02.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
                                                     </div>
-                                                    <div class="main-board__descriptionbg"></div>
-                                                    <h4 class="main-board__description main-board__description--diff">몸BTI 유전자검사 젠톡</h4>
+                                                    <h4 class="main-board__description">LEADERSHIP</h4>
                                                 </li>
                                             </ul>
                                             <ul class="main-board__list">
                                                 <li>
                                                     <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image03.jpg" alt="Single Cell Multi-omics" />
+                                                        <img src="../resources/assets/images/test/type3_image03.jpg" alt="Single Cell Multi-omics" />
                                                     </div>
-                                                    <h4 class="main-board__description main-board__description--diff">장내미생물 검사 더바이옴</h4>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image04.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
-                                                    </div>
-
-                                                    <h4 class="main-board__description main-board__description--diff">마크로젠 세종캠퍼스 오픈</h4>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image05.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
-                                                    </div>
-                                                    <h4 class="main-board__description main-board__description--diff">
+                                                    <h4 class="main-board__description">
                                                         Single Cell Multi-omics<br />
                                                         싱글셀 분석 서비스
                                                     </h4>
                                                 </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/test/type3_image04.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                    </div>
+                                                    <h4 class="main-board__description">글로벌 정밀의학 헬스케어 리더</h4>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/test/type3_image05.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                    </div>
+                                                    <h4 class="main-board__description">장내미생물 검사 더바이옴</h4>
+                                                </li>
+                                            </ul>
+                                            <ul class="main-board__list main-board__list--center">
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/test/type3_image06.jpg" alt="Single Cell Multi-omics" />
+                                                    </div>
+                                                    <h4 class="main-board__description">인류의 건강한 미래 마크로젠</h4>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/test/type3_image07.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                    </div>
+                                                    <h4 class="main-board__description">몸BTI 유전자검사 젠톡</h4>
+                                                </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/test/type3_image08.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                    </div>
+                                                    <h4 class="main-board__description">바이오뱅크</h4>
+                                                </li>
                                             </ul>
                                             <ul class="main-board__list">
                                                 <li>
                                                     <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image06.jpg" alt="Single Cell Multi-omics" />
+                                                        <img src="../resources/assets/images/test/type3_image09.jpg" alt="Single Cell Multi-omics" />
                                                     </div>
-                                                    <h4 class="main-board__description main-board__description--diff">젠톡 유전상담 AI 챗봇</h4>
+                                                    <h4 class="main-board__description">젠톡 유전상담 AI 챗봇</h4>
                                                 </li>
                                                 <li>
                                                     <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image07.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                        <img src="../resources/assets/images/test/type3_image10.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
                                                     </div>
-                                                    <h4 class="main-board__description main-board__description--diff">
+                                                    <h4 class="main-board__description">
                                                         Ultima Genomics UG100™<br />
                                                         아시아 최초 도입
                                                     </h4>
                                                 </li>
+                                                <li>
+                                                    <div class="main-board__image">
+                                                        <img src="../resources/assets/images/test/type3_image11.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                    </div>
+                                                    <h4 class="main-board__description">마크로젠 세종캠퍼스 오픈</h4>
+                                                </li>
                                             </ul>
                                             <ul class="main-board__list">
                                                 <li>
                                                     <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image08.jpg" alt="Single Cell Multi-omics" />
+                                                        <img src="../resources/assets/images/test/type3_image12.jpg" alt="Single Cell Multi-omics" />
                                                     </div>
-                                                    <h4 class="main-board__description main-board__description--diff">
-                                                        글로벌 정밀의학<br />
-                                                        헬스케어 리더
-                                                    </h4>
+                                                    <h4 class="main-board__description">ESG</h4>
                                                 </li>
                                                 <li>
                                                     <div class="main-board__image">
-                                                        <img src="../resources/assets/images/test/type2_image09.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                        <img src="../resources/assets/images/test/type3_image13.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
                                                     </div>
-                                                    <h4 class="main-board__description main-board__description--diff">인류의 건강한 미래<br />마크로젠</h4>
+                                                    <h4 class="main-board__description">인재채용</h4>
                                                 </li>
                                             </ul>
                                         </div>
@@ -279,7 +147,7 @@
                 <section class="section section--slogan section--slide">
                     <div class="section__inner">
                         <h3 class="ir">마크로젠 서비스</h3>
-                        <div class="main-full main-slogan main-slogan--diff">
+                        <div class="main-full main-slogan">
                             <div class="main-slogan__wrap">
                                 <div class="main-slogan__group">
                                     <div class="main-slogan__text">
@@ -489,8 +357,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="유럽법인" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>Europe11111</span>
-                                                        <h4>유럽법인</h4>
+                                                        <span>Korea</span>
+                                                        <h4>마크로젠 강남 본사</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="1">
@@ -498,8 +366,8 @@
                                                         <img src="../resources/assets/images/main/global_slide02.jpg" alt="스페인 마드리드 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>Europe11111</span>
-                                                        <h4>스페인 마드리드 지놈슈퍼센터</h4>
+                                                        <span>Korea</span>
+                                                        <h4>마크로젠 지놈센터</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="1">
@@ -507,8 +375,8 @@
                                                         <img src="../resources/assets/images/main/global_slide03.jpg" alt="이탈리아 밀라노 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>Europe111111</span>
-                                                        <h4>이탈리아 밀라노 지놈슈퍼센터</h4>
+                                                        <span>Korea</span>
+                                                        <h4>마크로젠 송도 글로벌 캠퍼스</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="1">
@@ -516,8 +384,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="프랑스 파리 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>Europe11111111</span>
-                                                        <h4>프랑스 파리 지놈슈퍼센터</h4>
+                                                        <span>Japan</span>
+                                                        <h4>일본 법인</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="2">
@@ -525,8 +393,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="유럽법인" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>22222222</span>
-                                                        <h4>유럽법인</h4>
+                                                        <span>Singapore</span>
+                                                        <h4>마크로젠 APAC</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="2">
@@ -534,8 +402,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="유럽법인" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>22222222</span>
-                                                        <h4>유럽법인</h4>
+                                                        <span>Singapore</span>
+                                                        <h4>마크로젠 APAC</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="2">
@@ -543,8 +411,8 @@
                                                         <img src="../resources/assets/images/main/global_slide02.jpg" alt="스페인 마드리드 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>22222222</span>
-                                                        <h4>스페인 마드리드 지놈슈퍼센터</h4>
+                                                        <span>Singapore</span>
+                                                        <h4>마크로젠 APAC</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="2">
@@ -552,8 +420,8 @@
                                                         <img src="../resources/assets/images/main/global_slide03.jpg" alt="이탈리아 밀라노 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>Europe22222222</span>
-                                                        <h4>이탈리아 밀라노 지놈슈퍼센터</h4>
+                                                        <span>Singapore</span>
+                                                        <h4>마크로젠 APAC</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="2">
@@ -561,8 +429,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="프랑스 파리 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>Europe2</span>
-                                                        <h4>프랑스 파리 지놈슈퍼센터</h4>
+                                                        <span>Singapore</span>
+                                                        <h4>마크로젠 APAC</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="2">
@@ -570,8 +438,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="유럽법인" />
                                                     </div>
                                                     <div class="global-swiper__description" data-group="2">
-                                                        <span>Europe222222222222</span>
-                                                        <h4>유럽법인</h4>
+                                                        <span>Singapore</span>
+                                                        <h4>마크로젠 APAC</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="2">
@@ -579,8 +447,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="유럽법인" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>22222222</span>
-                                                        <h4>유럽법인</h4>
+                                                        <span>Singapore</span>
+                                                        <h4>스페인 마드리드 지놈슈퍼센터</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="3">
@@ -588,8 +456,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="유럽법인" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>33333333333333333</span>
-                                                        <h4>유럽법인</h4>
+                                                        <span>America</span>
+                                                        <h4>미국법인</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="3">
@@ -597,8 +465,8 @@
                                                         <img src="../resources/assets/images/main/global_slide02.jpg" alt="스페인 마드리드 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>33333333333333333</span>
-                                                        <h4>스페인 마드리드 지놈슈퍼센터</h4>
+                                                        <span>America</span>
+                                                        <h4>미국법인</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="3">
@@ -606,8 +474,8 @@
                                                         <img src="../resources/assets/images/main/global_slide03.jpg" alt="이탈리아 밀라노 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>33333333333333333</span>
-                                                        <h4>이탈리아 밀라노 지놈슈퍼센터</h4>
+                                                        <span>America</span>
+                                                        <h4>미국법인</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="3">
@@ -615,8 +483,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="프랑스 파리 지놈슈퍼센터" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>33333333333333333</span>
-                                                        <h4>프랑스 파리 지놈슈퍼센터</h4>
+                                                        <span>America</span>
+                                                        <h4>미국법인</h4>
                                                     </div>
                                                 </div>
                                                 <div class="global-swiper__item swiper-slide" data-group="3">
@@ -624,8 +492,8 @@
                                                         <img src="../resources/assets/images/main/global_slide01.jpg" alt="유럽법인" />
                                                     </div>
                                                     <div class="global-swiper__description">
-                                                        <span>33333333333333333</span>
-                                                        <h4>유럽법인</h4>
+                                                        <span>America</span>
+                                                        <h4>미국법인</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -809,5 +677,10 @@
                 </section>
             </main>
         </div>
+        <script>
+            setTimeout(() => {
+                $('.main-board__description').addClass('active');
+            }, 1200);
+        </script>
     </body>
 </html>

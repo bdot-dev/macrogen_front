@@ -77,6 +77,10 @@ body {
         text-align: center;
         transition: all 0.3s;
 
+        &--white {
+            color: #B7B7B7;
+        }
+
         &--pl {
             position: relative;
             padding-left: 20px;
@@ -181,6 +185,19 @@ body {
         border: none;
         background: #38556A;
         border-radius: 30px;
+
+        &.white {
+            background: #F7F7F7;
+
+
+            &.active {
+                background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
+
+                .btn-default__text--white {
+                    color: #fff;
+                }
+            }
+        }
 
         &.active {
             background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
