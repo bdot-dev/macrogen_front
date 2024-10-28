@@ -367,9 +367,8 @@
         &::before {
             position: absolute;
             content: "";
-            top: 50%;
+            top: 10px;
             left: 0%;
-            transform: translateY(-50%);
             width: 4px;
             height: 4px;
             border-radius: 50%;

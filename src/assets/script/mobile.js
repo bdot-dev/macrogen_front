@@ -71,7 +71,15 @@ document.addEventListener('DOMContentLoaded', function () {
     $closeButton.forEach((icon) => {
         icon.addEventListener('click', function (e) {
             const $target = this.parentNode;
-            toggleElement(e, $target);
+
+            // 이전 형제 요소가 존재하는지 확인
+            if ($target.previousElementSibling) {
+                toggleElement(e, $target);
+                const $previousSibling = $target.previousElementSibling;
+                if ($previousSibling.lastElementChild) {
+                    $previousSibling.lastElementChild.classList.remove('active');
+                }
+            }
         });
     });
 });
