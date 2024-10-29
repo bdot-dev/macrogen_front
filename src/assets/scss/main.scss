@@ -524,16 +524,22 @@ body {
     }
 
     &__link {
-        width: 180px;
+        display: grid;
+        grid-template-columns: repeat(1, 200px);
+        column-gap: 50px;
+        row-gap: 10px;
+        max-width: 450px;
+        width: 100%;
         margin-top: auto;
+
+        &--col50 {
+            grid-template-columns: repeat(2, 200px);
+        }
 
         li {
             position: relative;
             width: 100%;
 
-            &+li {
-                margin-top: 10px;
-            }
 
             &::before {
                 content: "";
