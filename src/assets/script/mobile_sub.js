@@ -35,44 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    // $plusIcon.forEach((icon) => {
-    //     icon.addEventListener('click', function (e) {
-    //         const $target = this.parentNode.nextElementSibling;
-    //         let toggleHeight = this.parentNode.nextElementSibling.scrollHeight;
-
-    //         if ($target.classList.contains('active')) {
-    //             e.target.classList.remove('active');
-    //             $target.classList.remove('active');
-    //             $target.lastElementChild.classList.remove('active');
-    //             this.parentNode.nextElementSibling.style.height = `0px`;
-    //         } else {
-    //             e.target.classList.add('active');
-    //             $target.classList.add('active');
-    //             $target.lastElementChild.classList.add('active');
-    //             this.parentNode.nextElementSibling.style.height = `${toggleHeight}px`;
-    //         }
-    //     });
-    // });
-
-    // $closeButton.forEach((icon) => {
-    //     icon.addEventListener('click', function (e) {
-    //         const $target = this.parentNode;
-    //         let toggleHeight = $target.scrollHeight;
-
-    //         if ($target.classList.contains('active')) {
-    //             e.target.classList.remove('active');
-    //             $target.classList.remove('active');
-    //             $target.previousElementSibling.lastElementChild.classList.remove('active');
-    //             $target.style.height = `0px`;
-    //         } else {
-    //             e.target.classList.add('active');
-    //             $target.classList.add('active');
-    //             $target.previousElementSibling.lastElementChild.classList.add('active');
-    //             $target.style.height = `${toggleHeight}px`;
-    //         }
-    //     });
-    // });
-
     function toggleElement(e, target) {
         let toggleHeight = target.scrollHeight;
 
