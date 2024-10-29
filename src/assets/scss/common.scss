@@ -1,9 +1,9 @@
 @charset "UTF-8";
-@import 'common/base';
-@import 'common/font';
-@import 'common/variables';
-@import 'common/mixin';
-@import 'common/media';
+@import './common/base';
+@import './common/_font.scss';
+@import './common/variables';
+@import './common/mixin';
+@import './common/media';
 
 * {
     margin: 0;
@@ -15,7 +15,11 @@ html,
 body {
     width: 100%;
     height: 100%;
-    font-family: 'NotoSansKR', 'NeuzeitGrotesk', sans-serif;
+    
+}
+
+body {
+    font-family: 'NotoSans', 'NeuzeitGrotesk', sans-serif;
 }
 
 .ir {

@@ -30,6 +30,7 @@
         "sass": "^1.75.0"
     },
     "dependencies": {
-        "lottie-web": "^5.12.2"
+        "lottie-web": "^5.12.2",
+        "rigger": "^1.0.1"
     }
 }

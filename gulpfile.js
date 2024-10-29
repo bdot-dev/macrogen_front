@@ -99,7 +99,7 @@ async function Script() {
  * ? @task : Copy - Fonts
  */
 async function Font() {
-    return src(`${CONFIG.workspace.ASSETS.FONTS}/**/*`, { encoding: 'binary' }).pipe(newer(CONFIG.deploy.ASSETS.FONTS)).pipe(dest(CONFIG.deploy.ASSETS.FONTS));
+    return src(`${CONFIG.workspace.ASSETS.FONTS}/**/*`, { encoding: false }).pipe(dest(CONFIG.deploy.ASSETS.FONTS));
 }
 
 /**
