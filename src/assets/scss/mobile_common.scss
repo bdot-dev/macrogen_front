@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import 'common/base';
+@import 'common/font';
+@import 'common/variables';
+@import 'common/mixin';
+@import 'common/media';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    .container {
+        padding: 0;
+    }
+}
+
+/* 버튼 */
+.btn {
+    display: inline-block;
+    min-width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    line-height: 0;
+    letter-spacing: normal;
+}
+
+.btn-default {
+    display: inline-block;
+    padding: 0 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+
+    &__text {
+        font-family: "NeuzeitGrotesk";
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 48px;
+        color: #fff;
+        text-align: center;
+        transition: all 0.3s;
+
+        &--pl {
+            position: relative;
+            padding-left: 20px;
+
+            &::before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        &--apple {
+            &::before {
+                width: 14px;
+                height: 16px;
+                background: url(../images/sub/apple.svg) center / auto no-repeat;
+            }
+        }
+
+        &--google {
+            &::before {
+                width: 14px;
+                height: 16px;
+                background: url(../images/sub/google.svg) center / auto no-repeat;
+            }
+        }
+    }
+
+    &--regular {
+        min-width: 158px;
+    }
+
+    &--white {
+        background-color: transparent;
+
+        .btn-default__text {
+            color: #fff;
+        }
+
+        &:hover {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            background-color: rgba($color: white, $alpha: 0.1);
+        }
+    }
+
+    &--bnw {
+        background-color: #fff;
+        border: 1px solid #fff;
+
+        .btn-default__text {
+            color: #000;
+            font-size: 16px;
+        }
+    }
+}

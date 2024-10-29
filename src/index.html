@@ -6,24 +6,98 @@
         <title>Document</title>
     </head>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            display: flex;
+            column-gap: 50px;
+        }
         ul li {
+            position: relative;
             padding: 10px 0;
+            padding-left: 20px;
+            list-style: none;
+        }
+        ul li::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #000;
+        }
+        h1 {
+            font-size: 46px;
+        }
+        h2 {
+            font-size: 34px;
+        }
+        .box {
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .row {
+            margin-top: 50px;
+        }
+        .list {
+            margin-top: 20px;
+        }
+        @media screen and (max-width: 768px) {
+            ul {
+                display: block;
+            }
+            h1 {
+                text-align: center;
+            }
+            .box {
+                padding: 20px;
+            }
         }
     </style>
     <body>
-        <div>
+        <div class="box">
             <h1>MACROGEN</h1>
-            <ul>
-                <li>
-                    <a href="/pc/test1.html">tpyeA</a>
-                </li>
-                <li>
-                    <a href="/pc/test2.html">tpyeB</a>
-                </li>
-                <li>
-                    <a href="/pc/test3.html">tpyeC</a>
-                </li>
-            </ul>
+            <div class="row">
+                <h2>- PC</h2>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="/pc/type_a.html">PC MAIN tpyeA</a>
+                        </li>
+                        <li>
+                            <a href="/pc/type_b.html">PC MAIN tpyeB</a>
+                        </li>
+                        <li>
+                            <a href="/pc/type_c.html">PC MAIN tpyeC</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="/pc/sub.html">PC GENTOK</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <h2 style="font-size: 34px">- MOBILE</h2>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="/mo/index.html">MO MOBILE</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="/mo/sub.html">MO GENTOK</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </body>
 </html>
