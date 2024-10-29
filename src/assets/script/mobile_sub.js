@@ -7,6 +7,21 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 20,
     });
 
+    let banner_swiper = new Swiper('.slide-banner', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        // autoplay: {
+        //     delay: 3000,
+        // },
+        // loop: true,
+        speed: 800,
+    });
+
     // $plusIcon.forEach((icon) => {
     //     icon.addEventListener('click', function (e) {
     //         const $target = this.parentNode.nextElementSibling;

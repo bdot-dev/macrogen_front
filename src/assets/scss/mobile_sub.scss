@@ -1,4 +1,3 @@
-
 .gentok {
     padding-top: 70px;
 
@@ -75,6 +74,10 @@
 .examine {
     padding: 92px 0 60px 0;
 
+    &__container {
+        padding: 0 20px;
+    }
+
     &__list {
         li {
             max-width: 265px;
@@ -84,9 +87,7 @@
         }
     }
 
-    &__function {
-        padding: 0 20px 0 20px;
-    }
+
 
     &__inner {
         display: flex;
@@ -113,7 +114,6 @@
 
     &__check {
         margin-top: 124px;
-        padding: 0 20px;
     }
 
     &__checklist {
@@ -162,17 +162,17 @@
     }
 
     &__content {
-        text-align: center;
+        padding: 0 25px;
         color: #fff;
-        padding: 0 30px;
+        text-align: center;
 
         >button {
             display: inline-block;
             width: 24px;
             height: 24px;
+            margin-top: 20px;
             padding: 0;
             font-size: 0;
-            margin-top: 20px;
 
             &::before,
             &::after {
@@ -237,10 +237,17 @@
     }
 
     &__hidewrap {
-        padding: 30px 30px 50px 30px;
+        position: relative;
+        margin: 0 30px;
+        padding: 30px 0 50px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         color: #fff;
-        position: relative;
+    }
+
+    &__hideimage {
+        img {
+            width: 100%;
+        }
     }
 
     &__hidebottom {
@@ -256,15 +263,15 @@
     }
 
     &__itemname {
-        padding-left: 10px;
         position: relative;
+        padding-left: 10px;
         font-weight: 700;
         line-height: 24px;
         letter-spacing: -0.48px;
 
         &::before {
-            position: absolute;
             content: "";
+            position: absolute;
             top: 10px;
             left: 0%;
             width: 4px;
@@ -275,9 +282,9 @@
     }
 
     &__itemdesc {
+        margin-top: 5px;
         line-height: 22px;
         letter-spacing: -0.48px;
-        margin-top: 5px;
     }
 
     &__hidebutton {
@@ -287,17 +294,17 @@
 
     &__hideclose {
         position: absolute;
-        bottom: -30px;
         left: 0;
-        text-align: center;
+        bottom: -30px;
         width: 100%;
         border-radius: 0 0 10px 10px;
-        transition: all 0.4s;
-        line-height: 30px;
         font-family: "Neuzeit Grotesk";
         font-size: 14px;
         font-weight: 700;
+        line-height: 30px;
         color: #fff;
+        text-align: center;
+        transition: all 0.4s;
 
         &.active {
             bottom: 0;
@@ -307,7 +314,37 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+.slide-banner {
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+    // border: 1px solid red;
+    overflow: hidden;
+
+
+    &__item {
+        &--01 {
+            background: #BBD7FF;
+            background-image: url(../images/mo/slide-banner_img01.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        &--02 {
+            background: #F1D8FF;
+            background-image: url(../images/mo/slide-banner_img02.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    &__cont {
+        padding: 60px 18px 250px 30px;
+    }
+}
+
+
+@media screen and (max-width: 374px) {
     .gentok__btnwrap ul {
         flex-direction: column;
         align-items: center;
