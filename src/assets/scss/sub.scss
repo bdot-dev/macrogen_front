@@ -439,7 +439,6 @@
 
 .about-slide {
     margin-top: 60px;
-    // overflow: hidden;
 }
 
 .advantage-slide {
@@ -670,7 +669,7 @@
     right: 20px;
     bottom: 100px;
     z-index: 10;
-    
+
     &.fixed {
         position: absolute;
         bottom: 20px;

@@ -13,7 +13,7 @@
 
 .wrap {
     .container {
-        padding: 0;
+        padding: 0 0 70px 0;
     }
 }
 
@@ -37,7 +37,7 @@
 
     &__text {
         font-family: "NeuzeitGrotesk";
-        font-size: 14px;
+
         font-weight: 700;
         line-height: 48px;
         color: #fff;
@@ -47,6 +47,7 @@
         &--pl {
             position: relative;
             padding-left: 20px;
+            font-size: 14px !important;
 
             &::before {
                 display: inline-block;
@@ -94,12 +95,33 @@
         }
     }
 
+    &--black {
+        background-color: transparent;
+        border: 1px solid #000;
+
+        .btn-default__text {
+            color: #000;
+            font-size: 16px;
+        }
+
+    }
+
     &--bnw {
         background-color: #fff;
         border: 1px solid #fff;
 
         .btn-default__text {
             color: #000;
+            font-size: 16px;
+        }
+    }
+
+    &--gradient {
+        background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
+        padding: 0 50px;
+
+        .btn-default__text {
+            color: #fff;
             font-size: 16px;
         }
     }

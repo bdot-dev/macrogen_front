@@ -132,18 +132,10 @@ body {
 
     &--black {
         background-color: transparent;
-        border: 1px solid;
+        border: 1px solid #000;
 
         .btn-default__text {
             color: #000;
-        }
-
-        &:hover {
-            background-color: #000;
-
-            .btn-default__text {
-                color: #fff;
-            }
         }
     }
 

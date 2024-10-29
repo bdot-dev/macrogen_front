@@ -8,18 +8,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let banner_swiper = new Swiper('.slide-banner', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
         pagination: {
             el: '.swiper-pagination',
         },
-        // autoplay: {
-        //     delay: 3000,
-        // },
-        // loop: true,
+        autoplay: {
+            delay: 3000,
+        },
+        loop: true,
         speed: 800,
+    });
+
+    let advanSwiper = new Swiper('.advantage-slide', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        pagination: {
+            el: '.advantage-slide__progres',
+            type: 'progressbar',
+        },
+    });
+    let commsSwiper = new Swiper('.comms-slide', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        pagination: {
+            el: '.comms-slide__progres',
+            type: 'progressbar',
+        },
     });
 
     // $plusIcon.forEach((icon) => {
