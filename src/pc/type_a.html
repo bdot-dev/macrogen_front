@@ -21,20 +21,29 @@
                 height: 100%;
                 width: 100%;
             }
+            .grid-imagewrap video {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
             .gird-image:hover img {
-                transform: scale(1.05);
+                transform: scale(1.09);
+            }
+            .gird-image:hover video {
+                transform: scale(1.09);
             }
             .gird-image:hover .main-board__descriptionbg {
                 opacity: 1;
             }
-
             .grid-imagewrap {
                 border-radius: 20px;
                 overflow: hidden;
                 width: 100%;
                 height: 100%;
             }
-            .grid-imagewrap img {
+            .grid-imagewrap img,
+            .grid-imagewrap video {
                 transition: transform 0.5s;
             }
             .gird-image:nth-child(1) {
@@ -135,7 +144,9 @@
                                             </div>
                                             <div class="gird-image">
                                                 <div class="grid-imagewrap">
-                                                    <img src="../resources/assets/images/test/type1_image04.jpg" />
+                                                    <video autoplay muted playsinline>
+                                                        <source src="../resources/assets/video/kv01_02.mp4" type="video/mp4" />
+                                                    </video>
                                                 </div>
                                                 <h4 class="main-board__description main-board__description--diff">글로벌 정밀의학 헬스케어 리더</h4>
                                             </div>
@@ -154,7 +165,9 @@
                                             </div>
                                             <div class="gird-image">
                                                 <div class="grid-imagewrap">
-                                                    <img src="../resources/assets/images/test/type1_image07.jpg" />
+                                                    <video autoplay muted playsinline>
+                                                        <source src="../resources/assets/video/kv01_01.mp4" type="video/mp4" />
+                                                    </video>
                                                 </div>
 
                                                 <h4 class="main-board__description main-board__description--diff">Single Cell Multi-omics</h4>
@@ -172,72 +185,6 @@
                                                     <h4 class="main-board__description main-board__description--diff">인류의 건강한 미래 마크로젠</h4>
                                                 </div>
                                             </div>
-                                            <!-- <ul class="main-board__list">
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image01.jpg" alt="Single Cell Multi-omics" />
-                                                        <h4 class="main-board__description">Single Cell Multi-omics</h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image02.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
-                                                        <h4 class="main-board__description">글로벌 정밀의학 헬스케어 리더</h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image03.jpg" alt="장내미생물 검사 더바이옴" />
-                                                        <h4 class="main-board__description">장내미생물 검사 더바이옴</h4>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="main-board__list main-board__list--center">
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image04.jpg" alt="인류의 건강한 미래 마크로젠" />
-                                                        <h4 class="main-board__description">인류의 건강한 미래 마크로젠</h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image05.jpg" alt="몸BTI 유전자검사 젠톡" />
-                                                        <h4 class="main-board__description">몸BTI 유전자검사 젠톡</h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image06.jpg" alt="바이오뱅크" />
-                                                        <h4 class="main-board__description">바이오뱅크</h4>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="main-board__list">
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image07.jpg" alt="젠톡 유전상담 AI 챗봇" />
-                                                        <h4 class="main-board__description">젠톡 유전상담 AI 챗봇</h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image08.jpg" alt="Ultima Genomics UG100™ 아시아 최초 도입" />
-                                                        <h4 class="main-board__description">
-                                                            Ultima Genomics UG100™<br />
-                                                            아시아 최초 도입
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="main-board__image">
-                                                        <img src="../resources/assets/images/main/kv-image09.jpg" alt="마크로젠 유럽 EMQN CIC, ISO17025" />
-                                                        <h4 class="main-board__description">
-                                                            마크로젠 유럽<br />
-                                                            EMQN CIC, ISO17025
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                            </ul> -->
                                         </div>
                                     </div>
                                 </div>

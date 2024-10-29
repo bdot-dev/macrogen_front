@@ -142,8 +142,27 @@
             .main-board__list {
                 gap: 40px;
             }
+            .main-board__list li {
+                position: relative;
+            }
+            .main-board__list li img {
+                position: relative;
+            }
+            .main-board__list li video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+                transition: all 0.5s;
+            }
             .main-board__list li:hover img {
                 transform: scale(1.1);
+            }
+            .main-board__list li:hover video {
+                transform: scale(1.2);
             }
             .main-board__list li:hover .main-board__descriptionbg {
                 opacity: 1;
@@ -234,6 +253,9 @@
                                                 <li>
                                                     <div class="main-board__image">
                                                         <img src="../resources/assets/images/test/type2_image05.jpg" alt="글로벌 정밀의학 헬스케어 리더" />
+                                                        <video autoplay muted playsinline>
+                                                            <source src="../resources/assets/video/kv02_01.mp4" type="video/mp4" />
+                                                        </video>
                                                     </div>
                                                     <h4 class="main-board__description main-board__description--diff">
                                                         Single Cell Multi-omics<br />
@@ -262,6 +284,9 @@
                                                 <li>
                                                     <div class="main-board__image">
                                                         <img src="../resources/assets/images/test/type2_image08.jpg" alt="Single Cell Multi-omics" />
+                                                        <video autoplay muted playsinline>
+                                                            <source src="../resources/assets/video/kv02_02.mp4" type="video/mp4" />
+                                                        </video>
                                                     </div>
                                                     <h4 class="main-board__description main-board__description--diff">
                                                         글로벌 정밀의학<br />
