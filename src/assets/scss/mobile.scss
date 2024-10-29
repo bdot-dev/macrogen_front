@@ -12,11 +12,16 @@
         width: 100%;
         max-width: none;
     }
+    
 }
 
 
 .section {
     height: 100vh;
+
+    &--kv {
+        padding-top: 70px; 
+    }
 
     &--auto {
         height: auto;
@@ -89,43 +94,53 @@
 .main-kv {
     &__inner {
         overflow: hidden;
+        height: 100%;
     }
 }
 
 .main-board {
     position: relative;
     overflow: hidden;
+    height: 100%;
 
     &__cont {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 100%;
         background: #1F1F1F;
         overflow: hidden;
     }
 
-    &__pc {
-        display: flex;
-        justify-content: space-between;
-        transform: translate(0, 0);
-        min-width: 1620px;
-        padding: 70px 120px;
-        column-gap: 60px;
-        -webkit-transition-timing-function: ease-out;
-        transition-timing-function: ease-out;
-        -webkit-transition-duration: 1.5s;
-        transition-duration: 1.2s;
+    &__mo {
+        display: grid;
+        row-gap: 15px;
+        max-width: 769px;
+        width: 100%;
+        height: 100%;
+        padding: 15px 20px;
+    }
+
+    &__row {
+        flex: 1;
+        height: 100%;
+        &--col50 {
+            grid-template-columns: repeat(2, 50%);
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        row-gap: 15px;
+        width: 100%;
+        height: 100%;
 
         li {
             position: relative;
-
+            display: flex;
+            column-gap: 15px;
+            height: 100%;
             &:nth-child(even) {
                 .main-board__image {
                     animation: scale cubic-bezier(0.5, 1, 0.89, 1) 1.78s forwards;
@@ -140,14 +155,14 @@
                 }
             }
         }
-
-        &--center {
-            padding-top: 220px;
-        }
     }
-
+    
     &__image {
         position: relative;
+        display: flex;
+        align-items: flex-end;
+        flex: 1;
+        height: 100%;
         transform: scale(0);
         border-radius: 10px;
         overflow: hidden;
@@ -155,6 +170,11 @@
         box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
 
         img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
             transition: 0.64s cubic-bezier(0.5, 1, 0.89, 1);
         }
 
@@ -177,16 +197,13 @@
 
     &__description {
         position: absolute;
-        left: 50%;
-        bottom: 40px;
-        transform: translateX(-50%);
+        bottom: 0;
+        left: 0;
         width: 100%;
-        font-size: 24px;
+        padding: 15px;
+        font-size: 14px;
         font-weight: 700;
-        line-height: 34px;
         color: #fff;
-        text-align: center;
-        letter-spacing: -0.72px;
     }
 }
 
