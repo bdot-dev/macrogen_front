@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleActions: 'play reset restart reset',
         },
     });
+
     tl.to('.main-slogan', {
         backgroundColor: '#1F273C',
         duration: 2.5,
