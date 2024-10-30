@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const $topButton = document.querySelector('.top-btn button');
     const counters = document.querySelectorAll('.counting');
     let tl;
+    let globalSlider;
+    let initialGroupIndex = null;
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
@@ -238,5 +240,57 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 1.5,
         pauseOnMouseEnter: true,
         direction: 'left',
+    });
+
+    const swiperOptions = {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        on: {
+            init: function () {
+                const slides = document.querySelectorAll('.global-swiper .swiper-slide');
+                slides.forEach((slide, index) => {
+                    setTimeout(() => {
+                        slide.classList.add('active');
+                    }, index * 200);
+                });
+            },
+            slideChange: function () {
+                const currentSlide = this.slides[this.activeIndex];
+                const currentGroup = currentSlide.getAttribute('data-group');
+                globalMapSlider.slideTo(currentGroup - 1);
+                document.querySelectorAll('.group-button').forEach((button) => {
+                    button.classList.toggle('active', button.dataset.group === currentGroup);
+                });
+            },
+        },
+    };
+
+    gsap.to('.section--global', {
+        scrollTrigger: {
+            trigger: '.section--global .title',
+            start: 'center center',
+            onEnter: () => {
+                document.querySelector('.section--global').classList.add('active');
+                globalSlider = new Swiper('.global-swiper', swiperOptions);
+
+                if (initialGroupIndex !== null) {
+                    const slides = document.querySelectorAll(`.global-swiper .swiper-slide[data-group="${initialGroupIndex}"]`);
+
+                    if (slides.length > 0) {
+                        const firstSlide = slides[0];
+                        const allSlides = Array.from(globalSlider.slides);
+                        const firstSlideIndex = allSlides.indexOf(firstSlide);
+
+                        globalSlider.slideTo(firstSlideIndex);
+                        globalMapSlider.slideTo(groupIndex - 1);
+                        firstSlide.classList.add('swiper-slide-active');
+                        globalSlider.update();
+                        globalMapSlider.update();
+                    }
+                }
+            },
+            markers: false,
+            once: true,
+        },
     });
 });
