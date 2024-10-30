@@ -226,4 +226,17 @@ document.addEventListener('DOMContentLoaded', () => {
             once: true,
         },
     });
+
+    new SimpleMarquee('.main-marquee__slide--01 ul', {
+        autoplay: true,
+        speed: 1.5,
+        pauseOnMouseEnter: true,
+        direction: 'right',
+    });
+    new SimpleMarquee('.main-marquee__slide--02 ul', {
+        autoplay: true,
+        speed: 1.5,
+        pauseOnMouseEnter: true,
+        direction: 'left',
+    });
 });

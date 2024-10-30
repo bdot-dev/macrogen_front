@@ -1,5 +1,11 @@
 @import 'common/mixin';
 
+.wrap {
+    .container {
+        padding: 0 0 70px 0;
+    }
+}
+
 .gentok {
     padding-top: 70px;
 

@@ -13,11 +13,7 @@
     font-weight: 400;
 }
 
-.wrap {
-    .container {
-        padding: 0 0 70px 0;
-    }
-}
+
 
 .tac {
     text-align: center;
@@ -125,6 +121,7 @@
     &--gradient {
         background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
         padding: 0 50px;
+        border: none;
 
         .btn-default__text {
             color: #fff;
@@ -168,18 +165,20 @@
 
     &__menu {
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
         button {
             position: relative;
             display: block;
             width: 100%;
             padding: 17px 30px 17px 0;
-            
+
             text-align: left;
 
             &.active {
                 strong {
                     color: #7fb3ff;
                 }
+
                 &::after {
                     transform: translateY(-50%) rotate(-90deg);
                 }
@@ -190,7 +189,8 @@
                 font-size: 16px;
             }
 
-            &::before, &::after {
+            &::before,
+            &::after {
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -205,6 +205,7 @@
                 width: 10px;
                 height: 2px;
             }
+
             &::after {
                 right: 19px;
                 width: 2px;
@@ -215,6 +216,7 @@
 
         ul {
             border-top: 1px solid rgba(255, 255, 255, 0.3);
+
             li {
                 padding: 10px 0;
                 font-size: 14px;
@@ -235,6 +237,7 @@
                 a {
                     display: block;
                     font-size: 14px;
+
                     &:hover {
                         color: #fff;
                     }
@@ -242,7 +245,7 @@
             }
         }
 
-        
+
     }
 
     .toggle__menu {
@@ -255,9 +258,7 @@
         padding-top: 40px;
     }
 
-    &__etc {
-        
-    }
+    &__etc {}
 
     &__site {
         display: flex;
@@ -268,6 +269,7 @@
             flex-wrap: wrap;
             column-gap: 20px;
             row-gap: 10px;
+
             li {
                 font-size: 14px;
                 font-weight: 300;
@@ -374,6 +376,7 @@
         row-gap: 10px;
         padding-top: 40px;
         font-size: 14px;
+
         p {
             display: flex;
             justify-content: space-between;
@@ -391,6 +394,7 @@
         font-size: 12px;
         font-weight: 300;
         line-height: 12px;
+
         p {
             font-family: "Neuzeit Grotesk";
             font-size: 12px;
@@ -406,11 +410,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
+
     button {
         display: inline-block;
         width: 100%;
         text-align: center;
         background-color: #222;
+
         span {
             display: inline-block;
             font-size: 14px;
