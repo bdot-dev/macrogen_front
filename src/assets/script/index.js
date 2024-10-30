@@ -74,23 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
         moveBox.style.transform = `translate(0px, 0px)`;
     };
 
-    const resetSloganAnimation = () => {
-        gsap.set('.main-slogan', { backgroundColor: '#1F1F1F' });
-        gsap.set('.main-slogan--diff', { backgroundColor: '#fff' });
-        gsap.set('.main-slogan__text h4', { y: '110%', scale: 1.3 });
-        gsap.set('.highlight .bg', { width: '0%' });
-        gsap.set('.main-slogan__marquee', { opacity: 0, top: '50%', left: '50%', transform: 'translateY(-50%)' });
-        gsap.set('.main-service', { opacity: 0 });
-        gsap.set('.main-slogan__image--scale', { width: '500px', height: '304px', borderRadius: '10px' });
-        gsap.set('.overlay-circle', { scale: 1, opacity: 0 });
-    };
-
     const initAnimation = () => {
         tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.section--slogan',
-                start: 'top top',
-                end: 'top bottom',
+                start: 'top bottom',
+                end: 'bottom top',
+                toggleActions: 'play reset restart reset',
             },
         });
 
@@ -284,14 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 sections[index].classList.add('active');
-
-                if (sections[index].classList.contains('section--slogan')) {
-                    initAnimation();
-                    ScrollTrigger.update();
-                } else {
-                    tl.kill();
-                    resetSloganAnimation();
-                }
 
                 if (index === 0) {
                     header.classList.remove('header-sm');
