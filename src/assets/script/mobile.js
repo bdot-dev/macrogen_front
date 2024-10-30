@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let tl;
     const serviceButtons = document.querySelectorAll('.main-service__button li');
+    const $topButton = document.querySelector('.top-btn button');
+    const counters = document.querySelectorAll('.counting');
+    let tl;
+
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
 
@@ -178,5 +181,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const globalSwiper = new Swiper('.global-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 20,
+    });
+
+    $topButton.addEventListener('click', function () {
+        window.scrollTo(0, 0);
+    });
+
+    const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const generateRandomNumber = (length) => getRandomInt(Math.pow(10, length - 1), Math.pow(10, length) - 1);
+
+    const countToTarget = (element, target, duration) => {
+        const startTime = performance.now();
+
+        const step = () => {
+            const elapsedTime = performance.now() - startTime;
+            const progressRatio = Math.min(elapsedTime / duration, 1);
+
+            element.innerText = progressRatio < 1 ? generateRandomNumber(target.toString().length) : target;
+
+            if (progressRatio < 1) requestAnimationFrame(step);
+        };
+
+        requestAnimationFrame(step);
+    };
+
+    function startCounting(counterElement) {
+        countToTarget(counterElement, parseInt(counterElement.getAttribute('data-count'), 10), 1200);
+    }
+
+    gsap.to('.section--info', {
+        scrollTrigger: {
+            trigger: '.section--info',
+            start: 'center center',
+            end: 'bottom top',
+            onEnter: () => {
+                document.querySelector('.section--info').classList.add('active');
+                counters.forEach((counter) => {
+                    if (counter.getAttribute('data-count')) {
+                        startCounting(counter);
+                    }
+                });
+            },
+            once: true,
+        },
     });
 });

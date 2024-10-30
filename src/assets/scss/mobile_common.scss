@@ -292,7 +292,7 @@
             position: relative;
             display: inline-block;
             font-family: "Neuzeit Grotesk";
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 700;
             line-height: 1;
             color: #fff;
@@ -391,6 +391,13 @@
         font-size: 12px;
         font-weight: 300;
         line-height: 12px;
+        p {
+            font-family: "Neuzeit Grotesk";
+            font-size: 12px;
+            letter-spacing: 0;
+            font-weight: 300;
+            color: #fff;
+        }
     }
 }
 
