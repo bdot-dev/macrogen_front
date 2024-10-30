@@ -147,4 +147,36 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
         });
     });
+
+    document.querySelector('.main-global__selecttext').addEventListener('click', function () {
+        const optionList = document.querySelector('.main-global__optionlist');
+        optionList.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.main-global__optionlist li').forEach((option) => {
+        option.addEventListener('click', function () {
+            const selectedText = this.getAttribute('data-option');
+            const selectedGroup = this.getAttribute('data-group');
+
+            const selectText = document.querySelector('.main-global__selecttext');
+            selectText.textContent = selectedText;
+            selectText.setAttribute('data-text', selectedText);
+            selectText.setAttribute('data-group', selectedGroup);
+
+            document.querySelectorAll('.main-global__optionlist li').forEach((li) => {
+                li.classList.remove('active');
+            });
+
+            this.classList.add('active');
+            this.parentNode.classList.remove('active');
+
+            const select = this.closest('.main-global__select');
+            select.classList.remove('active');
+        });
+    });
+
+    const globalSwiper = new Swiper('.global-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+    });
 });

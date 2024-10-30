@@ -9,12 +9,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: NotoSans;
+    font-weight: 400;
 }
 
 .wrap {
     .container {
         padding: 0 0 70px 0;
     }
+}
+
+.tac {
+    text-align: center;
 }
 
 /* 버튼 */
