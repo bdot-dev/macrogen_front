@@ -126,6 +126,11 @@
         .btn-default__text {
             color: #fff;
             font-size: 16px;
+
+            &--diff {
+                font-size: 12px;
+                line-height: 44px;
+            }
         }
     }
 }
