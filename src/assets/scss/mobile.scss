@@ -165,7 +165,7 @@
         border-radius: 10px;
         overflow: hidden;
         overflow: hidden;
-        box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
+        // box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
 
         img {
             position: absolute;
@@ -320,13 +320,19 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateY(-50%);
+        width: 100%;
+        transform: translate(-50%, -50%);
         color: #000;
         white-space: nowrap;
         z-index: 3;
         opacity: 0;
 
         h4 {
+            opacity: 0;
+            position: absolute;
+            top: calc(50% - 100px);
+            left: 150%;
+            transform: translate(-50%, -50%);
             display: inline-block;
             flex-shrink: 0;
             font-size: 30px;
@@ -337,6 +343,11 @@
     }
 
     &__imagewrap {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: -150%;
+        transform: translate(-50%, -50%);
         font-size: 0;
         white-space: nowrap;
 
@@ -484,7 +495,7 @@
 
     &__button {
         position: absolute;
-        top: 70px;
+        top: 40px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
@@ -549,7 +560,9 @@
         margin-top: 60px;
         display: grid;
         grid-template-columns: 1fr;
-
+        row-gap: 12px;
+        max-width: 200px;
+        
         li {
             position: relative;
             width: 100%;
