@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let tl;
     let globalSlider;
     let initialGroupIndex = null;
+    let groupIndex;
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
@@ -180,11 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const globalSwiper = new Swiper('.global-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-    });
-
     $topButton.addEventListener('click', function () {
         window.scrollTo(0, 0);
     });
@@ -231,15 +227,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     new SimpleMarquee('.main-marquee__slide--01 ul', {
         autoplay: true,
-        speed: 1.5,
+        speed: 1,
         pauseOnMouseEnter: true,
         direction: 'right',
     });
     new SimpleMarquee('.main-marquee__slide--02 ul', {
         autoplay: true,
-        speed: 1.5,
+        speed: 1,
         pauseOnMouseEnter: true,
         direction: 'left',
+    });
+
+    const globalMapSlider = new Swiper('.main-global__bg', {
+        slidesPerView: 'auto',
+        loop: false,
+        speed: 600,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        allowTouchMove: false,
+        parallax: true,
+        grabCursor: false,
     });
 
     const swiperOptions = {
@@ -257,9 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
             slideChange: function () {
                 const currentSlide = this.slides[this.activeIndex];
                 const currentGroup = currentSlide.getAttribute('data-group');
+
                 globalMapSlider.slideTo(currentGroup - 1);
                 document.querySelectorAll('.group-button').forEach((button) => {
-                    button.classList.toggle('active', button.dataset.group === currentGroup);
+                    button.classList.toggle('active', button.dataset.group === String(currentGroup));
                 });
             },
         },
@@ -292,5 +302,41 @@ document.addEventListener('DOMContentLoaded', () => {
             markers: false,
             once: true,
         },
+    });
+
+    document.querySelectorAll('.group-button').forEach((button) => {
+        button.addEventListener('click', function () {
+            groupIndex = this.dataset.group;
+            initialGroupIndex = groupIndex;
+
+            const slides = document.querySelectorAll(`.global-swiper .swiper-slide[data-group="${groupIndex}"]`);
+            const parentLi = this.closest('li');
+            const siblingButtons = parentLi.querySelectorAll('li button');
+
+            siblingButtons.forEach((siblingButton) => {
+                siblingButton.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            if (slides.length > 0) {
+                const firstSlide = slides[0];
+                const allSlides = Array.from(globalSlider.slides);
+                const firstSlideIndex = allSlides.indexOf(firstSlide);
+
+                const activeSlides = document.querySelectorAll('.swiper-slide-active');
+                activeSlides.forEach((slide) => {
+                    slide.classList.remove('swiper-slide-active');
+                });
+
+                globalSlider.slideTo(firstSlideIndex);
+                globalMapSlider.slideTo(groupIndex - 1);
+                firstSlide.classList.add('swiper-slide-active');
+                globalSlider.update();
+                globalMapSlider.update();
+            } else {
+                console.log(`그룹 ${groupIndex}에 슬라이드가 없습니다.`);
+            }
+        });
     });
 });
