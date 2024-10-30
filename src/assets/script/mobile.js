@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     let tl;
-    let scrollDirection;
-    let lastScrollY;
     const serviceButtons = document.querySelectorAll('.main-service__button li');
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
@@ -149,6 +147,4 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
         });
     });
-
-    initAnimation();
 });
