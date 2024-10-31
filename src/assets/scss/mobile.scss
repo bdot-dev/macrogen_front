@@ -495,7 +495,7 @@
     &__button {
         display: flex;
         position: absolute;
-        top: 40px;
+        top: 60px;
         left: 50%;
         transform: translateX(-50%);
         width: calc(100% - 40px);
@@ -524,8 +524,9 @@
 
     &__cont {
         display: flex;
+        align-items: center;
         width: 100%;
-        padding: 25vh 20px 0 20px;
+        padding: 20px;
     }
 
     &__left {
@@ -696,6 +697,14 @@
         padding: 0 30px;
         border-radius: 20px;
         background: #38556A;
+
+        &.active {
+            .main-global__selecttext {
+                &::before {
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+        }
     }
 
     &__selecttext {
@@ -715,6 +724,7 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+            transition: 0.23s ease;
         }
     }
 
@@ -739,7 +749,14 @@
         }
 
         li {
-            padding: 10px 30px;
+            
+            button {
+                display: block;
+                width: 100%;
+                text-align: left;
+                line-height: 24px;
+                padding: 10px 30px;
+            }
 
             &+li {
                 border-top: 1px solid rgba($color: #eee, $alpha: 0.2);

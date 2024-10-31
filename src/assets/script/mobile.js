@@ -156,11 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelector('.main-global__selecttext').addEventListener('click', function () {
-        const optionList = document.querySelector('.main-global__optionlist');
-        optionList.classList.toggle('active');
+        const $selectBox = document.querySelector('.main-global__select');
+        const $optionList = document.querySelector('.main-global__optionlist');
+        $selectBox.classList.toggle('active');
+        $optionList.classList.toggle('active');
     });
 
-    document.querySelectorAll('.main-global__optionlist li').forEach((option) => {
+    document.querySelectorAll('.main-global__optionlist li button').forEach((option) => {
         option.addEventListener('click', function () {
             const selectedText = this.getAttribute('data-option');
             const selectedGroup = this.getAttribute('data-group');
@@ -170,8 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
             selectText.setAttribute('data-text', selectedText);
             selectText.setAttribute('data-group', selectedGroup);
 
-            document.querySelectorAll('.main-global__optionlist li').forEach((li) => {
-                li.classList.remove('active');
+            document.querySelectorAll('.main-global__optionlist li button').forEach((button) => {
+                button.classList.remove('active');
             });
 
             this.classList.add('active');
@@ -267,11 +269,16 @@ document.addEventListener('DOMContentLoaded', () => {
             slideChange: function () {
                 const currentSlide = this.slides[this.activeIndex];
                 const currentGroup = currentSlide.getAttribute('data-group');
-
+                let buttonText;
                 globalMapSlider.slideTo(currentGroup - 1);
-                document.querySelectorAll('.group-button').forEach((button) => {
-                    button.classList.toggle('active', button.dataset.group === String(currentGroup));
+
+                document.querySelectorAll('.group-button button').forEach(function (button) {
+                    if (Number(button.getAttribute('data-group')) === Number(currentGroup)) {
+                        buttonText = button.getAttribute('data-option');
+                    }
                 });
+
+                document.querySelector('.main-global__selecttext').innerText = buttonText;
             },
         },
     };
@@ -305,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    document.querySelectorAll('.group-button').forEach((button) => {
+    document.querySelectorAll('.group-button button').forEach((button) => {
         button.addEventListener('click', function () {
             groupIndex = this.dataset.group;
             initialGroupIndex = groupIndex;

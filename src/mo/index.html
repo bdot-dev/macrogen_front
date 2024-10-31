@@ -289,9 +289,9 @@
                                         <div class="main-global__selecttext" data-text="Asia" data-group="1">Asia</div>
                                         <div class="main-global__option">
                                             <ul class="main-global__optionlist">
-                                                <li class="group-button" data-option="Asia" data-group="1">Asia</li>
-                                                <li class="group-button" data-option="Europe" data-group="2">Europe</li>
-                                                <li class="group-button" data-option="America" data-group="3">America</li>
+                                                <li class="group-button"><button type="button" data-option="Asia" data-group="1">Asia</button></li>
+                                                <li class="group-button"><button type="button" data-option="Europe" data-group="2">Europe</button></li>
+                                                <li class="group-button"><button type="button" data-option="America" data-group="3">America</button></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -653,7 +653,8 @@
                         }
                     });
                 </script>
-                <%- include("./include/footer.html") %>
+
+                <%- include("./include/header_gnb.html") %> <%- include("./include/footer.html") %>
             </main>
         </div>
     </body>
