@@ -152,8 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     left: 'calc(50% + 245.333px)',
                     transform: 'translate(-100%, -50%)',
-                    duration: 5,
-                    stagger: 0,
+                    duration: 3,
+                    // stagger: 0,
+                    ease: 'power1.in',
                 },
                 '-=0.1'
             )
@@ -163,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     opacity: 1, // opacity를 1로 설정
                     duration: 1, // opacity 변경 시간
                 },
-                '-=5' // 첫 번째 애니메이션과 겹치도록 설정
+                '-=3' // 첫 번째 애니메이션과 겹치도록 설정
             )
             .to(
                 '.main-slogan__image--scale',
@@ -174,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 1, // scale 변경 시간
                     ease: 'power2.out', // 부드러운 애니메이션
                 },
-                '+=0.5' // opacity 애니메이션이 끝난 후 0.5초 지연
+                '+=0' // opacity 애니메이션이 끝난 후 0.5초 지연
             )
             .to('.main-slogan__image--scale', {
                 opacity: 1,
