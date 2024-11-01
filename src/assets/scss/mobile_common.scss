@@ -429,3 +429,16 @@
         }
     }
 }
+
+// 241101 원본 css (_layout.scss)에 추가 필요.
+.gnb.modal {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+    padding-left: 0;
+}
+.gnb.modal .modal-dialog .gnb-content .gnb-body > ul > li > a {
+    width: 100%;
+}
+.gnb.modal .modal-dialog .gnb-content .gnb-body > ul > li > a::after {
+    right: 20px;
+}
