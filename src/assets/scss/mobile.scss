@@ -26,6 +26,7 @@
     height: 100vh;
 
     &--kv {
+        height: auto;
         padding-top: 70px;
     }
 
@@ -124,9 +125,6 @@
     }
 
     &__row {
-        flex: 1;
-        height: 100%;
-
         &--col50 {
             grid-template-columns: repeat(2, 50%);
         }
@@ -142,7 +140,6 @@
         li {
             display: flex;
             position: relative;
-            height: 100%;
             column-gap: 15px;
 
             &:nth-child(even) {
@@ -162,23 +159,20 @@
     }
 
     &__image {
-        display: flex;
         flex: 1;
-        align-items: flex-end;
         position: relative;
         transform: scale(0);
-        height: 100%;
         border-radius: 10px;
-        overflow: hidden;
         overflow: hidden;
         // box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
 
         img, video {
-            position: absolute;
+            max-width: 100%;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+            transition: 0.34s ease;
+            &:hover {
+                transform: scale(1.14);
+            }
         }
 
         @keyframes scale {
@@ -495,7 +489,7 @@
     &__button {
         display: flex;
         position: absolute;
-        top: 60px;
+        top: 40px;
         left: 50%;
         transform: translateX(-50%);
         width: calc(100% - 40px);
@@ -524,9 +518,8 @@
 
     &__cont {
         display: flex;
-        align-items: center;
         width: 100%;
-        padding: 20px;
+        padding: 150px 20px 50px 20px;
     }
 
     &__left {
@@ -710,6 +703,8 @@
     &__selecttext {
         position: relative;
         line-height: 40px;
+        font-family: "NeuzeitGrotesk";
+        font-weight: 700;
 
         &::before {
             display: inline-block;
@@ -743,6 +738,7 @@
     &__optionlist {
         height: 0px;
         transition: all 0.4s;
+        padding: 0 10px;
 
         &.active {
             height: 134px;
@@ -755,11 +751,13 @@
                 width: 100%;
                 text-align: left;
                 line-height: 24px;
-                padding: 10px 30px;
+                padding: 10px 20px;
+                font-family: "NeuzeitGrotesk";
+                font-weight: 700;
             }
 
             &+li {
-                border-top: 1px solid rgba($color: #eee, $alpha: 0.2);
+                // border-top: 1px solid rgba($color: #eee, $alpha: 0.2);
             }
         }
 
@@ -769,7 +767,7 @@
 
     &__map {
         position: relative;
-        margin-top: 60px;
+        margin-top: 20px;
 
     }
 
@@ -788,6 +786,7 @@
 
 .global-swiper {
     width: 100%;
+    margin-top: 40px;
     color: #fff;
 
     &__item {
@@ -799,6 +798,10 @@
     &__image {
         border-radius: 5px;
         overflow: hidden;
+        img {
+            max-width: 190px;
+            width: 100%;
+        }
     }
 
     &__description {
@@ -806,7 +809,7 @@
 
         span {
             background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             font-size: 14px;
             font-weight: 700;
             line-height: 14px;
@@ -869,7 +872,7 @@
     &__top {
         position: relative;
         margin-top: 20px;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
         border-bottom: 1px solid #ddd;
 
         &::after {
@@ -899,7 +902,7 @@
 
     &__category {
         background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
-        font-family: "Neuzeit Grotesk";
+        font-family: "NeuzeitGrotesk";
         font-weight: 700;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -948,7 +951,7 @@
     &__image {
         position: relative;
         width: 100%;
-        height: 337px;
+        height: 290px;
 
         border-radius: 10px;
         overflow: hidden;

@@ -177,10 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             this.classList.add('active');
-            this.parentNode.classList.remove('active');
-
-            const select = this.closest('.main-global__select');
-            select.classList.remove('active');
+            this.parentNode.parentNode.classList.remove('active');
+            this.closest('.main-global__select').classList.remove('active');
         });
     });
 
@@ -193,13 +191,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateRandomNumber = (length) => getRandomInt(Math.pow(10, length - 1), Math.pow(10, length) - 1);
 
     const countToTarget = (element, target, duration) => {
-        const startTime = performance.now();
+        const startTime = performance.now() - 1;
+        const updateInterval = 50; // 숫자를 업데이트할 간격 (밀리초)
+        let lastUpdateTime = 0;
 
         const step = () => {
             const elapsedTime = performance.now() - startTime;
             const progressRatio = Math.min(elapsedTime / duration, 1);
 
-            element.innerText = progressRatio < 1 ? generateRandomNumber(target.toString().length) : target;
+            // 현재 시간
+            const currentTime = performance.now();
+
+            // 지정된 간격마다 숫자를 업데이트
+            if (currentTime - lastUpdateTime >= updateInterval) {
+                element.innerText = progressRatio < 1 ? generateRandomNumber(target.toString().length) : target;
+                lastUpdateTime = currentTime;
+            }
 
             if (progressRatio < 1) requestAnimationFrame(step);
         };
@@ -208,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function startCounting(counterElement) {
-        countToTarget(counterElement, parseInt(counterElement.getAttribute('data-count'), 10), 1200);
+        countToTarget(counterElement, parseInt(counterElement.getAttribute('data-count'), 10), 1500);
     }
 
     gsap.to('.section--info', {

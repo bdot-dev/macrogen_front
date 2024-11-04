@@ -74,24 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
         moveBox.style.transform = `translate(0px, 0px)`;
     };
 
-    const resetSloganAnimation = () => {
-        gsap.set('.main-slogan', { backgroundColor: '#1F1F1F' });
-        gsap.set('.main-slogan--diff', { backgroundColor: '#fff' });
-        gsap.set('.main-slogan__text h4', { y: '110%', scale: 1.3 });
-        gsap.set('.highlight', { color: '#000' });
-        gsap.set('.highlight .bg', { width: '0%' });
-        gsap.set('.main-slogan__marquee', { opacity: 0, top: '50%', left: '50%', transform: 'translateY(-50%)' });
-        gsap.set('.main-service', { opacity: 0 });
-        gsap.set('.main-slogan__image--scale', { width: '500px', height: '304px', borderRadius: '10px' });
-        gsap.set('.overlay-circle', { scale: 1, opacity: 0 });
-    };
-
     const initAnimation = () => {
         tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.section--slogan',
-                start: 'top top',
-                end: 'top bottom',
+                start: 'top bottom',
+                end: 'bottom top',
+                once: true,
             },
         });
 
@@ -124,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power2.out',
                     stagger: 0,
                 },
-                '-=0.5'
+                '+=0.2'
             )
             .to(
                 '.highlight .bg',
@@ -134,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power2.out',
                     stagger: 0.3,
                 },
-                '-=0.5'
+                '-=0.85'
             )
             .to(
                 '.highlight',
@@ -162,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 onComplete: () => {
                     gsap.to('.overlay-circle', { opacity: 0, duration: 0 });
                     gsap.to('.main-slogan', {
-                        backgroundColor: '#1F1F1F',
+                        backgroundColor: '#1F273B',
                         duration: 0,
                         ease: 'power2.out',
                     });
@@ -174,9 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     left: 'calc(50% + 245.333px)',
                     transform: 'translate(-100%, -50%)',
                     duration: 5,
-                    stagger: 0,
+                    // stagger: 0,
+                    ease: 'power1.in',
                 },
-                '-=0.1'
+                '-=3'
             )
             .to(
                 '.main-slogan__marquee',
@@ -184,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     opacity: 1, // opacity를 1로 설정
                     duration: 1, // opacity 변경 시간
                 },
-                '-=5' // 첫 번째 애니메이션과 겹치도록 설정
+                '-=3' // 첫 번째 애니메이션과 겹치도록 설정
             )
             .to(
                 '.main-slogan__image--scale',
@@ -195,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 1, // scale 변경 시간
                     ease: 'power2.out', // 부드러운 애니메이션
                 },
-                '+=0.5' // opacity 애니메이션이 끝난 후 0.5초 지연
+                '+=0' // opacity 애니메이션이 끝난 후 0.5초 지연
             )
             .to('.main-slogan__image--scale', {
                 opacity: 1,
@@ -295,14 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 sections[index].classList.add('active');
-
-                if (sections[index].classList.contains('section--slogan')) {
-                    initAnimation();
-                    ScrollTrigger.update();
-                } else {
-                    tl.kill();
-                    resetSloganAnimation();
-                }
 
                 if (index === 0) {
                     header.classList.remove('header-sm');

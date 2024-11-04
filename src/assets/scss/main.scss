@@ -161,7 +161,9 @@ body {
         border-radius: 10px;
         overflow: hidden;
         overflow: hidden;
-        box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
+        // box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
+        border-radius: 15px;
+        overflow: hidden;
 
         img {
             transition: 0.64s cubic-bezier(0.5, 1, 0.89, 1);
@@ -196,6 +198,7 @@ body {
         color: #fff;
         text-align: center;
         letter-spacing: -0.72px;
+        z-index: 1;
     }
 }
 
@@ -476,7 +479,7 @@ body {
 
             &.active {
                 width: 320px;
-                background: linear-gradient(90deg, #8CD05F 0%, #56A1DE 77.25%);
+                background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);;
                 opacity: 1;
             }
         }
@@ -499,9 +502,9 @@ body {
     }
 
     &__entitle {
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 700;
-        line-height: 40px;
+        line-height: 34px;
     }
 
     &__kotitle {
@@ -611,6 +614,7 @@ body {
         row-gap: 150px;
     }
 
+    
     // &__content {
     //     margin-top: 15vh;
     // }
@@ -626,12 +630,15 @@ body {
             text-align: center;
 
             strong {
-                font-family: "FamiljenGrotesk";
                 font-size: 60px;
                 font-weight: 700;
                 line-height: 70px;
                 color: #fff;
                 letter-spacing: -1.8px;
+            }
+
+            .counting {
+                font-family: 'FamiljenGrotesk';
             }
 
             p {
@@ -668,6 +675,8 @@ body {
 
     &__btn {
         margin: 0 auto;
+        position: relative;
+        z-index: 2;
     }
 
     &__btnlist {
@@ -684,11 +693,11 @@ body {
 
     &__map {
         position: relative;
-        margin-top: 60px;
-
+        margin-top: 20px;
     }
 
     &__bg {
+        margin-top: -50px;
         li {
             text-align: center;
 
@@ -703,7 +712,7 @@ body {
 
 .global-swiper {
     width: 100%;
-    margin-top: -45px;
+    margin-top: -100px;
     padding: 0 150px;
     color: #fff;
 
@@ -716,6 +725,9 @@ body {
     &__image {
         border-radius: 10px;
         overflow: hidden;
+        img {
+            max-width: 300px;
+        }
     }
 
     &__description {
@@ -772,6 +784,9 @@ body {
 
             a {
                 &:hover {
+                    .main-news__title {
+                        color: #000;
+                    }
                     .main-news__top {
                         &::after {
                             width: 100%;
@@ -828,7 +843,7 @@ body {
 
     &__category {
         background: linear-gradient(90deg, #83D8FF 0%, #AE88EF 100%);
-        font-family: "Neuzeit Grotesk";
+        font-family: "NeuzeitGrotesk";
         font-size: 24px;
         font-weight: 700;
         background-clip: text;
@@ -836,7 +851,6 @@ body {
     }
 
     &__title {
-
         font-size: 42px;
         font-weight: 700;
         letter-spacing: -1.26px;
@@ -852,10 +866,17 @@ body {
         font-size: 24px;
         color: #444;
         letter-spacing: -0.72px;
+        word-break: keep-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
     }
 
     &__date {
-        padding-top: 30px;
+        display: block;
+        margin-top: 20px;
         font-size: 18px;
         line-height: 16px;
         color: #999;

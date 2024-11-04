@@ -8,67 +8,75 @@
 // 특수문자: U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E
 
 @font-face {
-    font-family: "NotoSans";
-    src: url(../fonts/NotoSans-Thin.woff2) format("woff2"),
-        url(../fonts/NotoSans-Thin.woff) format("woff");
+    font-family: "NotoSansKR";
+    src: url(../fonts/NotoSansKR-Thin.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-Thin.woff) format("woff");
     font-weight: 100;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
-    font-family: "NotoSans";
-    src: url(../fonts/NotoSans-ExtraLight.woff2) format("woff2"),
-        url(../fonts/NotoSans-ExtraLight.woff) format("woff");
+    font-family: "NotoSansKR";
+    src: url(../fonts/NotoSansKR-ExtraLight.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-ExtraLight.woff) format("woff");
     font-weight: 200;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
-    font-family: "NotoSans";
+    font-family: "NotoSansKR";
     src: url(../fonts/NotoSans-Light.woff2) format("woff2"),
         url(../fonts/NotoSansKR-Light.woff) format("woff");
     font-weight: 300;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
-    font-family: "NotoSans";
+    font-family: "NotoSansKR";
     src: url(../fonts/NotoSansKR-Regular.woff2) format("woff2"),
         url(../fonts/NotoSansKR-Regular.woff) format("woff");
     font-weight: 400;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
-    font-family: "NotoSans";
-    src: url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    font-family: "NotoSansKR";
+    src: url(../fonts/NotoSansKR-Medium.woff2) format("woff2"),
         url(../fonts/NotoSansKR-Medium.woff) format("woff");
     font-weight: 500;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
-    font-family: "NotoSans";
-    src: url(../fonts/NotoSans-Bold.woff2) format("woff2"),
+    font-family: "NotoSansKR";
+    src: url(../fonts/NotoSansKR-Bold.woff2) format("woff2"),
         url(../fonts/NotoSansKR-Bold.woff) format("woff");
     font-weight: 700;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
-    font-family: "NotoSans";
-    src: url(../fonts/NotoSans-ExtraBold.woff2) format("woff2"),
-        url(../fonts/NotoSans-ExtraBold.woff) format("woff");
+    font-family: "NotoSansKR";
+    src: url(../fonts/NotoSansKR-ExtraBold.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-ExtraBold.woff) format("woff");
     font-weight: 800;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
-    font-family: "NotoSans";
-    src: url(../fonts/NotoSans-Black.woff2) format("woff2"),
-        url(../fonts/NotoSans-Black.woff) format("woff");
+    font-family: "NotoSansKR";
+    src: url(../fonts/NotoSansKR-Black.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-Black.woff) format("woff");
     font-weight: 900;
     font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
 
 @font-face {
@@ -78,6 +86,7 @@
     src: local(※),
         url(../fonts/NeuzeitGrotesk-Light.woff2) format('woff2'),
         url(../fonts/NeuzeitGrotesk-Light.woff) format('woff');
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
 }
 
 @font-face {
@@ -87,6 +96,7 @@
     src: local(※),
         url(../fonts/NeuzeitGrotesk-Regular.woff2) format('woff2'),
         url(../fonts/NeuzeitGrotesk-Regular.woff) format('woff');
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
 }
 
 @font-face {
@@ -96,6 +106,7 @@
     src: local(※),
         url(../fonts/NeuzeitGrotesk-Bold.woff2) format('woff2'),
         url(../fonts/NeuzeitGrotesk-Bold.woff) format('woff');
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
 }
 
 @font-face {
@@ -105,6 +116,7 @@
     src: local(※),
         url(../fonts/NeuzeitGrotesk-Black.woff2) format('woff2'),
         url(../fonts/NeuzeitGrotesk-Black.woff) format('woff');
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
 }
 
 @font-face {
@@ -114,4 +126,5 @@
     src: local(※),
         url(../fonts/FamiljenGrotesk-Medium.woff2) format('woff2'),
         url(../fonts/FamiljenGrotesk-Medium.woff) format('woff');
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
 }

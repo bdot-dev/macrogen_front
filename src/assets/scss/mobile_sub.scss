@@ -14,7 +14,7 @@
         text-align: center;
 
         h3 {
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             font-size: 40px;
             font-weight: 700;
             line-height: 46px;
@@ -105,7 +105,7 @@
 
     &__num {
         display: inline-block;
-        font-family: "Neuzeit Grotesk";
+        font-family: "NeuzeitGrotesk";
         font-size: 14px;
         font-weight: 700;
         line-height: 14px;
@@ -247,7 +247,7 @@
     &__hidewrap {
         position: relative;
         margin: 0 30px;
-        padding: 30px 0 50px 0;
+        padding: 30px 0 60px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         color: #fff;
     }
@@ -306,7 +306,7 @@
         bottom: -30px;
         width: 100%;
         border-radius: 0 0 10px 10px;
-        font-family: "Neuzeit Grotesk";
+        font-family: "NeuzeitGrotesk";
         font-size: 14px;
         font-weight: 700;
         line-height: 30px;
@@ -316,6 +316,21 @@
 
         &.active {
             bottom: 0;
+        }
+        span {
+            position: relative;
+            display: inline-block;
+            padding-right: 22px;
+            &::before {
+                content:'';
+                display: inline-block;
+                position: absolute;
+                top: 10px;
+                right: 0;
+                width: 12px;
+                height: 12px;
+                background: url(../images/mo/icon_close_arrow.svg) center / contain no-repeat;
+            }
         }
     }
 
@@ -609,11 +624,12 @@
         margin-top: 10px;
 
         p {
+            font-family: "NeuzeitGrotesk";
             font-size: 14px;
             font-style: normal;
             line-height: 24px;
             letter-spacing: -0.42px;
-            color: #666;
+            color: #999;
         }
     }
 

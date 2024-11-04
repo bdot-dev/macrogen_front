@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mouseMoveHandler = (e) => {
         const nowX = (-1 + (e.pageX / winWidth) * 2).toFixed(2);
         const nowY = (1 - (e.pageY / winHeight) * 2).toFixed(2);
-        const movePositionX = -1 * (nowX * ((contWidth + 70 - winWidth) / 2));
+        const movePositionX = 1 * (nowX * ((contWidth + 70 - winWidth) / 2));
         const movePositionY = nowY * ((contHeight + 20 - winHeight) / 2);
         if (!isMoving) {
             isMoving = true;
@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 trigger: '.section--slogan',
                 start: 'top bottom',
                 end: 'bottom top',
-                toggleActions: 'play reset restart reset',
+                // toggleActions: 'play reset restart reset',
+                once: true,
             },
         });
 
@@ -88,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             backgroundColor: '#1F273C',
             duration: 1,
             ease: 'power2.out',
-
             onStart: () => {
                 // main-service__button의 모든 li 요소에서 active 클래스 제거
                 const listItems = document.querySelectorAll('.main-service__button li');
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power2.out',
                     stagger: 0,
                 },
-                '-=0.5'
+                '+=0.2'
             )
             .to(
                 '.highlight .bg',
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power2.out',
                     stagger: 0.3,
                 },
-                '-=0.5'
+                '-=0.85'
             )
             .to('.main-slogan__text h4', {
                 y: 100,
@@ -152,11 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     left: 'calc(50% + 245.333px)',
                     transform: 'translate(-100%, -50%)',
-                    duration: 3,
+                    duration: 5,
                     // stagger: 0,
                     ease: 'power1.in',
                 },
-                '-=0.1'
+                '-=3'
             )
             .to(
                 '.main-slogan__marquee',
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplay: true,
         speed: 1.5,
         pauseOnMouseEnter: true,
-        direction: 'right',
+        direction: 'left',
     });
 
     const serviceSwiper = new Swiper('.main-service__slide', {

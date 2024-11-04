@@ -17,7 +17,7 @@
         text-align: center;
 
         h2 {
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             font-size: 80px;
             font-weight: 700;
             line-height: 80px;
@@ -596,10 +596,7 @@
             &:hover {
                 .comms-slide__description {
                     p {
-                        text-decoration: underline;
-                        text-underline-offset: 6px;
-                        text-decoration-thickness: 1px;
-                        text-decoration-color: #666;
+                        color: #000;
                     }
                 }
             }
