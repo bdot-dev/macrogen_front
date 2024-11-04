@@ -277,14 +277,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentSlide = this.slides[this.activeIndex];
                 const currentGroup = currentSlide.getAttribute('data-group');
                 let buttonText;
+
                 globalMapSlider.slideTo(currentGroup - 1);
 
+                // 마지막 data-group 값을 가진 슬라이드 개수 계산
+                const lastGroup = Number(this.slides[this.slides.length - 1].getAttribute('data-group'));
+                const lastGroupSlidesCount = this.slides.filter((slide) => Number(slide.getAttribute('data-group')) === lastGroup).length;
+
+                // 현재 그룹에 해당하는 버튼 텍스트 가져오기
                 document.querySelectorAll('.group-button button').forEach(function (button) {
                     if (Number(button.getAttribute('data-group')) === Number(currentGroup)) {
                         buttonText = button.getAttribute('data-option');
                     }
                 });
 
+                // isEnd일 때 lastGroupSlidesCount가 slidesPerView보다 작은 경우
+                const slidesPerView = this.params.slidesPerView === 'auto' ? Math.floor(this.width / this.slides[0].swiperSlideSize) : this.params.slidesPerView;
+
+                // lastGroupSlidesCount가 slidesPerView보다 작은 경우 마지막 그룹의 버튼 텍스트만 설정
+                if (this.isEnd && lastGroupSlidesCount < slidesPerView) {
+                    // 마지막 그룹의 버튼 텍스트로 설정
+                    document.querySelectorAll('.group-button button').forEach(function (button) {
+                        if (Number(button.getAttribute('data-group')) === lastGroup) {
+                            buttonText = button.getAttribute('data-option');
+                        }
+                    });
+                }
+
+                // 버튼 텍스트 업데이트
                 document.querySelector('.main-global__selecttext').innerText = buttonText;
             },
         },
@@ -353,5 +373,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`그룹 ${groupIndex}에 슬라이드가 없습니다.`);
             }
         });
+    });
+
+    window.addEventListener('resize', function () {
+        globalSlider.update();
     });
 });
