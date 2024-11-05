@@ -318,8 +318,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('load', setInitialPosition);
+
     window.addEventListener('scroll', setInitialPosition);
+
     window.addEventListener('wheel', handleWheel, { passive: false });
+
     window.addEventListener(
         'resize',
         debounce(() => {

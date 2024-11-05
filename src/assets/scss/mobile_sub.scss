@@ -580,6 +580,16 @@
     &__wrap {
         li {
             max-width: 260px;
+            a {
+                display: block;
+                &:hover {
+                    .comms-slide__description {
+                        p {
+                            color: #000;
+                        }
+                    }
+                }
+            }
         }
     }
 
