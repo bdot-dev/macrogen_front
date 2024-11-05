@@ -171,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     width: '101vw',
                     height: '101vh',
+                    minWidth: '1680px',
                     borderRadius: '0%',
                     duration: 1, // scale 변경 시간
                     ease: 'power2.out', // 부드러운 애니메이션

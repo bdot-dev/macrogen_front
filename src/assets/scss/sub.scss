@@ -1,5 +1,13 @@
 @import 'common/mixin';
 
+html, body {
+    width: 100%;
+    height: auto;
+}
+
+#wrap {
+    overflow-x: hidden;
+}
 
 .gray {
     background-color: #F7F7F7;
@@ -33,7 +41,7 @@
 
     &__content {
         position: relative;
-        max-width: 1640px;
+        max-width: 1660px;
         width: 100%;
         margin: 0 auto;
         padding: 135px 20px;

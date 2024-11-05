@@ -36,12 +36,18 @@ body {
     text-align: center;
 }
 
+#wrap {
+    min-width: 1660px;
+    .header {
+        max-width: none;
+    }
+}
+
 .wrap {
     .container {
-        overflow-x: hidden;
         padding-top: 120px;
-        width: auto;
-        max-width: none;
+        width: 100%;
+        max-width: 100%;
 
     }
 
