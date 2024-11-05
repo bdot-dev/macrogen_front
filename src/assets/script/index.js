@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let tl;
 
     let globalSlider;
-    let initialGroupIndex = null;
+    let initialGroupIndex = 0;
     let groupIndex;
 
     const globalMapSlider = new Swiper('.main-global__bg', {
@@ -352,12 +352,10 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             slideChange: function () {
                 const currentSlide = this.slides[this.activeIndex];
-                const currentGroup = currentSlide.getAttribute('data-group');
+                let currentGroup = currentSlide.getAttribute('data-group');
 
                 // 그룹에 따라 globalMapSlider를 이동
-                globalMapSlider.slideTo(currentGroup - 1);
 
-                // 현재 슬라이드의 group에 맞는 버튼 활성화
                 document.querySelectorAll('.group-button').forEach((button) => {
                     button.classList.toggle('active', button.dataset.group === currentGroup);
                 });
@@ -365,22 +363,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 const lastGroup = Number(this.slides[this.slides.length - 1].getAttribute('data-group'));
                 const slidesPerView = this.params.slidesPerView === 'auto' ? Math.floor(this.width / this.slides[0].swiperSlideSize) : this.params.slidesPerView;
 
-                // lastGroup과 같은 data-group을 가진 슬라이드 개수 계산
                 const lastGroupSlidesCount = this.slides.filter((slide) => Number(slide.getAttribute('data-group')) === lastGroup).length;
 
-                // isEnd일 때 lastGroupSlidesCount가 slidesPerView보다 작은 경우
-                console.log(this.isEnd);
                 if (this.isEnd) {
                     document.querySelectorAll('.group-button').forEach((button) => {
-                        // lastGroupSlidesCount가 slidesPerView보다 작은 경우 마지막 그룹만 활성화
                         if (lastGroupSlidesCount < slidesPerView) {
                             button.classList.toggle('active', Number(button.dataset.group) === lastGroup);
+                            currentGroup = lastGroup;
                         } else {
-                            // 일반 로직
                             button.classList.toggle('active', button.dataset.group === currentGroup);
                         }
                     });
                 }
+
+                globalMapSlider.slideTo(currentGroup);
             },
             reachEnd: function () {},
         },
@@ -390,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
             trigger: '.section--global .title',
             scroller: '.scroll-area',
-            start: 'bottom+=40px top',
+            start: 'bottom+=40px center',
             onEnter: () => {
                 document.querySelector('.section--global').classList.add('active');
                 document.querySelector('.main-global__btnlist').classList.add('active');
@@ -405,7 +401,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const firstSlideIndex = allSlides.indexOf(firstSlide);
 
                         globalSlider.slideTo(firstSlideIndex);
-                        globalMapSlider.slideTo(groupIndex - 1);
                         firstSlide.classList.add('swiper-slide-active');
                         globalSlider.update();
                         globalMapSlider.update();
@@ -443,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 globalSlider.slideTo(firstSlideIndex);
-                globalMapSlider.slideTo(groupIndex - 1);
+                globalMapSlider.slideTo(groupIndex);
                 firstSlide.classList.add('swiper-slide-active');
                 globalSlider.update();
                 globalMapSlider.update();

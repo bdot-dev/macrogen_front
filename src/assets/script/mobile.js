@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counting');
     let tl;
     let globalSlider;
-    let initialGroupIndex = null;
+    let initialGroupIndex = 0;
     let groupIndex;
 
     gsap.registerPlugin(ScrollTrigger);
@@ -286,10 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             slideChange: function () {
                 const currentSlide = this.slides[this.activeIndex];
-                const currentGroup = currentSlide.getAttribute('data-group');
+                let currentGroup = currentSlide.getAttribute('data-group');
                 let buttonText;
-
-                globalMapSlider.slideTo(currentGroup - 1);
 
                 // 마지막 data-group 값을 가진 슬라이드 개수 계산
                 const lastGroup = Number(this.slides[this.slides.length - 1].getAttribute('data-group'));
@@ -311,9 +309,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelectorAll('.group-button button').forEach(function (button) {
                         if (Number(button.getAttribute('data-group')) === lastGroup) {
                             buttonText = button.getAttribute('data-option');
+                            currentGroup = lastGroup;
                         }
                     });
                 }
+
+                globalMapSlider.slideTo(currentGroup);
 
                 // 버튼 텍스트 업데이트
                 document.querySelector('.main-global__selecttext').innerText = buttonText;
@@ -338,7 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const firstSlideIndex = allSlides.indexOf(firstSlide);
 
                         globalSlider.slideTo(firstSlideIndex);
-                        globalMapSlider.slideTo(groupIndex - 1);
                         firstSlide.classList.add('swiper-slide-active');
                         globalSlider.update();
                         globalMapSlider.update();
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 globalSlider.slideTo(firstSlideIndex);
-                globalMapSlider.slideTo(groupIndex - 1);
+                globalMapSlider.slideTo(groupIndex);
                 firstSlide.classList.add('swiper-slide-active');
                 globalSlider.update();
                 globalMapSlider.update();
