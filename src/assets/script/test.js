@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mouseMoveHandler = (e) => {
         const nowX = (-1 + (e.pageX / winWidth) * 2).toFixed(2);
         const nowY = (1 - (e.pageY / winHeight) * 2).toFixed(2);
-        const movePositionX = -1 * (nowX * ((contWidth + 70 - winWidth) / 2));
+        const movePositionX = 1 * (nowX * ((contWidth + 70 - winWidth) / 2));
         const movePositionY = nowY * ((contHeight + 20 - winHeight) / 2);
         if (!isMoving) {
             isMoving = true;
