@@ -15,7 +15,6 @@ html,
 body {
     width: 100%;
     height: 100%;
-    
 }
 
 body {
@@ -121,7 +120,7 @@ body {
                 height: 16px;
                 background: url(../images/sub/apple.svg) center / auto no-repeat;
             }
-            
+
         }
 
         &--google {
@@ -153,6 +152,7 @@ body {
 
         &:hover {
             background-color: #000;
+
             .btn-default__text {
                 color: #fff;
             }
@@ -187,7 +187,7 @@ body {
 
         &::before {
             opacity: 0;
-            content:'';
+            content: '';
             display: inline-block;
             width: 100%;
             height: 100%;
@@ -318,6 +318,7 @@ body {
         color: #fff;
         min-width: auto;
         padding: 0;
+        min-width: 1660px;
 
         &::before {
             display: none;
@@ -539,7 +540,7 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         font-size: 0;
-        
+
     }
 
 }
