@@ -164,6 +164,7 @@
         transform: scale(0);
         border-radius: 10px;
         overflow: hidden;
+        font-size: 0;
         // box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
 
         img, video {
@@ -705,6 +706,7 @@
         line-height: 40px;
         font-family: "NeuzeitGrotesk";
         font-weight: 700;
+        z-index: 3;
 
         &::before {
             display: inline-block;
@@ -725,27 +727,25 @@
 
     &__option {
         position: absolute;
-        top: 50px;
+        top: 20px;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
+        height: 0px;
         border-radius: 15px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         background: #38556A;
         overflow: hidden;
         z-index: 2;
+        transition: 0.34s ease;
     }
 
     &__optionlist {
-        height: 0px;
         transition: all 0.4s;
-        padding: 0 10px;
-
-        &.active {
-            height: 134px;
-        }
+        padding: 20px 10px 0;
 
         li {
-            
             button {
                 display: block;
                 width: 100%;
@@ -755,20 +755,12 @@
                 font-family: "NeuzeitGrotesk";
                 font-weight: 700;
             }
-
-            &+li {
-                // border-top: 1px solid rgba($color: #eee, $alpha: 0.2);
-            }
         }
-
-
     }
-
 
     &__map {
         position: relative;
         margin-top: 20px;
-
     }
 
     &__bg {

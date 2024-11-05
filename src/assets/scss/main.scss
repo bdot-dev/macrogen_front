@@ -160,7 +160,6 @@ body {
         transform: scale(0);
         border-radius: 10px;
         overflow: hidden;
-        overflow: hidden;
         // box-shadow: 20px 50px 40px 0 rgba(0, 0, 0, 0.32);
         border-radius: 15px;
         overflow: hidden;
@@ -614,7 +613,6 @@ body {
         row-gap: 150px;
     }
 
-    
     // &__content {
     //     margin-top: 15vh;
     // }
@@ -624,11 +622,9 @@ body {
         flex-wrap: wrap;
         column-gap: 200px;
         row-gap: 97px;
-
         li {
             width: calc((100% - 400px) / 3);
             text-align: center;
-
             strong {
                 font-size: 60px;
                 font-weight: 700;
@@ -685,7 +681,6 @@ body {
         column-gap: 20px;
         justify-content: center;
         transition: 0.54s ease;
-
         &.active {
             opacity: 1;
         }
@@ -693,14 +688,13 @@ body {
 
     &__map {
         position: relative;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     &__bg {
-        margin-top: -50px;
+        margin-top: -80px;
         li {
             text-align: center;
-
             img {
                 display: inline-block;
                 width: 60vw;
@@ -852,6 +846,7 @@ body {
     &__title {
         font-size: 42px;
         font-weight: 700;
+        line-height: 60px;
         letter-spacing: -1.26px;
         display: -webkit-box;
         overflow: hidden;

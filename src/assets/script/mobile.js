@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: '.section--slogan',
             start: '20% bottom',
             end: '80% top',
-            toggleActions: 'play reset restart reset',
+            // toggleActions: 'play reset restart reset',
+            once: true,
         },
     });
 
@@ -147,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         },
     });
+
     serviceButtons.forEach((btn, index) => {
         btn.addEventListener('click', () => {
             serviceSwiper.slideTo(index);
@@ -157,9 +159,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('.main-global__selecttext').addEventListener('click', function () {
         const $selectBox = document.querySelector('.main-global__select');
-        const $optionList = document.querySelector('.main-global__optionlist');
+        const $option = document.querySelector('.main-global__option');
+        const scrollHeight = document.querySelector('.main-global__option').scrollHeight;
+
         $selectBox.classList.toggle('active');
-        $optionList.classList.toggle('active');
+        $option.classList.toggle('active');
+
+        if ($option.classList.contains('active')) {
+            $option.style.height = scrollHeight + 'px';
+        } else {
+            $option.style.height = 0 + 'px';
+        }
     });
 
     document.querySelectorAll('.main-global__optionlist li button').forEach((option) => {
@@ -177,7 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             this.classList.add('active');
-            this.parentNode.parentNode.classList.remove('active');
+            this.parentNode.parentNode.parentNode.classList.remove('active');
+            this.parentNode.parentNode.parentNode.style.height = 0 + 'px';
             this.closest('.main-global__select').classList.remove('active');
         });
     });
