@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tl.to('.main-slogan', {
         backgroundColor: '#1F273C',
-        duration: 2.5,
+        duration: 1,
         ease: 'power2.out',
 
         onStart: () => {
@@ -202,43 +202,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateRandomNumber = (length) => getRandomInt(Math.pow(10, length - 1), Math.pow(10, length) - 1);
 
     const countToTarget = (element, target, duration) => {
-        const startTime = performance.now() - 1;
-        const updateInterval = 50; // 숫자를 업데이트할 간격 (밀리초)
-        let lastUpdateTime = 0;
+        const startTime = performance.now();
+        // const updateInterval = 50; // 숫자를 업데이트할 간격 (밀리초)
+        // let lastUpdateTime = 0;
 
         const step = () => {
             const elapsedTime = performance.now() - startTime;
             const progressRatio = Math.min(elapsedTime / duration, 1);
 
             // 현재 시간
-            const currentTime = performance.now();
+            // const currentTime = performance.now();
 
             // 지정된 간격마다 숫자를 업데이트
-            if (currentTime - lastUpdateTime >= updateInterval) {
-                element.innerText = progressRatio < 1 ? generateRandomNumber(target.toString().length) : target;
-                lastUpdateTime = currentTime;
-            }
+            // if (currentTime - lastUpdateTime >= updateInterval) {
+            element.innerText = progressRatio < 1 ? generateRandomNumber(target.toString().length) : target;
+            //     lastUpdateTime = currentTime;
+            // }
 
             if (progressRatio < 1) requestAnimationFrame(step);
         };
 
         requestAnimationFrame(step);
     };
+    // counters.forEach((counter) => counter.innerText === '0' && startCounting(counter));
 
     function startCounting(counterElement) {
-        countToTarget(counterElement, parseInt(counterElement.getAttribute('data-count'), 10), 1500);
+        countToTarget(counterElement, parseInt(counterElement.getAttribute('data-count'), 10), 1200);
     }
 
     gsap.to('.section--info', {
         scrollTrigger: {
             trigger: '.section--info',
-            start: 'center center',
+            start: 'top center',
             end: 'bottom top',
+            // markers: true,
             onEnter: () => {
                 document.querySelector('.section--info').classList.add('active');
+                const counters = document.querySelectorAll('.counting'); // 카운터 요소 선택
                 counters.forEach((counter) => {
                     if (counter.getAttribute('data-count')) {
-                        startCounting(counter);
+                        startCounting(counter); // 카운팅 시작
                     }
                 });
             },

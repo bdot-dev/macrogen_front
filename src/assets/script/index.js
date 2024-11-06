@@ -249,7 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         requestAnimationFrame(step);
     };
-
     counters.forEach((counter) => counter.innerText === '0' && startCounting(counter));
 
     function startCounting(counterElement) {
