@@ -1,6 +1,7 @@
 @import 'common/mixin';
 
-html, body {
+html,
+body {
     width: 100%;
     height: auto;
 }
@@ -315,7 +316,7 @@ html, body {
             color: #fff;
 
             &+li {
-                margin-top: 5px;
+                margin-top: 10px;
             }
 
             &::before {

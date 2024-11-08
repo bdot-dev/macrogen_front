@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let tl;
 
     let globalSlider;
-    let initialGroupIndex = null;
+    let initialGroupIndex = 0;
     let groupIndex;
 
     const globalMapSlider = new Swiper('.main-global__bg', {
@@ -59,8 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const mouseMoveHandler = (e) => {
         const nowX = (-1 + (e.pageX / winWidth) * 2).toFixed(2);
         const nowY = (1 - (e.pageY / winHeight) * 2).toFixed(2);
-        const movePositionX = 1 * (nowX * ((contWidth + 70 - winWidth) / 2));
+        let movePositionX;
         const movePositionY = nowY * ((contHeight + 20 - winHeight) / 2);
+
+        if (winWidth < contWidth) {
+            movePositionX = -1 * (nowX * ((contWidth + 70 - winWidth) / 2));
+        } else {
+            movePositionX = nowX * ((contWidth + 70 - winWidth) / 2);
+        }
+
         if (!isMoving) {
             isMoving = true;
             requestAnimationFrame(() => {
@@ -88,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
             backgroundColor: '#fff',
             duration: 1,
             ease: 'power2.out',
-
             onStart: () => {
                 // main-service__button의 모든 li 요소에서 active 클래스 제거
                 const listItems = document.querySelectorAll('.main-service__button li');
@@ -252,7 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         requestAnimationFrame(step);
     };
-
     counters.forEach((counter) => counter.innerText === '0' && startCounting(counter));
 
     function startCounting(counterElement) {

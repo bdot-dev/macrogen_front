@@ -295,6 +295,25 @@
         letter-spacing: -0.48px;
     }
 
+    &__piece {
+        display: flex;
+        gap: 5px;
+
+        &+.examine__piece {
+            margin-top: 5px;
+        }
+
+        span {
+            &:first-child {
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &__one {
+        flex-basis: 50px;
+    }
+
     &__hidebutton {
         margin-top: 20px;
         text-align: center;
@@ -317,12 +336,14 @@
         &.active {
             bottom: 0;
         }
+
         span {
             position: relative;
             display: inline-block;
             padding-right: 22px;
+
             &::before {
-                content:'';
+                content: '';
                 display: inline-block;
                 position: absolute;
                 top: 10px;
@@ -580,8 +601,10 @@
     &__wrap {
         li {
             max-width: 260px;
+
             a {
                 display: block;
+
                 &:hover {
                     .comms-slide__description {
                         p {

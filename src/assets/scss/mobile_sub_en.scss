@@ -1,0 +1,50 @@
+.examine {
+    &__inner {
+        height: 160px;
+    }
+
+    &__name {
+        line-height: 24px;
+    }
+
+    &__title {
+        h4 {
+            font-family: "Neuzeit Grotesk";
+            letter-spacing: 0;
+        }
+    }
+
+    &__one {
+        flex-basis: 92px;
+    }
+
+    &__two {
+        flex-basis: 77px;
+    }
+}
+
+.slide-banner {
+    &__title {
+        h3 {
+            font-family: "Neuzeit Grotesk";
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}
+
+.advantage-slide {
+    &__name {
+        font-family: "Neuzeit Grotesk";
+        font-size: 14px;
+    }
+}
+
+.comms-slide {
+    &__description {
+        p {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}

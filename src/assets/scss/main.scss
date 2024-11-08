@@ -28,6 +28,7 @@ body {
             max-width: 1660px;
             min-width: 1660px;
         }
+
         &.header-main {
             &.header-sm {
                 background: #fff !important;
@@ -116,8 +117,22 @@ body {
 
 // main-kv
 .main-kv {
+    position: relative;
+
     &__inner {
         overflow: hidden;
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 123px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(10px);
     }
 }
 
@@ -130,7 +145,7 @@ body {
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background: #1F1F1F;
+        background-color: #fff;
         overflow: hidden;
     }
 
@@ -138,9 +153,9 @@ body {
         display: flex;
         justify-content: space-between;
         transform: translate(0, 0);
-        min-width: 1620px;
-        padding: 70px 120px;
-        column-gap: 60px;
+        min-width: 1760px;
+        padding: 200px 20px 120px;
+        column-gap: 40px;
         -webkit-transition-timing-function: ease-out;
         transition-timing-function: ease-out;
         -webkit-transition-duration: 1.5s;
@@ -150,10 +165,27 @@ body {
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 40px;
 
         li {
             position: relative;
+
+            &:hover {
+
+                img,
+                video {
+                    transform: scale(1.05);
+                }
+
+                .main-board__descriptionbg {
+                    opacity: 1;
+                }
+
+                .main-board__description--diff {
+                    background: rgba(181, 57, 0, 0.1);
+                    backdrop-filter: blur(2.5px);
+                }
+            }
 
             &:nth-child(even) {
                 .main-board__image {
@@ -167,6 +199,21 @@ body {
                     animation: scale cubic-bezier(0.5, 1, 0.89, 1) 1.58s forwards;
                     animation-delay: 0.23s;
                 }
+            }
+
+            img {
+                position: relative;
+            }
+
+            video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+                transition: all 0.5s;
             }
         }
 
@@ -188,9 +235,16 @@ body {
             transition: 0.64s cubic-bezier(0.5, 1, 0.89, 1);
         }
 
+        video {
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
         &:hover {
             img {
-                transform: scale(1.23);
+                transform: scale(1.05);
             }
         }
 
@@ -207,17 +261,24 @@ body {
 
     &__description {
         position: absolute;
-        left: 50%;
-        bottom: 40px;
+        left: 0px;
+        top: 0px;
         transform: translateX(-50%);
         width: 100%;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
-        line-height: 34px;
+        line-height: 32px;
         color: #fff;
         text-align: center;
         letter-spacing: -0.72px;
         z-index: 1;
+        transform: unset;
+        text-align: left;
+        letter-spacing: -0.66px;
+        padding: 35px 30px;
+        transition: all 0.5s ease;
+        background: rgba(181, 57, 0, 0);
+        backdrop-filter: blur(0px);
     }
 }
 
@@ -289,7 +350,7 @@ body {
 .main-slogan {
     position: relative;
     height: 100vh;
-    background: #1F1F1F;
+    background: #fff;
     line-height: 90px;
     color: #fff;
     text-align: center;
@@ -311,6 +372,7 @@ body {
     &__text {
         overflow: hidden;
         white-space: nowrap;
+        color: #000;
 
         &+.main-slogan__text {
             margin-top: 10px;
@@ -333,7 +395,7 @@ body {
         top: 50%;
         left: 50%;
         transform: translateY(-50%);
-        color: #000;
+        color: #fff;
         white-space: nowrap;
         z-index: 3;
         opacity: 0;
@@ -425,7 +487,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #1f273b;
     opacity: 0;
     pointer-events: none;
     z-index: 2;
@@ -678,7 +740,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 150px 0 100px;
-    background-color: #223644;
+    background-color: #fff;
     overflow-x: hidden;
 
     .title {
@@ -772,7 +834,7 @@ body {
             font-weight: 400;
             line-height: 28px;
             letter-spacing: -0.54px;
-            color: #fff;
+            color: #000;
         }
     }
 
@@ -820,7 +882,7 @@ body {
 
                     .main-news__image {
                         img {
-                            transform: scale(1.23);
+                            transform: scale(1.05);
                         }
                     }
 

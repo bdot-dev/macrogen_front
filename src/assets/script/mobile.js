@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tl.to('.main-slogan', {
-        backgroundColor: '#1F273C',
+        backgroundColor: '#fff',
         duration: 1,
         ease: 'power2.out',
 
@@ -61,6 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             '-=0.5'
         )
+        .to(
+            '.highlight',
+            {
+                color: '#fff',
+                duration: 0.6,
+                ease: 'power2.out',
+                stagger: 0.3,
+            },
+            '-=0.85'
+        )
         .to('.main-slogan__text h4', {
             y: 100,
             scale: 1,
@@ -77,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             onComplete: () => {
                 gsap.to('.overlay-circle', { opacity: 0, duration: 0 });
                 gsap.to('.main-slogan', {
-                    backgroundColor: '#fff',
+                    backgroundColor: '#1F273B',
                     duration: 0,
                     ease: 'power2.out',
                 });
@@ -252,13 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
     new SimpleMarquee('.main-marquee__slide--01 ul', {
         autoplay: true,
         speed: 1,
-        pauseOnMouseEnter: true,
         direction: 'right',
     });
     new SimpleMarquee('.main-marquee__slide--02 ul', {
         autoplay: true,
         speed: 1,
-        pauseOnMouseEnter: true,
         direction: 'left',
     });
 

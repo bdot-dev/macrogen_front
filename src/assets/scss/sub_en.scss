@@ -1,0 +1,57 @@
+.examine {
+    &__hidelist {
+        li {
+            gap: 20px;
+        }
+    }
+
+    &__itemleft {
+        font-family: 'Neuzeit Grotesk';
+
+        &--small {
+            flex-basis: 130px;
+        }
+
+        &--middle {
+            flex-basis: 220px;
+        }
+
+        &--large {
+            flex-basis: 250px;
+        }
+    }
+
+    &__itemright {
+        font-family: 'Neuzeit Grotesk';
+
+        p {
+            line-height: 20px;
+            padding-left: 11px;
+            position: relative;
+
+            &+p {
+                margin-top: 5px;
+            }
+
+            &::before {
+                position: absolute;
+                content: "-";
+                top: -1px;
+                left: 0;
+
+            }
+        }
+    }
+}
+
+.slide-banner {
+    &__item {
+        height: auto;
+    }
+}
+
+.comms-slide {
+    &__description {
+        font-family: "Neuzeit Grotesk";
+    }
+}
