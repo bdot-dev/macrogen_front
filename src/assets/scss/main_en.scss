@@ -1,0 +1,73 @@
+.main-board {
+    &__description {
+        font-size: 24px;
+        line-height: 34px;
+    }
+}
+
+.main-slogan {
+    &__text {
+        h4 {
+            line-height: 1.3;
+        }
+    }
+}
+
+.highlight {
+    margin: 0 9px;
+}
+
+.main-service {
+    &__kotitle {
+        line-height: 70px;
+        margin-top: 10px;
+    }
+
+    &__cont {
+        height: 494px;
+    }
+
+    &__link {
+        margin-top: 80px;
+
+        &--small {
+            grid-template-columns: repeat(2, 170px);
+        }
+
+
+        &--large {
+            grid-template-columns: repeat(1, 320px);
+        }
+    }
+
+    &__button {
+        li {
+            padding: 22px 50px 22px 112px;
+            font-size: 24px;
+            line-height: 28px;
+            font-family: "Neuzeit Grotesk";
+            text-align: right;
+        }
+    }
+}
+
+.main-info {
+    &__list {
+        li {
+            p {
+                font-size: 20px;
+                font-family: "Neuzeit Grotesk";
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+.main-news {
+    &__title {
+        font-size: 40px;
+        line-height: 46px;
+        font-family: "Neuzeit Grotesk";
+        height: 96px;
+    }
+}

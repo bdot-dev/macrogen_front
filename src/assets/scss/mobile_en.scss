@@ -1,0 +1,77 @@
+.title {
+    font-family: "Neuzeit Grotesk";
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 44px;
+
+    &--small {
+        font-size: 24px;
+        line-height: 34px;
+    }
+}
+
+.main-slogan {
+    &__text {
+        h4 {
+            font-size: 34px;
+            line-height: 44px;
+        }
+    }
+
+    &__marquee {
+        h4 {
+            padding-bottom: 30px;
+        }
+    }
+}
+
+
+.highlight {
+    margin: 0 8px;
+    padding: 0px 8px 5px 8px;
+}
+
+.main-service {
+    &__link {
+        &--large {
+            max-width: 320px;
+        }
+    }
+
+    &__buttonwrap {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding: 0 20px;
+        overflow-x: auto;
+        z-index: 1;
+        text-align: center;
+    }
+
+    &__button {
+        position: static;
+        transform: unset;
+        min-width: 570px;
+        overflow-x: auto;
+        display: inline-flex;
+        justify-content: space-between;
+        width: unset;
+
+        li {
+            flex: unset;
+            padding: 0 20px;
+        }
+    }
+}
+
+.main-info {
+    &__list {
+        li {
+            p {
+                line-height: 22px;
+            }
+        }
+    }
+}
