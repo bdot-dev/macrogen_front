@@ -422,6 +422,12 @@ body {
                     font-weight: 300;
                     line-height: 14px;
                     letter-spacing: -0.42px;
+
+                    a {
+                        &:hover {
+                            color: unset;
+                        }
+                    }
                 }
             }
         }

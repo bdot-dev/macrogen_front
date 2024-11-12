@@ -21,6 +21,20 @@
     &__two {
         flex-basis: 77px;
     }
+
+    &__itemname {
+        font-size: 20px;
+        line-height: 30px;
+
+        &::before {
+            top: 15px;
+        }
+    }
+
+    &__itemdesc {
+        font-size: 18px;
+        line-height: 24px;
+    }
 }
 
 .slide-banner {
