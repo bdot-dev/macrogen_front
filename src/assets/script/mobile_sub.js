@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const $plusIcon = document.querySelectorAll('.examine__plus');
     const $closeButton = document.querySelectorAll('.examine__hideclose');
+    const $topButton = document.querySelector('.top-btn button');
+
+    $topButton.addEventListener('click', function () {
+        window.scrollTo(0, 0);
+    });
 
     let examineSwiper = new Swiper('.examine__function', {
         slidesPerView: 'auto',
