@@ -127,7 +127,7 @@
     &__checklist {
         display: flex;
         flex-direction: column;
-        row-gap: 60px;
+        row-gap: 80px;
 
         >li {
             position: relative;
@@ -297,6 +297,7 @@
 
     &__piece {
         display: flex;
+        flex-direction: column;
         gap: 5px;
 
         &+.examine__piece {
@@ -306,6 +307,10 @@
         span {
             &:first-child {
                 flex-shrink: 0;
+                flex-basis:unset;
+            }
+            &:nth-child(2) {
+                margin-left: 10px;
             }
         }
     }
