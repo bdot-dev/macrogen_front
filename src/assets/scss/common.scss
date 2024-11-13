@@ -475,13 +475,16 @@ body {
         }
 
         &__container {
-            height: 313px;
+            height: 380px;
             padding: 15px;
             overflow-y: auto;
             border: 1px solid #4F4F4F;
             border-radius: 10px;
 
             ul {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
                 li {
                     font-size: 0;
                     // border-bottom: 1px solid #2b2b2b;
@@ -494,14 +497,14 @@ body {
                         display: block;
                         font-family: "Neuzeit Grotesk";
                         font-size: 14px;
-                        line-height: 28px;
+                        line-height: 20px;
                         color: #fff;
-                        word-break: keep-all;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 1;
-                        -webkit-box-orient: vertical;
+                        // word-break: keep-all;
+                        // overflow: hidden;
+                        // text-overflow: ellipsis;
+                        // display: -webkit-box;
+                        // -webkit-line-clamp: 1;
+                        // -webkit-box-orient: vertical;
                         letter-spacing: -0.03rem;
                         &:hover{color: #83D8FF;}
                     }
@@ -514,7 +517,7 @@ body {
             position: absolute;
             bottom: 24px;
             right: 0;
-            width: 156px;
+            width: 215px;
             height: 0;
             background-color: #292929;
             transition: 0.23s ease;
