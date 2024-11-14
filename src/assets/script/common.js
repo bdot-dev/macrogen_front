@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     $familyButton.addEventListener('click', function (e) {
         const $target = this.nextElementSibling;
         const menuHeight = $target.scrollHeight;
-        console.log(menuHeight);
         if (this.classList.contains('active')) {
             this.classList.remove('active');
             this.nextElementSibling.style.height = 0 + 'px';

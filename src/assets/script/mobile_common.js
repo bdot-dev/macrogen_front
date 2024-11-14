@@ -2,13 +2,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const $footerMenuButton = document.querySelectorAll('.footer__menu button');
     const $familyButton = document.querySelector('.footer__button');
     const $familyToggle = document.querySelector('.footer__toggle');
+    const $topButton = document.querySelector('.top-btn button');
+
+    $topButton.addEventListener('click', function () {
+        window.scrollTo(0, 0);
+    });
 
     $footerMenuButton.forEach((menuButton) => {
         menuButton.addEventListener('click', function () {
             let $toggleMenu = this.nextElementSibling;
             let toggleHeight = $toggleMenu.scrollHeight;
-
-            console.log($toggleMenu);
 
             if (!this.classList.contains('active')) {
                 $footerMenuButton.forEach((btn) => {
