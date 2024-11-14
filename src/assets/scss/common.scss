@@ -228,7 +228,9 @@ body {
     }
 
     &--gradclick {
-        padding: 0 52px;
+        // padding: 0 52px;
+        width: 140px;
+        height: 48px;
         border: none;
         background: #38556A;
         border-radius: 30px;
@@ -251,8 +253,8 @@ body {
         }
 
         .btn-default__text {
-            line-height: 60px;
-            font-size: 24px;
+            line-height: 30px;
+            font-size: 20px;
         }
 
         &:hover {
