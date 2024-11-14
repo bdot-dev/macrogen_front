@@ -292,6 +292,8 @@
     &__itemdesc {
         margin-top: 5px;
         line-height: 22px;
+        text-indent: -10px;
+        padding-left: 20px;
         letter-spacing: -0.48px;
     }
 
@@ -310,7 +312,7 @@
                 flex-basis:unset;
             }
             &:nth-child(2) {
-                margin-left: 10px;
+               text-indent: 0;
             }
         }
     }
