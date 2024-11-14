@@ -286,8 +286,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (index >= sections.length - 1) {
                         counters.forEach(startCounting);
+                        document.querySelector('.bg-video').play();
                     } else {
                         counters.forEach((counter) => (counter.innerText = '0'));
+                        document.querySelector('.bg-video').pause();
                     }
                 });
 
