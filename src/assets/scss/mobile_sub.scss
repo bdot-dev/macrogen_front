@@ -148,6 +148,10 @@
                 .examine__hideclose {
                     background-color: #4CAFDA;
                 }
+                .examine__itemdesc{
+                    text-indent: -10px;
+                    padding-left: 20px;
+                }
             }
 
             &:nth-child(3) {
@@ -292,8 +296,8 @@
     &__itemdesc {
         margin-top: 5px;
         line-height: 22px;
-        text-indent: -10px;
-        padding-left: 20px;
+        // text-indent: -10px;
+        padding-left: 10px;
         letter-spacing: -0.48px;
     }
 
