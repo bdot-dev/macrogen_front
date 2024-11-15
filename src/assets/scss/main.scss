@@ -24,14 +24,17 @@ body {
     }
 
     .header {
+        height: 100px;
         .inner {
             max-width: 1660px;
             min-width: 1660px;
+            height: 99px;
         }
 
         &.header-main {
             &.header-sm {
-                background: #fff !important;
+                background: rgba(255, 255, 255, 0.9) !important;
+                backdrop-filter: blur(10px);
             }
         }
     }
@@ -112,6 +115,9 @@ body {
         letter-spacing: -1.5px;
     }
 }
+.wrap .header .gnb-2depth .box .item .title, .wrap .header-main .gnb-2depth .box .item .title{
+    letter-spacing: 0;
+}
 
 
 
@@ -123,17 +129,18 @@ body {
         overflow: hidden;
     }
 
-    &::after {
-        content: '';
-        display: inline-block;
-        width: 100%;
-        height: 123px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.10);
-        backdrop-filter: blur(10px);
-    }
+    // &::after {
+    //     content: '';
+    //     display: inline-block;
+    //     width: 100%;
+    //     height: 100px;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     background: rgba(0, 0, 0, 0.10);
+    //     backdrop-filter: blur(10px);
+    // }
+    // &.stop::after{display: none;}
 }
 
 .main-board {
@@ -143,10 +150,15 @@ body {
     &__cont {
         display: flex;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
+        align-items: flex-start;
         height: 100vh;
         background-color: #fff;
         overflow: hidden;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        -webkit-transition-duration: 1.5s;
+        transition-duration: 1.2s;
     }
 
     &__pc {
@@ -160,6 +172,8 @@ body {
         transition-timing-function: ease-out;
         -webkit-transition-duration: 1.5s;
         transition-duration: 1.2s;
+        margin-top: 0;
+        &.down{margin-top: -1000px;}
     }
 
     &__list {
@@ -609,6 +623,7 @@ body {
         font-size: 18px;
         line-height: 30px;
         letter-spacing: -0.54px;
+        height: 90px;
     }
 
     &__image {
@@ -761,7 +776,7 @@ body {
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 150px 0 100px;
+    padding: 110px 0 100px;
     background-color: #fff;
     overflow-x: hidden;
 

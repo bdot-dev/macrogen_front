@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
 
+    const mainKv = document.querySelector('.main-kv');
     const moveBox = document.querySelector('.main-board__pc');
     const mainBoard = document.querySelector('.main-board');
     const header = document.querySelector('#header');
@@ -59,13 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const mouseMoveHandler = (e) => {
         const nowX = (-1 + (e.pageX / winWidth) * 2).toFixed(2);
         const nowY = (1 - (e.pageY / winHeight) * 2).toFixed(2);
+        const minPositionY = 30;
         let movePositionX;
-        const movePositionY = nowY * ((contHeight + 20 - winHeight) / 2);
+        let movePositionY = nowY * ((contHeight + 20 - winHeight) / 2) - header.clientHeight;
 
         if (winWidth < contWidth) {
             movePositionX = -1 * (nowX * ((contWidth + 70 - winWidth) / 2));
         } else {
             movePositionX = nowX * ((contWidth + 70 - winWidth) / 2);
+        }
+        if (movePositionY > minPositionY) {
+            movePositionY = minPositionY;
         }
 
         if (!isMoving) {
@@ -296,7 +301,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 sections[index].classList.add('active');
 
                 if (index === 0) {
-                    header.classList.remove('header-sm');
+                    // header.classList.remove('header-sm');
+                    header.classList.add('header-sm');
+                }
+
+                if (index === 0 && !mainKv.classList.contains('stop')) {
+                    // header.classList.remove('header-sm');
                     header.style.display = 'block';
                     document.querySelector('.scroll-area').scrollTop = 0;
                 }
@@ -322,6 +332,16 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSectionIndex -= 1;
             goToSection(currentSectionIndex);
             document.querySelector('.scroll-area').scrollTop = 0;
+        }
+        if (delta == 'down' && currentSectionIndex === 1) {
+            setTimeout(() => (header.style.display = 'none'), 300);
+            moveBox.classList.add('down');
+        }
+        if (delta == 'up' && currentSectionIndex === 0) {
+            moveBox.classList.remove('down');
+        }
+        if (delta == 'up') {
+            header.classList.add('header-sm');
         }
     }
 
@@ -349,8 +369,28 @@ document.addEventListener('DOMContentLoaded', () => {
             handleWindowScroll();
         }, 100)
     );
+    const loadAfterEvt = () => {
+        // moveBox.style.paddingTop = `${moveBox.clientHeight - document.querySelectorAll('.section')[0].clientHeight + header.clientHeight + 40}px`;
+        moveBox.style.paddingTop = `${header.clientHeight}px`;
+        mainKv.classList.add('stop');
+        header.classList.add('header-sm');
 
-    [mainBoard, header].forEach((element) => element.addEventListener('mousemove', mouseMoveHandler));
+        setTimeout(() => {
+            window.addEventListener('mousemove', loadmouseMove);
+        }, 1000);
+    };
+    const loadmouseMove = () => {
+        if (mainKv.classList.contains('stop')) {
+            // moveBox.style.paddingTop = '0';
+            mainKv.classList.remove('stop');
+            // header.classList.remove('header-sm');
+
+            [mainBoard, header].forEach((element) => element.addEventListener('mousemove', mouseMoveHandler));
+            window.removeEventListener('mousemove', loadmouseMove);
+        }
+    };
+
+    loadAfterEvt();
 
     serviceButtons.forEach((btn, index) => {
         btn.addEventListener('click', () => {

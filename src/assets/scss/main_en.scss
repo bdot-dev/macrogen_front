@@ -39,7 +39,12 @@
             grid-template-columns: repeat(1, 320px);
         }
     }
-
+    &__description {height: auto;}
+    &__list{
+        li:first-child .main-service__link{ 
+            margin-top: 120px;
+        }
+    }
     &__button {
         li {
             padding: 22px 50px 22px 112px;
