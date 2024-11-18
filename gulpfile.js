@@ -29,6 +29,7 @@ const CONFIG = {
             STYLE: `./src/${ASSETS}scss`,
             SCRIPT: `./src/${ASSETS}script`,
             LIBRARY: `./src/${ASSETS}library`,
+            VIDEO: `./src/${ASSETS}video`,
         },
     },
     deploy: {
@@ -39,6 +40,7 @@ const CONFIG = {
             STYLE: `./dist/${RESOURCES}${ASSETS}css`,
             SCRIPT: `./dist/${RESOURCES}${ASSETS}script`,
             LIBRARY: `./dist/${RESOURCES}${ASSETS}library`,
+            VIDEO: `./dist/${RESOURCES}${ASSETS}video`,
         },
     },
 };
@@ -77,6 +79,13 @@ async function Imagemin() {
             ])
         )
         .pipe(dest(CONFIG.deploy.ASSETS.IMAGES));
+}
+
+/**
+ * ? @task : video
+ */
+async function Video() {
+    return src(`${CONFIG.workspace.ASSETS.VIDEO}/**/*`, { encoding: false }).pipe(dest(CONFIG.deploy.ASSETS.VIDEO));
 }
 
 /**
@@ -145,7 +154,7 @@ function Watch() {
 /**
  * ? 기본 작업
  */
-const defaultTasks = series(Clean, parallel(CompileCSS, EJS, Script, Library, Font, Imagemin, Lottie), BrowserSync, Watch);
+const defaultTasks = series(Clean, parallel(CompileCSS, EJS, Script, Library, Font, Imagemin, Video, Lottie), BrowserSync, Watch);
 
 export default defaultTasks;
 export { Clean };

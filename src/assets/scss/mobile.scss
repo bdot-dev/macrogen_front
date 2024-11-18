@@ -130,6 +130,7 @@
         flex-direction: column;
         row-gap: 15px;
         justify-content: space-between;
+        width: 100%;
     }
 
     &__list {
@@ -178,6 +179,18 @@
                 transform: scale(1);
             }
         }
+        &.video-length{
+            padding-top: calc(295/160*100%); 
+            video{
+                position: absolute;
+                top:0;
+                height: 100%;
+                width: auto;
+                max-width: unset;
+            }
+            &.first video{left: -145%;}
+            &.second video{left: -104%;}
+        }   
     }
 
     &__description {
