@@ -234,6 +234,7 @@ body {
     }
 
     &__image {
+        display: block;
         position: relative;
         transform: scale(0);
         border-radius: 10px;

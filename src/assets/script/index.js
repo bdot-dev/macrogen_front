@@ -512,6 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     topButton.addEventListener('click', () => {
         goToSection(0);
+        moveBox.classList.remove('down');
     });
 
     initAnimation();
