@@ -118,6 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 borderRadius: '0%',
                 duration: 1, // scale 변경 시간
                 ease: 'power2.out', // 부드러운 애니메이션
+                backgroundPosition:'left 45% top',
+                backgroundSize:'auto 130vh'
             },
             '+=0.5' // opacity 애니메이션이 끝난 후 0.5초 지연
         )

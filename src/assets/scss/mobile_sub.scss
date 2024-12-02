@@ -1,6 +1,9 @@
 @import 'common/mixin';
 
 .wrap {
+    *{
+        word-break: keep-all;
+    }
     .container {
         padding: 0 0 70px 0;
     }
@@ -303,7 +306,7 @@
 
     &__piece {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         gap: 5px;
 
         &+.examine__piece {
