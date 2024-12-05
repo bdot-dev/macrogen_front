@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tl.to('.main-slogan', {
             backgroundColor: '#fff',
-            duration: 1,
+            duration: 0.2,
             ease: 'power2.out',
             onStart: () => {
                 // main-service__button의 모든 li 요소에서 active 클래스 제거

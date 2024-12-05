@@ -1,3 +1,7 @@
+
+.wrap.main-wrap{
+    font-family: "NeuzeitGrotesk", sans-serif;
+}
 .main-board {
     &__description {
         font-size: 24px;
@@ -50,7 +54,7 @@
             padding: 22px 50px 22px 112px;
             font-size: 24px;
             line-height: 28px;
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             text-align: right;
         }
     }
@@ -61,7 +65,7 @@
         li {
             p {
                 font-size: 20px;
-                font-family: "Neuzeit Grotesk";
+                font-family: "NeuzeitGrotesk";
                 line-height: 30px;
             }
         }
@@ -72,7 +76,7 @@
     &__title {
         font-size: 40px;
         line-height: 46px;
-        font-family: "Neuzeit Grotesk";
+        font-family: "NeuzeitGrotesk";
         height: 96px;
     }
 }

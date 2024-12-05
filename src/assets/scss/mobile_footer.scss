@@ -99,7 +99,7 @@
                 letter-spacing: -0.48px;
 
                 // &:first-child {
-                //     font-family: "Neuzeit Grotesk";
+                //     font-family: "NeuzeitGrotesk";
                 //     font-size: 18px;
                 //     line-height: 18px
                 // }
@@ -151,6 +151,9 @@
                     color: #fff;
 
                 }
+                &.policy a{
+                    font-weight: 700;
+                }
 
             }
         }
@@ -163,7 +166,7 @@
         .footer__button {
             position: relative;
             display: inline-block;
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             font-size: 12px;
             font-weight: 700;
             line-height: 1;
@@ -217,7 +220,7 @@
 
                 a {
                     display: block;
-                    font-family: "Neuzeit Grotesk";
+                    font-family: "NeuzeitGrotesk";
                     font-size: 14px;
                     line-height: 28px;
                     color: #fff;
@@ -271,7 +274,7 @@
         line-height: 12px;
 
         p {
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             font-size: 12px;
             letter-spacing: 0;
             font-weight: 300;

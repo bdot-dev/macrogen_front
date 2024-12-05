@@ -1,3 +1,7 @@
+html,body{
+    font-family: "NeuzeitGrotesk", sans-serif;
+}
+
 .examine {
     &__hidelist {
         li {
@@ -6,7 +10,7 @@
     }
 
     &__itemleft {
-        font-family: 'Neuzeit Grotesk';
+        font-family: "NeuzeitGrotesk";
 
         &--small {
             flex-basis: 130px;
@@ -22,7 +26,7 @@
     }
 
     &__itemright {
-        font-family: 'Neuzeit Grotesk';
+        font-family: "NeuzeitGrotesk";
 
         p {
             line-height: 20px;
@@ -52,6 +56,6 @@
 
 .comms-slide {
     &__description {
-        font-family: "Neuzeit Grotesk";
+        font-family: "NeuzeitGrotesk";
     }
 }

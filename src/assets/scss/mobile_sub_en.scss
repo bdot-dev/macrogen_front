@@ -1,3 +1,7 @@
+html,body{
+    font-family: "NeuzeitGrotesk", sans-serif;
+}
+
 .examine {
     &__inner {
         height: 160px;
@@ -9,7 +13,7 @@
 
     &__title {
         h4 {
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             letter-spacing: 0;
         }
     }
@@ -40,7 +44,7 @@
 .slide-banner {
     &__title {
         h3 {
-            font-family: "Neuzeit Grotesk";
+            font-family: "NeuzeitGrotesk";
             font-size: 20px;
             line-height: 30px;
         }
@@ -49,7 +53,7 @@
 
 .advantage-slide {
     &__name {
-        font-family: "Neuzeit Grotesk";
+        font-family: "NeuzeitGrotesk";
         font-size: 14px;
     }
 }
